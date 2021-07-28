@@ -1,0 +1,89 @@
+{
+  "Banner": {
+    "description": "Auto imported from components/Banner.vue"
+  },
+  "BestDealSlider": {
+    "description": "Auto imported from components/BestDealSlider.vue"
+  },
+  "Blog": {
+    "description": "Auto imported from components/Blog.vue"
+  },
+  "BlogSidebar": {
+    "description": "Auto imported from components/BlogSidebar.vue"
+  },
+  "BrandCard": {
+    "description": "Auto imported from components/BrandCard.vue"
+  },
+  "Breadcrumbs": {
+    "description": "Auto imported from components/Breadcrumbs.vue"
+  },
+  "CommentForm": {
+    "description": "Auto imported from components/CommentForm.vue"
+  },
+  "DropdownMenu": {
+    "description": "Auto imported from components/DropdownMenu.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "HeaderMobile": {
+    "description": "Auto imported from components/HeaderMobile.vue"
+  },
+  "HomeHeader": {
+    "description": "Auto imported from components/HomeHeader.vue"
+  },
+  "Pagination": {
+    "description": "Auto imported from components/Pagination.vue"
+  },
+  "ProductCard": {
+    "description": "Auto imported from components/ProductCard.vue"
+  },
+  "ProductCarousel": {
+    "description": "Auto imported from components/ProductCarousel.vue"
+  },
+  "ProductDetailHeader": {
+    "description": "Auto imported from components/ProductDetailHeader.vue"
+  },
+  "Search": {
+    "description": "Auto imported from components/Search.vue"
+  },
+  "ShopHeader": {
+    "description": "Auto imported from components/ShopHeader.vue"
+  },
+  "SmallBanner": {
+    "description": "Auto imported from components/SmallBanner.vue"
+  },
+  "SubMenu": {
+    "description": "Auto imported from components/SubMenu.vue"
+  },
+  "SubMenuItem": {
+    "description": "Auto imported from components/SubMenuItem.vue"
+  },
+  "Tag": {
+    "description": "Auto imported from components/Tag.vue"
+  },
+  "TopBrandSlider": {
+    "description": "Auto imported from components/TopBrandSlider.vue"
+  },
+  "TrendingProduct": {
+    "description": "Auto imported from components/TrendingProduct.vue"
+  },
+  "DashboardNavBar": {
+    "description": "Auto imported from components/dashboard/NavBar.vue"
+  },
+  "DashboardSideBar": {
+    "description": "Auto imported from components/dashboard/SideBar.vue"
+  },
+  "UIcomponentsAlert": {
+    "description": "Auto imported from components/UIcomponents/Alert.vue"
+  },
+  "UIcomponentsModal": {
+    "description": "Auto imported from components/UIcomponents/Modal.vue"
+  },
+  "UIcomponentsSlideOver": {
+    "description": "Auto imported from components/UIcomponents/SlideOver.vue"
+  },
+  "DashboardCategoryShow": {
+    "description": "Auto imported from components/dashboard/category/Show.vue"
+  }
+}

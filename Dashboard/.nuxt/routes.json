@@ -1,0 +1,65 @@
+[
+  {
+    "name": "404",
+    "path": "*",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\404.vue",
+    "chunkName": "pages/404.vue",
+    "_name": "_e1d79e88"
+  },
+  {
+    "name": "home-page",
+    "path": "/",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\index.vue",
+    "chunkName": "pages/index.vue",
+    "_name": "_3e80a856"
+  },
+  {
+    "name": "shop-by-brand",
+    "path": "/thuong-hieu/:slug",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\product\\\\brand.vue",
+    "chunkName": "pages/product/brand.vue",
+    "_name": "_aa9d7b38"
+  },
+  {
+    "name": "shop-by-category",
+    "path": "/danh-muc/:slug",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\product\\\\index.vue",
+    "chunkName": "pages/product/index.vue",
+    "_name": "_ad06fba2"
+  },
+  {
+    "name": "product-detail",
+    "path": "/san-pham/:slug",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\product\\\\_slug.vue",
+    "chunkName": "pages/product/_slug.vue",
+    "_name": "_b0743e32"
+  },
+  {
+    "name": "cart",
+    "path": "/gio-hang",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\cart.vue",
+    "chunkName": "pages/cart.vue",
+    "_name": "_193eab68"
+  },
+  {
+    "name": "contact",
+    "path": "/lien-he",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\contact.vue",
+    "chunkName": "pages/contact.vue",
+    "_name": "_db6efcb8"
+  },
+  {
+    "name": "dashboard-category",
+    "path": "/dashboard/category",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\dashboard\\\\category\\\\index.vue",
+    "chunkName": "pages/dashboard/category/index.vue",
+    "_name": "_27fa032c"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\Pet-Market\\\\pages\\\\dashboard\\\\login.vue",
+    "chunkName": "pages/dashboard/login.vue",
+    "_name": "_5437e981"
+  }
+]
