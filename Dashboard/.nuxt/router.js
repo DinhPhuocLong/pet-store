@@ -4,15 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _e1d79e88 = () => interopDefault(import('..\\pages\\404.vue' /* webpackChunkName: "pages/404.vue" */))
-const _3e80a856 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index.vue" */))
-const _aa9d7b38 = () => interopDefault(import('..\\pages\\product\\brand.vue' /* webpackChunkName: "pages/product/brand.vue" */))
-const _ad06fba2 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
-const _b0743e32 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug.vue" */))
-const _193eab68 = () => interopDefault(import('..\\pages\\cart.vue' /* webpackChunkName: "pages/cart.vue" */))
-const _db6efcb8 = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact.vue" */))
-const _27fa032c = () => interopDefault(import('..\\pages\\dashboard\\category\\index.vue' /* webpackChunkName: "pages/dashboard/category/index.vue" */))
-const _5437e981 = () => interopDefault(import('..\\pages\\dashboard\\login.vue' /* webpackChunkName: "pages/dashboard/login.vue" */))
+const _67a0d9d2 = () => interopDefault(import('..\\pages\\404.vue' /* webpackChunkName: "pages/404.vue" */))
+const _bb66401e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index.vue" */))
+const _0fb4c01a = () => interopDefault(import('..\\pages\\category\\index.vue' /* webpackChunkName: "pages/category/index.vue" */))
+const _6bf48308 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
+const _cd254e58 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
+const _7af5a8f4 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
 
 const emptyFn = () => {}
 
@@ -27,40 +24,28 @@ export const routerOptions = {
 
   routes: [{
     path: "*",
-    component: _e1d79e88,
+    component: _67a0d9d2,
     name: "404"
   }, {
     path: "/",
-    component: _3e80a856,
-    name: "home-page"
+    component: _bb66401e,
+    name: "dashboard"
   }, {
-    path: "/thuong-hieu/:slug",
-    component: _aa9d7b38,
-    name: "shop-by-brand"
-  }, {
-    path: "/danh-muc/:slug",
-    component: _ad06fba2,
-    name: "shop-by-category"
-  }, {
-    path: "/san-pham/:slug",
-    component: _b0743e32,
-    name: "product-detail"
-  }, {
-    path: "/gio-hang",
-    component: _193eab68,
-    name: "cart"
-  }, {
-    path: "/lien-he",
-    component: _db6efcb8,
-    name: "contact"
-  }, {
-    path: "/dashboard/category",
-    component: _27fa032c,
-    name: "dashboard-category"
+    path: "/category",
+    component: _0fb4c01a,
+    name: "category"
   }, {
     path: "/login",
-    component: _5437e981,
+    component: _6bf48308,
     name: "login"
+  }, {
+    path: "/register",
+    component: _cd254e58,
+    name: "register"
+  }, {
+    path: "/product",
+    component: _7af5a8f4,
+    name: "product"
   }],
 
   fallback: false

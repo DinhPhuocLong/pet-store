@@ -158,7 +158,7 @@
 </template>
 
 <script>
-    import util from '../../../helpers/util';
+    import util from '../../helpers/util';
     import { ValidationProvider, ValidationObserver } from "vee-validate";
     export default {
         props: ['category', 'title'],
