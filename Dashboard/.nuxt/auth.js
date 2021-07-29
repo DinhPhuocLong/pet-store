@@ -15,7 +15,12 @@ export default function (ctx, inject) {
   "rewriteRedirects": true,
   "fullPathRedirect": false,
   "watchLoggedIn": true,
-  "redirect": false,
+  "redirect": {
+    "login": "/login",
+    "logout": "/",
+    "home": "/",
+    "callback": "/login"
+  },
   "vuex": {
     "namespace": "auth"
   },

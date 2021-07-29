@@ -1,6 +1,6 @@
 export default function(context) {
     const { redirect, $auth } = context;
-    if ($auth.loggedIn) {
-        redirect('/dashboard');
+    if (!$auth.logged) {
+        redirect('/login');
     } 
 }

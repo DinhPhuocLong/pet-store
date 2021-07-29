@@ -1,904 +1,531 @@
 <template>
     <div>
-        <div class="flex mt-10 w-[94%] max-w-[1440px] xl:w-11/12 mx-auto">
-            <div class="hidden lg:block w-1/4">
-                <div class="border-b border-solid border-gray-200">
-                    <h3 class="text-2xl font-bold pb-3">Nhóm Giá</h3>
-                </div>
-
-                <div class="mt-4">
-                    <div class="flex items-center gap-x-2 mb-4">
-                        <input type="radio" name="item" class="w-4 h-4" />
-                        <span>Dưới 100.000đ</span>
-                    </div>
-
-                    <div class="flex items-center gap-x-2 mb-4">
-                        <input type="radio" name="item" class="w-4 h-4" />
-                        <span>100.000đ - 200.000đ</span>
-                    </div>
-                </div>
-
-                <div class="border-b border-solid border-gray-200 mt-10">
-                    <h3 class="text-2xl font-bold pb-3">Thương Hiệu</h3>
-                </div>
-
-                <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 mt-4">
-                    <BrandCard v-for="brand in brands" :key="brand.id" :brand="brand" />
-                </div>
-
-                <div class="border-b border-solid border-gray-200 mt-10">
-                    <h3 class="text-2xl font-bold pb-3">Sản phẩm cùng loại</h3>
-                </div>
-                <ul class="mt-4">
-                    <li class="border-b border-solid border-gray-300 pb-4 mt-4">
-                        <div class="flex flex-row">
-                            <div class="w-5/12 pr-8">
-                                <img
-                                    class="border border-solid border-gray-300 rounded-lg"
-                                    src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2020/12/product-4.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="flex flex-col w-7/12">
-                                <div class="flex justify-start">
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <p class="truncate mt-1 text-gray-400">
-                                    <a href="overflow-truncate">
-                                        Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Minima, tempore.
-                                    </a>
-                                </p>
-
-                                <span class="text-red-400 font-bold">
-                                    100.000đ
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="border-b border-solid border-gray-300 pb-4 mt-4">
-                        <div class="flex flex-row">
-                            <div class="w-5/12 pr-8">
-                                <img
-                                    class="border border-solid border-gray-300 rounded-lg"
-                                    src="https://petshopsaigon.vn/wp-content/uploads/2021/06/sua-tam-cho-meo-da-nhay-cam-tropiclean-oxymed-hypo-allergenic-1-300x300.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="flex flex-col w-7/12">
-                                <div class="flex justify-start">
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <p class="truncate mt-1 text-gray-400">
-                                    <a href="overflow-truncate">
-                                        Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Minima, tempore.
-                                    </a>
-                                </p>
-
-                                <span class="text-red-400 font-bold">
-                                    100.000đ
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class=" pb-4 mt-4">
-                        <div class="flex flex-row">
-                            <div class="w-5/12 pr-8">
-                                <img
-                                    class="border border-solid border-gray-300 rounded-lg"
-                                    src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2020/12/product-4.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="flex flex-col w-7/12">
-                                <div class="flex justify-start">
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        class="focus:outline-none mr-1"
-                                    >
-                                        <svg
-                                            class="block h-3 w-3 text-yellow-400"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path
-                                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <p class="truncate mt-1 text-gray-400">
-                                    <a href="overflow-truncate">
-                                        Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Minima, tempore.
-                                    </a>
-                                </p>
-
-                                <span class="text-red-400 font-bold">
-                                    100.000đ
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="w-full lg:w-3/4">
-                <div
-                    class="w-[94%] xl:w-11/12 mx-auto flex justify-between lg:justify-end gap-x-2"
-                >
-                    <div
-                        class="toggle-open-options cursor-pointer border border-black rounded-lg p-1 lg:hidden hover:bg-red-500 hover:border-red-500 transition-all duration-500"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-adjustments"
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="#2c3e50"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <circle cx="6" cy="10" r="2" />
-                            <line x1="6" y1="4" x2="6" y2="8" />
-                            <line x1="6" y1="12" x2="6" y2="20" />
-                            <circle cx="12" cy="16" r="2" />
-                            <line x1="12" y1="4" x2="12" y2="14" />
-                            <line x1="12" y1="18" x2="12" y2="20" />
-                            <circle cx="18" cy="7" r="2" />
-                            <line x1="18" y1="4" x2="18" y2="5" />
-                            <line x1="18" y1="9" x2="18" y2="20" />
-                        </svg>
-                    </div>
-                    <!--Navbar Toggle Option Items-->
-                    <div
-                        class="toggle-items-option fixed top-0 left-0 bg-white shadow-md w-80 h-full animate-OpenMenuMobile"
-                        style="display:none; z-index: 9999;"
-                    >
-                        <div
-                            class="p-4 flex justify-end font-bold bg-white shadow-md"
-                        >
-                            <button
-                                class="toggle-close-options focus:outline-none italic"
-                            >
-                                Close
-                                <i class="fas fa-times italic"></i>
-                            </button>
-                        </div>
-                        <div class="px-6 pt-8 pb-20 overflow-y-scroll h-full">
-                            <div class="border-b border-solid border-gray-200">
-                                <h3 class="text-2xl font-bold pb-3">
-                                    Nhóm Giá
-                                </h3>
-                            </div>
-
-                            <div class="mt-4">
-                                <div class="flex items-center gap-x-2 mb-4">
-                                    <input
-                                        type="radio"
-                                        name="item"
-                                        class="w-4 h-4"
-                                    />
-                                    <span>Dưới 100.000đ</span>
-                                </div>
-
-                                <div class="flex items-center gap-x-2 mb-4">
-                                    <input
-                                        type="radio"
-                                        name="item"
-                                        class="w-4 h-4"
-                                    />
-                                    <span>100.000đ - 200.000đ</span>
-                                </div>
-                            </div>
-
-                            <div
-                                class="border-b border-solid border-gray-200 mt-3 lg:mt-10"
-                            >
-                                <h3 class="text-2xl font-bold pb-3">
-                                    Thương Hiệu
-                                </h3>
-                            </div>
-
-                            <div
-                                class="grid grid-cols-2 xl:grid-cols-3 gap-2 mt-4"
-                            >
-                                <div
-                                    class="border border-solid border-gray-300 rounded-lg overflow-hidden hover:border-black cursor-pointer"
-                                >
-                                    <img
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-
-                                <div
-                                    class="border border-solid border-gray-300 rounded-lg overflow-hidden hover:border-black cursor-pointer"
-                                >
-                                    <img
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-
-                                <div
-                                    class="border border-solid border-gray-300 rounded-lg overflow-hidden hover:border-black cursor-pointer"
-                                >
-                                    <img
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-
-                                <div
-                                    class="border border-solid border-gray-300 rounded-lg overflow-hidden hover:border-black cursor-pointer"
-                                >
-                                    <img
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-
-                                <div
-                                    class="border border-solid border-gray-300 rounded-lg overflow-hidden hover:border-black cursor-pointer"
-                                >
-                                    <img
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-
-                                <div
-                                    class="border border-solid border-gray-300 rounded-lg overflow-hidden hover:border-black cursor-pointer"
-                                >
-                                    <img
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-1.jpg"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-
-                            <div
-                                class="border-b border-solid border-gray-200 mt-3 lg:mt-10"
-                            >
-                                <h3 class="text-2xl font-bold pb-3">
-                                    Sản phẩm cùng loại
-                                </h3>
-                            </div>
-                            <ul class="mt-4">
-                                <li
-                                    class="border-b border-solid border-gray-300 pb-4 mt-4"
-                                >
-                                    <div class="flex flex-row">
-                                        <div class="w-5/12 pr-8">
-                                            <img
-                                                class="border border-solid border-gray-300 rounded-lg"
-                                                src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2020/12/product-4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="flex flex-col w-7/12">
-                                            <div class="flex justify-start">
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <p
-                                                class="truncate mt-1 text-gray-400"
-                                            >
-                                                <a href="overflow-truncate">
-                                                    Lorem ipsum dolor sit amet
-                                                    consectetur, adipisicing
-                                                    elit. Minima, tempore.
-                                                </a>
-                                            </p>
-
-                                            <span
-                                                class="text-red-400 font-bold"
-                                            >
-                                                100.000đ
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li
-                                    class="border-b border-solid border-gray-300 pb-4 mt-4"
-                                >
-                                    <div class="flex flex-row">
-                                        <div class="w-5/12 pr-8">
-                                            <img
-                                                class="border border-solid border-gray-300 rounded-lg"
-                                                src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2020/12/product-4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="flex flex-col w-7/12">
-                                            <div class="flex justify-start">
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <p
-                                                class="truncate mt-1 text-gray-400"
-                                            >
-                                                <a href="overflow-truncate">
-                                                    Lorem ipsum dolor sit amet
-                                                    consectetur, adipisicing
-                                                    elit. Minima, tempore.
-                                                </a>
-                                            </p>
-
-                                            <span
-                                                class="text-red-400 font-bold"
-                                            >
-                                                100.000đ
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class=" pb-4 mt-4">
-                                    <div class="flex flex-row">
-                                        <div class="w-5/12 pr-8">
-                                            <img
-                                                class="border border-solid border-gray-300 rounded-lg"
-                                                src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2020/12/product-4.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="flex flex-col w-7/12">
-                                            <div class="flex justify-start">
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-
-                                                <button
-                                                    type="button"
-                                                    class="focus:outline-none mr-1"
-                                                >
-                                                    <svg
-                                                        class="block h-3 w-3 text-yellow-400"
-                                                        fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 20 20"
-                                                    >
-                                                        <path
-                                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <p
-                                                class="truncate mt-1 text-gray-400"
-                                            >
-                                                <a href="overflow-truncate">
-                                                    Lorem ipsum dolor sit amet
-                                                    consectetur, adipisicing
-                                                    elit. Minima, tempore.
-                                                </a>
-                                            </p>
-
-                                            <span
-                                                class="text-red-400 font-bold"
-                                            >
-                                                100.000đ
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        class="lg:flex gap-x-4 border border-solid border-black rounded-full py-2.5 px-6 hidden"
-                    >
-                        <a href="" class="inline-block">
-                            <div
-                                class="grid grid-cols-2 gap-px grid-icon-bg-gray"
-                            >
-                                <span class=" bg-black w-1.5 h-1.5"></span>
-                                <span class=" bg-black w-1.5 h-1.5"></span>
-                                <span class=" bg-black w-1.5 h-1.5"></span>
-                                <span class=" bg-black w-1.5 h-1.5"></span>
-                                <span class=" bg-black w-1.5 h-1.5"></span>
-                                <span class=" bg-black w-1.5 h-1.5"></span>
-                            </div>
-                        </a>
-
-                        <a href="" class="inline-block">
-                            <div
-                                class="grid grid-cols-3 gap-px grid-icon-bg-black"
-                            >
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                            </div>
-                        </a>
-                        <a href="" class="inline-block">
-                            <div
-                                class="grid grid-cols-2 gap-y-px items-center justify-items-center grid-icon-bg-black"
-                            >
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-3 h-px"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-3 h-px"></span>
-                                <span class="bg-black w-1.5 h-1.5"></span>
-                                <span class="bg-black w-3 h-px"></span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="relative">
-                        <div class="">
-                            <select
-                                class=" text-black text-md text-center appearance-none border border-solid border-black rounded-full py-2.5 pl-4 leading-tight focus:outline-none"
-                                style="width: 150px"
-                            >
-                                <option class="pt-6">Default Sorting</option>
-                                <option>POST </option>
-                                <option>PUT</option>
-                                <option>DELETE</option>
-                            </select>
-                            <div
-                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2"
-                            >
-                                <i
-                                    class="fas fa-chevron-down text-black text-xs"
-                                ></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="mt-10 w-[94%] mx-auto grid grid-cols-2 md:grid-cols-3 gap-6"
-                >
-                    <ProductCard
-                        v-for="product in products.data"
-                        :key="product.id"
-                        :product="product"
+        <UIcomponentsSlideOver
+            v-on:close="closeSlideOver()"
+            :isShowing="isShowingSlideOver"
+            :title="'Thêm sản phẩm'"
+        >
+            <div slot="body">
+                <div class="mb-8">
+                    <label class="block mb-4">Tên sản phẩm</label>
+                    <input
+                        v-model="name"
+                        class="appearance-none border border-solid border-gray-300 w-full py-2 px-2
+                    text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                 </div>
+                <div class="mb-8">
+                    <label class="block mb-4 bg-white">Mô tả sản phẩm</label>
+                    <div
+                        style="min-height:150px;"
+                        class="quill-editor"
+                        :content="content"
+                        @change="onEditorChange($event)"
+                        @blur="onEditorBlur($event)"
+                        @focus="onEditorFocus($event)"
+                        @ready="onEditorReady($event)"
+                        v-quill:myQuillEditor="editorOption"
+                    ></div>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block mb-4">Danh mục</label>
+                    <select
+                        id="Currency"
+                        name="currency"
+                        v-model="category_id"
+                        class="w-full border border-solid border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 h-full py-2 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm"
+                    >
+                        <option
+                            v-for="category in categoryOptions"
+                            :key="category.id"
+                            :value="category.id"
+                            v-html="category.name"
+                        >
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block mb-4">Thương hiệu</label>
+                    <select
+                        v-model="brand"
+                        id="Currency"
+                        name="currency"
+                        class="w-full border border-solid border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 h-full py-2 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm"
+                    >
+                        <option
+                            v-for="brand in brands"
+                            :value="brand.id"
+                            :key="brand.id"
+                            class="py-2"
+                            >{{ brand.name }}</option
+                        >
+                    </select>
+                </div>
+
+                <div class="mb-8 flex gap-x-4">
+                    <div class="w-2/4">
+                        <label
+                            for="price"
+                            class="block text-sm font-medium text-gray-700"
+                            >Giá</label
+                        >
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div
+                                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                            >
+                                <span class="text-gray-500 sm:text-sm">
+                                    đ
+                                </span>
+                            </div>
+                            <input
+                                v-model="price"
+                                type="text"
+                                class="border border-solid border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm py-2"
+                                placeholder="0.00"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="w-2/4">
+                        <label
+                            for="price"
+                            class="block text-sm font-medium text-gray-700"
+                            >Giảm giá</label
+                        >
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div
+                                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                            >
+                                <span class="text-gray-500 sm:text-sm">
+                                    %
+                                </span>
+                            </div>
+                            <input
+                                v-model="salePrice"
+                                type="text"
+                                class="border border-solid border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm py-2"
+                                placeholder="0.00"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <span>Hình ảnh</span>
+                    <div
+                        class="relative h-40 rounded-lg border-dashed border-2 border-gray-200 bg-white flex justify-center items-center hover:cursor-pointer"
+                    >
+                        <div class="absolute">
+                            <div class="flex flex-col items-center ">
+                                <i
+                                    class="fa fa-cloud-upload fa-3x text-gray-200"
+                                ></i>
+                                <span class="block text-blue-400 font-normal"
+                                    >Browse files</span
+                                >
+                            </div>
+                        </div>
+                        <input
+                            type="file"
+                            class="h-full w-full opacity-0"
+                            name=""
+                            multiple
+                            @change="onFileChange"
+                        />
+                    </div>
+                </div>
+                <div v-if="images" class="grid grid-cols-4 gap-x-2">
+                    <div
+                        id="preview-image"
+                        v-for="(image, index) in images"
+                        :key="index"
+                        class="border border-solid border-gray-300 relative"
+                        style="max-height: 120px"
+                    >
+                        <img :src="image" class="h-full" />
+                        <div
+                            id="remove-button"
+                            class="absolute top-0 left-0 w-full h-full bg-gray-100 flex items-center justify-center opacity-0"
+                        >
+                            <svg
+                                @click="removePreviewImage(index)"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-circle-x"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="#2c3e50"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                />
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M10 10l4 4m0 -4l-4 4" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div slot="footer">
+                <div class="mt-10">
+                    <button
+                        @click.prevent="addNewProduct()"
+                        class="mr-4 inline-block text-center lg:text-none py-2 px-10 text-md rounded-md text-white bg-blue-600 hover:bg-blue-800 transition-all duration-500"
+                    >
+                        Tạo mới
+                    </button>
+                    <button
+                        @click.prevent="closeSlideOver()"
+                        class="inline-block text-center lg:text-none py-2 px-10  text-md rounded-md text-white bg-blue-600 hover:bg-blue-800 transition-all duration-500"
+                    >
+                        Huỷ
+                    </button>
+                </div>
+            </div>
+        </UIcomponentsSlideOver>
+
+        <div class="flex justify-end items-center gap-x-4">
+            <!-- search bar -->
+            <div class="relative text-gray-600">
+                <input
+                    type="search"
+                    name="serch"
+                    placeholder="Tìm kiếm..."
+                    class="bg-white h-10 w-full xl:w-64 px-5 rounded-lg border text-sm focus:outline-none"
+                />
+                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                    <svg
+                        class="h-4 w-4 fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1"
+                        id="Capa_1"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 56.966 56.966"
+                        style="enable-background:new 0 0 56.966 56.966;"
+                        xml:space="preserve"
+                        width="512px"
+                        height="512px"
+                    >
+                        <path
+                            d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
+                        />
+                    </svg>
+                </button>
+            </div>
+
+            <div @click="openSlideOver()">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="37"
+                    height="37"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"
+                    />
+                </svg>
             </div>
         </div>
+        <div
+            class="inline-block w-full border border-solid border-gray-200 overflow-x-auto mt-4"
+        >
+            <table class="min-w-full leading-normal">
+                <thead>
+                    <tr>
+                        <th
+                            class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            Id
+                        </th>
+                        <th
+                            class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            Tên sản phẩm
+                        </th>
 
-        <div class="mx-auto px-4 mt-20">
-            <nav
-                class="flex flex-row flex-nowrap justify-center items-center"
-                aria-label="Pagination"
-            >
-                <a
-                    class="flex w-10 h-10 mr-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
-                    href="#"
-                    title="Previous Page"
-                >
-                    <span class="sr-only">Previous Page</span>
-                    <svg
-                        class="block w-4 h-4 fill-current"
-                        viewBox="0 0 256 512"
-                        aria-hidden="true"
-                        role="presentation"
+                        <th
+                            class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            Danh mục
+                        </th>
+
+                        <th
+                            class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            Thương hiệu
+                        </th>
+                        <!-- <th
+                                    class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Người tạo
+                                </th> -->
+                        <th
+                            class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            Giá
+                        </th>
+
+                        <th
+                            class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            Khuyến mãi
+                        </th>
+
+                        <th
+                            class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            Tình trạng
+                        </th>
+
+                        <th
+                            class="bg-white px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            Khởi tạo
+                        </th>
+                    </tr>
+                </thead>
+                <tbody v-if="products.length">
+                    <tr
+                        class="even:bg-white relative group"
+                        v-for="product in products"
+                        :key="product.id"
                     >
-                        <path
-                            d="M238.475 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L50.053 256 245.546 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L10.454 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"
-                        ></path>
-                    </svg>
-                </a>
-                <a
-                    class="flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
-                    href="#"
-                    title="Page 1"
-                >
-                    1
-                </a>
-                <a
-                    class="flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
-                    href="#"
-                    title="Page 2"
-                >
-                    2
-                </a>
-                <a
-                    class="flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-black bg-black text-white pointer-events-none"
-                    href="#"
-                    aria-current="page"
-                    title="Page 3"
-                >
-                    3
-                </a>
-                <a
-                    class="flex w-10 h-10 ml-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
-                    href="#"
-                    title="Next Page"
-                >
-                    <span class="sr-only">Next Page</span>
-                    <svg
-                        class="block w-4 h-4 fill-current"
-                        viewBox="0 0 256 512"
-                        aria-hidden="true"
-                        role="presentation"
-                    >
-                        <path
-                            d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"
-                        ></path>
-                    </svg>
-                </a>
-            </nav>
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                            <p class="text-gray-900 whitespace-no-wrap">
+                                {{ product.id }}
+                            </p>
+                        </td>
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                            <p class="text-gray-900 whitespace-no-wrap">
+                                {{ product.name }}
+                            </p>
+                        </td>
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                            <p class="text-gray-900 whitespace-no-wrap">
+                                {{
+                                    product.category
+                                        ? product.category.name
+                                        : ''
+                                }}
+                            </p>
+                        </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                            <p class="text-gray-900 whitespace-no-wrap"></p>
+                        </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                            <p class="text-gray-900 whitespace-no-wrap">
+                                {{ product.price | toVndCurrency }}
+                            </p>
+                        </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                            <p class="text-gray-900 whitespace-no-wrap">
+                                {{ product.sale | percentage }}
+                            </p>
+                        </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                            <span
+                                class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
+                            >
+                                <span
+                                    aria-hidden
+                                    class="absolute inset-0 opacity-50 rounded-full"
+                                    v-bind:class="[
+                                        !product.hidden
+                                            ? 'bg-green-300'
+                                            : 'bg-red-300'
+                                    ]"
+                                ></span>
+                                <span class="relative">{{
+                                    status(product.hidden)
+                                }}</span>
+                            </span>
+                        </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                            <p class="text-gray-900 whitespace-no-wrap">
+                                {{ product.created_at | formatDate }}
+                            </p>
+                        </td>
+                        <div
+                            class="w-full text-black text-[12px] absolute px-5 left-0 bottom-0 opacity-0
+                                group-hover:opacity-100 group-hover:visible transition-all duration-500"
+                        >
+                            <nuxt-link
+                                :to="{
+                                    name: 'category-id',
+                                    params: { id: product.id }
+                                }"
+                                class="hover:text-blue-400"
+                                >Chỉnh sửa</nuxt-link
+                            >
+                            <span> | </span>
+                            <button
+                                @click.prevent="destroy(product.id)"
+                                class="hover:text-blue-400"
+                            >
+                                Xóa
+                            </button>
+                            <span> | </span>
+                            <button class="hover:text-blue-400">
+                                Xem
+                            </button>
+                        </div>
+                    </tr>
+                </tbody>
+                <div v-else>
+                    Chưa có dữ liệu
+                </div>
+            </table>
         </div>
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+import util from '../../helpers/util';
 export default {
-    layout: 'shop',
-    async asyncData({ params, redirect, $services }) {
-        try {
-            const slug = params.slug;
-            let products, brands;
-            
-            await $services.Brand.all({ limit: 6 }).then(
-                response => (brands = response.data.filter(item => item.path_img != ''))
-            );
-            return { products, brands };
-        } catch (error) {
-            redirect('/');
-        }
+    layout: 'dashboard',
+    data() {
+        return {
+            isShowingSlideOver: false,
+            editorOption: {
+                placeholder: 'Vui lòng nhập gì đó',
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['blockquote', 'code-block']
+                    ]
+                }
+            },
+            files: '',
+            images: [],
+            name: '',
+            category_id: '',
+            price: '',
+            salePrice: '',
+            content: '',
+            brand: '',
+            brands: []
+        };
     },
     async created() {
-        await $services.Product.getProductByCategory(slug).then(
-                response => (products = response.data)
-        );
+        this.$store.dispatch('product/getProducts');
+        this.$store.dispatch('category/getCategory', 'product');
+        this.getBrand();
+    },
+    computed: {
+        ...mapState({
+            products: state => {
+                return state.product.products;
+            },
+            categories: state => {
+                return state.category.category;
+            }
+        }),
+        categoryOptions() {
+            const tree = this.categories;
+            return util.recursiveCategory(tree, '&nbsp;&nbsp;');
+        }
+    },
+    methods: {
+        async getBrand() {
+            const response = await this.$services.Brand.all();
+            this.brands = response.data;
+        },
+        async addNewProduct() {
+            try {
+                const formData = new FormData();
+                // for (var i = 0; i < this.files.length; i++) {
+                //     let file = this.files[i];
+                //     formData.append('files[' + i + ']', file);
+                // }
+                this.files.forEach(file => {
+                    formData.append('src[]', file);
+                });
+                console.log(formData);
+                formData.append('slug', '');
+                formData.append('name', this.name);
+                formData.append('price', this.price);
+                formData.append('description', this.content);
+                formData.append('category_id', this.category_id);
+                formData.append('brand_id', this.brand);
+                await this.$services.Product.store(formData);
+                this.files = '';
+                this.name = '';
+                this.category_id = '';
+                this.content = '';
+                this.images = [];
+                this.$store.dispatch('product/getProducts');
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        onFileChange(event) {
+            console.log(event.target.files.FileList);
+            let files = event.target.files || event.dataTransfer.files;
+            console.log(files);
+            if (!files.length) return;
+            this.files = (files);
+            this.createImage(files);
+        },
+        createImage(files) {
+            let vm = this;
+            for (let index = 0; index < files.length; index++) {
+                let reader = new FileReader();
+                reader.onload = function(event) {
+                    const imageUrl = event.target.result;
+                    vm.images.push(imageUrl);
+                };
+                reader.readAsDataURL(files[index]);
+            }
+        },
+        removePreviewImage(index) {
+            this.images.splice(index, 1);
+        },
+        status(status) {
+            if (!status) {
+                return 'Hiện';
+            }
+            return 'Ẩn';
+        },
+        openSlideOver() {
+            this.isShowingSlideOver = true;
+        },
+        closeSlideOver() {
+            this.isShowingSlideOver = false;
+        },
+        onEditorBlur(editor) {
+            // console.log("editor blur!", editor);
+        },
+        onEditorFocus(editor) {
+            // console.log("editor focus!", editor);
+        },
+        onEditorReady(editor) {
+            // console.log("editor ready!", editor);
+        },
+        onEditorChange({ editor, html, text }) {
+            // console.log("editor change!", editor, html, text);
+            this.content = html;
+        }
     }
 };
 </script>
 
-<style></style>
+<style scoped>
+#preview-image:hover #remove-button {
+    opacity: 1;
+}
+</style>

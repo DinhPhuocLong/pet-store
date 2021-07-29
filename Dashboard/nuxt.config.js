@@ -2,6 +2,7 @@ require('dotenv').config()
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'server',
+    ssr: false,
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
@@ -46,61 +47,43 @@ export default {
 
     router: {
         extendRoutes(routes, resolve) {
-            return [{
+            return [
+                {
                     name: '404',
                     path: '*',
                     component: resolve(__dirname, 'pages/404.vue'),
                     chunkName: 'pages/404.vue'
                 },
                 {
-                    name: 'home-page',
+                    name: 'dashboard',
                     path: '/',
                     component: resolve(__dirname, 'pages/index.vue'),
-                    chunkName: 'pages/index.vue',
+                    chunkName: 'pages/index.vue'
                 },
                 {
-                    name: 'shop-by-brand',
-                    path: '/thuong-hieu/:slug',
-                    component: resolve(__dirname, 'pages/product/brand.vue'),
-                    chunkName: 'pages/product/brand.vue',
-                },
-                {
-                    name: 'shop-by-category',
-                    path: '/danh-muc/:slug',
-                    component: resolve(__dirname, 'pages/product/index.vue'),
-                    chunkName: 'pages/product/index.vue',
-                },
-                {
-                    name: 'product-detail',
-                    path: '/san-pham/:slug',
-                    component: resolve(__dirname, 'pages/product/_slug.vue'),
-                    chunkName: 'pages/product/_slug.vue',
-                },
-                {
-                    name: 'cart',
-                    path: '/gio-hang',
-                    component: resolve(__dirname, 'pages/cart.vue'),
-                    chunkName: 'pages/cart.vue',
-                },
-                {
-                    name: 'contact',
-                    path: '/lien-he',
-                    component: resolve(__dirname, 'pages/contact.vue'),
-                    chunkName: 'pages/contact.vue',
-                },
-                {
-                    name: 'dashboard-category',
-                    path: '/dashboard/category',
-                    component: resolve(__dirname, 'pages/dashboard/category/index.vue'),
-                    chunkName: 'pages/dashboard/category/index.vue',
+                    name: 'category',
+                    path: '/category',
+                    component: resolve(__dirname, 'pages/category/index.vue'),
+                    chunkName: 'pages/category/index.vue'
                 },
                 {
                     name: 'login',
                     path: '/login',
-                    component: resolve(__dirname, 'pages/dashboard/login.vue'),
-                    chunkName: 'pages/dashboard/login.vue',
-                }
-
+                    component: resolve(__dirname, 'pages/login.vue'),
+                    chunkName: 'pages/login.vue'
+                },
+                {
+                    name: 'register',
+                    path: '/register',
+                    component: resolve(__dirname, 'pages/register.vue'),
+                    chunkName: 'pages/register.vue'
+                },
+                {
+                    name: 'product',
+                    path: '/product',
+                    component: resolve(__dirname, 'pages/product/index.vue'),
+                    chunkName: 'pages/product/index.vue'
+                },
             ]
         }
     },
@@ -128,8 +111,8 @@ export default {
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
-    components: true,
-
+    components: true, 
+ 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/tailwindcss
@@ -147,8 +130,8 @@ export default {
         credentials: true // Attention, credentials not withCredentials
     },
     auth: {
-        redirect: false,
         strategies: {
+            redirect: false,
             'laravelJWT': {
                 provider: 'laravel/jwt',
                 url: process.env.BASE_URL,
@@ -173,7 +156,7 @@ export default {
                         url: '/logout'
                     }
                 },
-            }
+            },
         },
     },
 

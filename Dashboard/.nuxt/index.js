@@ -13,14 +13,14 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_01837fa6 from 'nuxt_plugin_plugin_01837fa6' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_061acfd0 from 'nuxt_plugin_axios_061acfd0' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_plugin_b0f63d28 from 'nuxt_plugin_plugin_b0f63d28' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_axios_035bd0e2 from 'nuxt_plugin_axios_035bd0e2' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_quill_1080d657 from 'nuxt_plugin_quill_1080d657' // Source: ..\\plugins\\quill.js (mode: 'client')
 import nuxt_plugin_services_66cd5d34 from 'nuxt_plugin_services_66cd5d34' // Source: ..\\plugins\\services.js (mode: 'all')
 import nuxt_plugin_veevalidate_4ef50776 from 'nuxt_plugin_veevalidate_4ef50776' // Source: ..\\plugins\\vee-validate.js (mode: 'all')
 import nuxt_plugin_filters_57ec6061 from 'nuxt_plugin_filters_57ec6061' // Source: ..\\plugins\\filters.js (mode: 'all')
 import nuxt_plugin_uikit_387dd07a from 'nuxt_plugin_uikit_387dd07a' // Source: ..\\plugins\\uikit.js (mode: 'client')
-import nuxt_plugin_auth_6f479f60 from 'nuxt_plugin_auth_6f479f60' // Source: .\\auth.js (mode: 'all')
+import nuxt_plugin_auth_3538e3c1 from 'nuxt_plugin_auth_3538e3c1' // Source: .\\auth.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -60,7 +60,7 @@ Object.defineProperty(Vue.prototype, '$nuxt', {
 
 Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n-head-ssr","tagIDKeyName":"hid"})
 
-const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
+const defaultTransition = {"name":"page","mode":"out-in","appear":true,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 const originalRegisterModule = Vuex.Store.prototype.registerModule
 
@@ -79,9 +79,6 @@ async function createApp(ssrContext, config = {}) {
   const store = createStore(ssrContext)
   // Add this.$router into store actions/mutations
   store.$router = router
-
-  // Fix SSR caveat https://github.com/nuxt/nuxt.js/issues/3757#issuecomment-414689141
-  store.registerModule = registerModule
 
   // Create Root instance
 
@@ -217,12 +214,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_01837fa6 === 'function') {
-    await nuxt_plugin_plugin_01837fa6(app.context, inject)
+  if (typeof nuxt_plugin_plugin_b0f63d28 === 'function') {
+    await nuxt_plugin_plugin_b0f63d28(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_061acfd0 === 'function') {
-    await nuxt_plugin_axios_061acfd0(app.context, inject)
+  if (typeof nuxt_plugin_axios_035bd0e2 === 'function') {
+    await nuxt_plugin_axios_035bd0e2(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_quill_1080d657 === 'function') {
@@ -245,8 +242,8 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_uikit_387dd07a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_auth_6f479f60 === 'function') {
-    await nuxt_plugin_auth_6f479f60(app.context, inject)
+  if (typeof nuxt_plugin_auth_3538e3c1 === 'function') {
+    await nuxt_plugin_auth_3538e3c1(app.context, inject)
   }
 
   // Lock enablePreview in context
