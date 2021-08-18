@@ -17,7 +17,8 @@
 export default {
   async fetch() {
     if (!this.$store.state.category.category.length) {
-        await this.$store.dispatch('category/getCategory');
+      console.log('true');
+        await this.$store.dispatch('category/getCategory', 'product');
     }
   }
 }

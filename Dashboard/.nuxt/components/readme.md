@@ -10,5 +10,6 @@ You can directly use them in pages and other components without the need to impo
 - `<SideBar>` | `<side-bar>` (components/SideBar.vue)
 - `<CategoryShow>` | `<category-show>` (components/Category/Show.vue)
 - `<UIcomponentsAlert>` | `<u-icomponents-alert>` (components/UIcomponents/Alert.vue)
+- `<UIcomponentsAlertIcon>` | `<u-icomponents-alert-icon>` (components/UIcomponents/alertIcon.js)
 - `<UIcomponentsModal>` | `<u-icomponents-modal>` (components/UIcomponents/Modal.vue)
 - `<UIcomponentsSlideOver>` | `<u-icomponents-slide-over>` (components/UIcomponents/SlideOver.vue)

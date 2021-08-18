@@ -1,4 +1,7 @@
 {
+  "AboutUsBanner": {
+    "description": "Auto imported from components/AboutUsBanner.vue"
+  },
   "Banner": {
     "description": "Auto imported from components/Banner.vue"
   },
@@ -39,7 +42,7 @@
     "description": "Auto imported from components/ProductCard.vue"
   },
   "ProductCarousel": {
-    "description": "Auto imported from components/ProductCarousel.vue"
+    "description": "Auto imported from components/productCarousel.vue"
   },
   "ProductDetailHeader": {
     "description": "Auto imported from components/ProductDetailHeader.vue"
@@ -68,12 +71,6 @@
   "TrendingProduct": {
     "description": "Auto imported from components/TrendingProduct.vue"
   },
-  "DashboardNavBar": {
-    "description": "Auto imported from components/dashboard/NavBar.vue"
-  },
-  "DashboardSideBar": {
-    "description": "Auto imported from components/dashboard/SideBar.vue"
-  },
   "UIcomponentsAlert": {
     "description": "Auto imported from components/UIcomponents/Alert.vue"
   },
@@ -82,8 +79,5 @@
   },
   "UIcomponentsSlideOver": {
     "description": "Auto imported from components/UIcomponents/SlideOver.vue"
-  },
-  "DashboardCategoryShow": {
-    "description": "Auto imported from components/dashboard/category/Show.vue"
   }
 }

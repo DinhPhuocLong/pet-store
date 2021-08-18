@@ -11,6 +11,9 @@
   "UIcomponentsAlert": {
     "description": "Auto imported from components/UIcomponents/Alert.vue"
   },
+  "UIcomponentsAlertIcon": {
+    "description": "Auto imported from components/UIcomponents/alertIcon.js"
+  },
   "UIcomponentsModal": {
     "description": "Auto imported from components/UIcomponents/Modal.vue"
   },

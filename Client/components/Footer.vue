@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Footer -->
-        <footer class="w-full bg-gray-100 mt-20">
+        <footer class="w-full bg-gray-100">
             <div class="w-full border-b border-solid border-gray-200">
                 <div class="w-[94%] xl:w-11/12 max-w-[1440px] mx-auto">
                     <div class="md:grid md:grid-cols-2 md:py-6 lg:grid-cols-3 justify-center">
@@ -15,16 +15,14 @@
                                 </svg>
                             </div>
                             <div>
-                                <h2 class="text-xl font-bold">Join now and get 10% off <br>
-                                    your next purchase!</h2>
+                                <h2 class="text-xl font-bold">Tham gia nhận thư để được giảm giá 10% <br>
+                                    cho đơn hàng tiếp theo!</h2>
                             </div>
                         </div>
 
                         <div class="text-center">
-                            <p class="text-gray-400 font-bold px-10 text-base my-4">Subscribe to the weekly newsletter for
-                                all
-                                the <br>
-                                latest updates</p>
+                            <p class="text-gray-400 font-bold px-10 text-base my-4">Đăng ký nhận thư để nhận được <br>
+                                thông tin mới nhất</p>
                         </div>
 
                         <div class="col-start-1 col-end-3 lg:col-auto mt-4">
@@ -32,9 +30,9 @@
                                 style="max-width: 480px;">
                                 <input type="text" class="w-full border-black rounded-l-full 
                         outline-none py-4 ml-10 bg-gray-100 text-sm font-bold
-                        " placeholder="Email Address">
+                        " placeholder="Địa chỉ email">
                                 <span class="">
-                                    <input type="submit" value="SUBSCRIBE" class="block relative top-0 
+                                    <input type="submit" value="ĐĂNG KÝ" class="block relative top-0 
                             bg-black rounded-full px-4 leading-4 h-11 m-1
                             text-xs text-white
                             ">

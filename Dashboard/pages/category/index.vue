@@ -1,5 +1,5 @@
 <template>
-    <DashboardCategoryShow
+    <CategoryShow
         :category="category"
         :title="title"
         v-on:refresh-data="refreshTableData()"
@@ -38,7 +38,7 @@ export default {
             this.$store.dispatch('category/getCategory', type);
         },
         refreshTableData() {
-            this.$store.dispatch('category/getCategory', this.type);
+            this.$store.dispatch('category/getCategory', this.title);
         },
     }
 };

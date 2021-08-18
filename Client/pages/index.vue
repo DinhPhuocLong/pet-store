@@ -5,6 +5,7 @@
         <BestDealSlider :saleProducts="saleProducts" />
         <SmallBanner />
         <TrendingProduct :trendingProducts="trendingProducts" />
+        <AboutUsBanner />
         <Blog />
     </div>
 </template>

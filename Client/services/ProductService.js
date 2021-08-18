@@ -10,9 +10,6 @@ export default ($axios) => ({
             }
         });
     },
-    getProductByCategory(slug) {
-        return $axios.get(`${resource}/${slug}`);
-    },
     getTrendingProduct() {
         return $axios.get(resource, {
             params: {

@@ -13,14 +13,15 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_b0f63d28 from 'nuxt_plugin_plugin_b0f63d28' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_035bd0e2 from 'nuxt_plugin_axios_035bd0e2' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_plugin_26276298 from 'nuxt_plugin_plugin_26276298' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_axios_65a80a8a from 'nuxt_plugin_axios_65a80a8a' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_quill_1080d657 from 'nuxt_plugin_quill_1080d657' // Source: ..\\plugins\\quill.js (mode: 'client')
+import nuxt_plugin_vuegoodtable_3db1ea8d from 'nuxt_plugin_vuegoodtable_3db1ea8d' // Source: ..\\plugins\\vue-good-table.js (mode: 'client')
 import nuxt_plugin_services_66cd5d34 from 'nuxt_plugin_services_66cd5d34' // Source: ..\\plugins\\services.js (mode: 'all')
 import nuxt_plugin_veevalidate_4ef50776 from 'nuxt_plugin_veevalidate_4ef50776' // Source: ..\\plugins\\vee-validate.js (mode: 'all')
 import nuxt_plugin_filters_57ec6061 from 'nuxt_plugin_filters_57ec6061' // Source: ..\\plugins\\filters.js (mode: 'all')
 import nuxt_plugin_uikit_387dd07a from 'nuxt_plugin_uikit_387dd07a' // Source: ..\\plugins\\uikit.js (mode: 'client')
-import nuxt_plugin_auth_3538e3c1 from 'nuxt_plugin_auth_3538e3c1' // Source: .\\auth.js (mode: 'all')
+import nuxt_plugin_auth_b18029d6 from 'nuxt_plugin_auth_b18029d6' // Source: .\\auth.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -85,7 +86,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Pet-Market","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Nunito&display=swap"},{"rel":"stylesheet","href":"\u002Fuikit-core.min.css"}],"script":[{"type":"module","src":"\u002Fuikit.min.js","ssr":false}],"style":[]},
+    head: {"title":"Pet-Market admin","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Flogo.png"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Nunito&display=swap"},{"rel":"stylesheet","href":"\u002Fuikit-core.min.css"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Fanimate.css\u002F4.1.1\u002Fanimate.min.css"}],"script":[{"type":"module","src":"\u002Fuikit.min.js","ssr":false}],"style":[]},
 
     store,
     router,
@@ -214,16 +215,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_b0f63d28 === 'function') {
-    await nuxt_plugin_plugin_b0f63d28(app.context, inject)
+  if (typeof nuxt_plugin_plugin_26276298 === 'function') {
+    await nuxt_plugin_plugin_26276298(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_035bd0e2 === 'function') {
-    await nuxt_plugin_axios_035bd0e2(app.context, inject)
+  if (typeof nuxt_plugin_axios_65a80a8a === 'function') {
+    await nuxt_plugin_axios_65a80a8a(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_quill_1080d657 === 'function') {
     await nuxt_plugin_quill_1080d657(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuegoodtable_3db1ea8d === 'function') {
+    await nuxt_plugin_vuegoodtable_3db1ea8d(app.context, inject)
   }
 
   if (typeof nuxt_plugin_services_66cd5d34 === 'function') {
@@ -242,8 +247,8 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_uikit_387dd07a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_auth_3538e3c1 === 'function') {
-    await nuxt_plugin_auth_3538e3c1(app.context, inject)
+  if (typeof nuxt_plugin_auth_b18029d6 === 'function') {
+    await nuxt_plugin_auth_b18029d6(app.context, inject)
   }
 
   // Lock enablePreview in context

@@ -1,55 +1,14 @@
 <template>
 <div>
-    <!--Header Mobile-->
-    <header class="w-full bg-white lg:hidden">
-        <!-- breadcum mobile -->
-        <div class="flex justify-center items-center bg-center bg-cover py-10"
-            style="background-image: url('https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/breadcumd.jpg');">
-            <div class="text-white text-center">
-                <h1 class="text-[40px] font-semibold text-white">Contact</h1>
-                <div class="mt-3 text-center text-[13px]">
-                    <a class="mr-1" href="#">
-                        Home
-                    </a>
-                    <span class="inline-block mr-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="white"/>
-                        </svg>
-                    </span>
-                        Contact
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--Header Desktop-->
-    <header class="w-full hidden lg:block">
-        <div class="flex justify-center items-center bg-center bg-cover bg-no-repeat py-9" style="background-image: url('https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/breadcumd.jpg')">
-            <div class="text-white text-center">
-                <h1 class="text-[40px] lg:text-[60px] text-white font-bold">Liên hệ</h1>
-                <div class="mt-3 text-center text-[13px]">
-                    <a class="mr-1" href="#">
-                        Trang chủ
-                    </a>
-                    <span class="inline-block mr-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="white"/>
-                        </svg>
-                    </span>
-                        Liên hệ
-                </div>
-            </div>
-        </div>
-    </header>
-
     <div class="w-full">
             <div class="flex flex-col flex-col-reverse lg:flex-row flex-wrap lg:relative">
                 <div class="w-full lg:w-1/5 xl:pl-40 p-4 text-center md:text-left">
                     <div class="px-6 lg:px-20 py-8 lg:absolute bg-gray-100 rounded-xl lg:top-1/4">
                         <h2 class="text-[30px] font-bold text-black uppercase">Dịch vụ</h2>
                         <p class="text-[15px] text-gray-500 font-normal">
-                            Do you have any questions or just want to say hello?
+                            Bạn có câu hỏi nào cho chúng tôi không?
                             <br />
-                            We’d love to hear from you!
+                            Chúng tôi rất vui khi được lắng nghe bạn!
                         </p>
                         <div class="mt-8">
                             <div class="mb-6 flex flex-col md:flex-row md:text-left flex-wrap items-center">
@@ -75,7 +34,7 @@
                                     </svg>
                                 </div>
                                 <div class="text-[15px]">
-                                    <p class="font-semibold">Phone</p>
+                                    <p class="font-semibold">Điện thoại</p>
                                     <p class="font-normal text-[14px] text-gray-500">+41 71 227 76 90</p>
                                 </div>
                             </div>
@@ -111,7 +70,7 @@
             <div class="flex flex-wrap px-4 py-4 lg:p-16 bg-center bg-no-repeat" style="background-image: url('https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/Slider-7.jpg');">
                 <div class="w-full lg:w-1/2"></div>
                 <div class="w-full lg:w-1/2">
-                    <p class="uppercase text-[30px] font-bold">SEND US A MESSAGE</p>
+                    <p class="uppercase text-[30px] font-bold">GỬI TIN NHẮN CHO CHÚNG TÔI</p>
                     <form action="#">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 my-4">
                             <input class="p-3 rounded-md text-[15px] focus:outline-none" type="text" placeholder="Nhập tên..." v-model="contact.name">
@@ -132,7 +91,7 @@
 
 <script>
 export default {
-    layout: 'contact',
+    layout: 'shop',
     data () {
         return {
             contact: {

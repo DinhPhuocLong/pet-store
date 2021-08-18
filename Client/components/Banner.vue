@@ -115,7 +115,7 @@
         </client-only>
         <div class="w-full md:flex gap-4 mt-4">
             <div class="md:w-2/6 rounded-lg overflow-hidden mt-4 relative">
-                <a href="#">
+                <nuxt-link :to="{ name: 'shop-by-category', params: { slug: 'shop-cho-cho' } }" >
                     <img
                         class="mx-auto object-cover h-full hover:filter grayscale blur-md contrast-200 hover:grayscale cursor-pointer transition-all duration-500"
                         src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/banner-7.jpg"
@@ -127,19 +127,19 @@
                         <p
                             class="text-[25px] xl:text-[34px] text-yellow-800 leading-7 md:leading-10 my-2 font-bold"
                         >
-                            Buy one <br />
-                            & Get 1 free
+                            Sản phẩm <br />
+                            cho chó
                         </p>
                         <button
                             class="text-[16px] font-bold py-2 px-8 bg-yellow-800 text-white hover:bg-red-500 rounded-full"
                         >
-                            shop now
+                            Mua Ngay
                         </button>
                     </div>
-                </a>
+                </nuxt-link>
             </div>
             <div class="md:w-2/6 rounded-lg overflow-hidden mt-4 relative">
-                <a href="#">
+                <nuxt-link :to="{ name: 'shop-by-category', params: { slug: 'shop-cho-meo' } }">
                     <img
                         class="mx-auto object-cover h-full hover:filter grayscale blur-md contrast-200 hover:grayscale cursor-pointer transition-all duration-500"
                         src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/banner-8.jpg"
@@ -151,20 +151,20 @@
                         <p
                             class="text-[25px] xl:text-[34px] text-purple-900 leading-7 md:leading-10 my-2 font-bold"
                         >
-                            Pets <br />
-                            accessories
+                            Sản phẩm <br />
+                            cho mèo
                         </p>
                         <button
                             class="text-[16px] font-bold py-2 px-8 bg-purple-900 text-white hover:bg-red-500 rounded-full"
                         >
-                            shop now
+                            Mua Ngay
                         </button>
                     </div>
-                </a>
+                </nuxt-link>
             </div>
 
             <div class="md:w-2/6 rounded-lg overflow-hidden mt-4 relative">
-                <a href="#">
+                <nuxt-link :to="{ name: 'shop-by-category', params: { slug: 'shop-thu-y' } }">
                     <img
                         class="mx-auto object-cover h-full hover:filter grayscale blur-md contrast-200 hover:grayscale cursor-pointer transition-all duration-500"
                         src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/banner-9.jpg"
@@ -176,16 +176,16 @@
                         <p
                             class="text-[25px] xl:text-[34px] text-blue-800 leading-7 md:leading-10 my-2 font-bold"
                         >
-                            Pep for <br />
-                            your pooch
+                            Chăm sóc<br />
+                            sức khoẻ
                         </p>
                         <button
                             class="text-[16px] font-bold py-2 px-8 bg-blue-800 text-white hover:bg-red-500 rounded-full"
                         >
-                            shop now
+                            Mua Ngay
                         </button>
                     </div>
-                </a>
+                </nuxt-link>
             </div>
         </div>
     </div>

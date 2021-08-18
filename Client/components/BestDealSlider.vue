@@ -12,7 +12,7 @@
                         <div class="relative product-img">
                             <a href="#">
                                 <img
-                                    :src="saleProduct.product_images[0].mediumImageUrl"
+                                    :src="saleProduct.product_images.length ? saleProduct.product_images[0].mediumImageUrl : ''"
                                     class="mx-auto"
                                     width="450"
                                     height="450"

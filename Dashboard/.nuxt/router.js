@@ -4,12 +4,16 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _67a0d9d2 = () => interopDefault(import('..\\pages\\404.vue' /* webpackChunkName: "pages/404.vue" */))
-const _bb66401e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index.vue" */))
-const _0fb4c01a = () => interopDefault(import('..\\pages\\category\\index.vue' /* webpackChunkName: "pages/category/index.vue" */))
-const _6bf48308 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
-const _cd254e58 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
-const _7af5a8f4 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
+const _284cabda = () => interopDefault(import('..\\pages\\404.vue' /* webpackChunkName: "pages/404.vue" */))
+const _7fcd27ed = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index.vue" */))
+const _174dc622 = () => interopDefault(import('..\\pages\\category\\index.vue' /* webpackChunkName: "pages/category/index.vue" */))
+const _1abb08b2 = () => interopDefault(import('..\\pages\\category\\_slug.vue' /* webpackChunkName: "pages/category/_slug.vue" */))
+const _4974cb04 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
+const _26b38150 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
+const _b7bec710 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
+const _bb2c09a0 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug.vue" */))
+const _df98956a = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index.vue" */))
+const _e305d7fa = () => interopDefault(import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages/blog/_slug.vue" */))
 
 const emptyFn = () => {}
 
@@ -24,28 +28,44 @@ export const routerOptions = {
 
   routes: [{
     path: "*",
-    component: _67a0d9d2,
+    component: _284cabda,
     name: "404"
   }, {
     path: "/",
-    component: _bb66401e,
+    component: _7fcd27ed,
     name: "dashboard"
   }, {
     path: "/category",
-    component: _0fb4c01a,
+    component: _174dc622,
     name: "category"
   }, {
+    path: "/category/:slug",
+    component: _1abb08b2,
+    name: "category-slug"
+  }, {
     path: "/login",
-    component: _6bf48308,
+    component: _4974cb04,
     name: "login"
   }, {
     path: "/register",
-    component: _cd254e58,
+    component: _26b38150,
     name: "register"
   }, {
     path: "/product",
-    component: _7af5a8f4,
+    component: _b7bec710,
     name: "product"
+  }, {
+    path: "/product/:slug",
+    component: _bb2c09a0,
+    name: "product-detail"
+  }, {
+    path: "/blog",
+    component: _df98956a,
+    name: "blog"
+  }, {
+    path: "/blog/:slug",
+    component: _e305d7fa,
+    name: "blog-detail"
   }],
 
   fallback: false

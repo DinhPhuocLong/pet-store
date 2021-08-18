@@ -103,8 +103,8 @@
             >
                 <!-- nav menu-->
                 <DropdownMenu :category="category" />
-                <div class="w-60 text-white font-semibold text-lg leading-none">
-                    <span>Free Shipping > 50$</span>
+                <div class="w-auto text-white font-semibold text-md leading-none pr-4">
+                    <span>Miễn phí giao hàng cho đơn hàng > 100k</span>
                 </div>
             </div>
         </div>

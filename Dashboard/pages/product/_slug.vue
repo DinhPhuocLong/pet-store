@@ -1,5 +1,10 @@
 <template>
     <div>
+        <Alert
+            :visible="alert.isVisible"
+            :message="alert.message"
+            :alertType="alert.type"
+        />
         <h1 class="text-[22px] uppercase font-bold my-2">Thêm sản phẩm</h1>
         <div
             class="w-full font-normal text-gray-500 text-[13px] flex flex-wrap items-center my-4 inline-block"
@@ -67,41 +72,20 @@
         <div class="bg-white shadow-md p-8">
             <div class="flex flex-wrap justify-between">
                 <div class="w-full lg:w-1/2">
-                    <div class="flex mx-auto">
+                    <div class="flex mx-auto" style="width: 400px">
                         <img
                             class="w-full"
-                            src="https://hoanghamobile.com/i/preview/Uploads/2020/11/06/apple-watch-series-6-gps-cellular-2.png"
-                            alt=""
+                            :src="product.product_images.length ? product.product_images[0].imageUrl : ''"
+                            :alt="product.name"
                         />
                     </div>
                     <div
-                        class="flex flex-wrap items-center justify-center mx-auto"
+                        class="flex flex-wrap items-center mx-auto"
                     >
-                        <div class="w-32">
+                        <div class="w-32" v-for="(image, index) in product.product_images" :key="index">
                             <img
                                 class="w-full border border-gray-200"
-                                src="https://hoanghamobile.com/i/preview/Uploads/2020/11/06/apple-watch-series-6-gps-cellular-2.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="w-32">
-                            <img
-                                class="w-full border border-gray-200"
-                                src="https://hoanghamobile.com/i/preview/Uploads/2020/11/06/apple-watch-series-6-gps-cellular-2.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="w-32">
-                            <img
-                                class="w-full border border-gray-200"
-                                src="https://hoanghamobile.com/i/preview/Uploads/2020/11/06/apple-watch-series-6-gps-cellular-2.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="w-32">
-                            <img
-                                class="w-full border border-gray-200"
-                                src="https://hoanghamobile.com/i/preview/Uploads/2020/11/06/apple-watch-series-6-gps-cellular-2.png"
+                                :src="image.imageUrl"
                                 alt=""
                             />
                         </div>
@@ -114,13 +98,14 @@
                             class="my-2 w-full rounded-md focus:outline-none bg-gray-100 text-[12px] p-2"
                             placeholder="Tên sản phẩm..."
                             type="text"
+                            v-model="product.name"
                         />
                     </div>
                     <div class="mb-4">
                         <p>Mô Tả:</p>
                         <div
                             class="quill-editor"
-                            :content="content"
+                            :content="product.description"
                             @change="onEditorChange($event)"
                             @blur="onEditorBlur($event)"
                             @focus="onEditorFocus($event)"
@@ -130,12 +115,15 @@
                     </div>
                     <div class="mb-4">
                         <p>Danh Mục:</p>
-                        <select class="w-full focus:outline-none p-2">
-                            <option>Macbook</option>
-                            <option>Macbook</option>
-                            <option>Macbook</option>
-                            <option>Macbook</option>
-                            <option>Macbook</option>
+                        <select class="w-full focus:outline-none p-2" v-model="product.category_id">
+                            <option
+                                v-for="category in categoryOptions"
+                                :key="category.id"
+                                :value="category.id"
+                                v-html="category.name"
+                                :selected="category.id == product.category_id"
+                            >
+                            </option>
                         </select>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6">
@@ -145,6 +133,7 @@
                                 class="my-2 w-full rounded-md focus:outline-none bg-gray-100 text-[12px] p-2"
                                 placeholder="Giá..."
                                 type="number"
+                                v-model="product.price"
                             />
                         </div>
                         <div class="mb-4">
@@ -153,6 +142,7 @@
                                 class="my-2 w-full rounded-md focus:outline-none bg-gray-100 text-[12px] p-2"
                                 placeholder="Giảm giá..."
                                 type="number"
+                                v-model="product.salePrice"
                             />
                         </div>
                     </div>
@@ -225,7 +215,7 @@
                             <button
                                 class="focus:outline-none w-full my-2 lg:my-0 lg:w-24 p-2 bg-blue-500 text-white text-center rounded-md mx-2 hover:bg-blue-700 transition-all duration-500"
                             >
-                                Tạo
+                                Cập nhật
                             </button>
                             <button
                                 class="focus:outline-none w-full my-2 lg:my-0 lg:w-24 p-2 bg-blue-300 text-white text-center rounded-md mx-2 hover:bg-blue-500 transition-all duration-500"
@@ -241,23 +231,67 @@
 </template>
 
 <script>
+import util from '@/helpers/util';
+import Alert from '@/components/UIcomponents/Alert.vue';
+import { mapState } from 'vuex';
 export default {
-    layout: "dashboard",
+    layout: 'default',
+    components: {
+        Alert,
+    },
     data() {
         return {
-            content: "",
+            content: '',
+            brands: '',
             editorOption: {
                 // some quill options
                 modules: {
                     toolbar: [
-                        ["bold", "italic", "underline", "strike"],
-                        ["blockquote", "code-block"]
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['blockquote', 'code-block']
                     ]
                 }
+            },
+            alert: {
+                isVisible: false,
+                message: '',
+                alertType: ''
             }
         };
     },
+    async asyncData({ $services, params, redirect }) {
+        try {
+            const slug = params.slug;
+            const response = await $services.Product.show(slug);
+            return { product: response.data };
+        } catch (error) {
+            redirect('/404');
+        }
+    },
+    created() {
+        this.getBrand();
+        this.$store.dispatch('category/getCategory', 'product');
+    },
+    computed: {
+        ...mapState({
+            categories: state => {
+                return state.category.category;
+            }
+        }),
+        categoryOptions() {
+            const tree = this.categories;
+            return util.recursiveCategory(tree, '&nbsp;&nbsp;');
+        },
+    },
     methods: {
+        alertTrigger(type, msg, ms) {
+            this.alert.isVisible = true;
+            this.alert.message = msg;
+            this.alertType = type;
+            setTimeout(_ => {
+                this.alert.isVisible = false;
+            }, ms);
+        },
         onEditorBlur(editor) {
             // console.log("editor blur!", editor);
         },
@@ -269,7 +303,11 @@ export default {
         },
         onEditorChange({ editor, html, text }) {
             this.content = html;
-        }
+        },
+        async getBrand() {
+            const response = await this.$services.Brand.all();
+            this.brands = response.data;
+        },
     }
 };
 </script>

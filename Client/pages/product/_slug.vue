@@ -302,7 +302,7 @@
 
 <script>
 export default {
-    layout: 'product',
+    layout: 'shop',
     async asyncData({ redirect, params, $services }) {
         let product;
         try {

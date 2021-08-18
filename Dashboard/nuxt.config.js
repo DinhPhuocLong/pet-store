@@ -6,7 +6,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'Pet-Market',
+        title: 'Pet-Market admin',
         htmlAttrs: {
             lang: 'en'
         },
@@ -26,7 +26,7 @@ export default {
         link: [{
                 rel: 'icon',
                 type: 'image/x-icon',
-                href: '/favicon.ico'
+                href: '/logo.png'
             },
             {
                 rel: "stylesheet",
@@ -36,6 +36,10 @@ export default {
                 rel: 'stylesheet',
                 href: '/uikit-core.min.css'
             },
+            {
+                rel: 'stylesheet',
+                href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'
+            }
         ],
         script: [{
             type: 'module',
@@ -47,8 +51,7 @@ export default {
 
     router: {
         extendRoutes(routes, resolve) {
-            return [
-                {
+            return [{
                     name: '404',
                     path: '*',
                     component: resolve(__dirname, 'pages/404.vue'),
@@ -65,6 +68,12 @@ export default {
                     path: '/category',
                     component: resolve(__dirname, 'pages/category/index.vue'),
                     chunkName: 'pages/category/index.vue'
+                },
+                {
+                    name: 'category-slug',
+                    path: '/category/:slug',
+                    component: resolve(__dirname, 'pages/category/_slug.vue'),
+                    chunkName: 'pages/category/_slug.vue'
                 },
                 {
                     name: 'login',
@@ -84,6 +93,26 @@ export default {
                     component: resolve(__dirname, 'pages/product/index.vue'),
                     chunkName: 'pages/product/index.vue'
                 },
+                {
+                    name: 'product-detail',
+                    path: '/product/:slug',
+                    component: resolve(__dirname, 'pages/product/_slug.vue'),
+                    chunkName: 'pages/product/_slug.vue'
+                },
+
+                // blog routes
+                {
+                    name: 'blog',
+                    path: '/blog',
+                    component: resolve(__dirname, 'pages/blog/index.vue'),
+                    chunkName: 'pages/blog/index.vue'
+                },
+                {
+                    name: 'blog-detail',
+                    path: '/blog/:slug',
+                    component: resolve(__dirname, 'pages/blog/_slug.vue'),
+                    chunkName: 'pages/blog/_slug.vue'
+                },
             ]
         }
     },
@@ -101,6 +130,10 @@ export default {
             src: 'plugins/quill.js',
             ssr: false
         },
+        {
+            src: 'plugins/vue-good-table.js',
+            ssr: false
+        },
         'plugins/services.js',
         'plugins/vee-validate.js',
         'plugins/filters.js',
@@ -111,8 +144,8 @@ export default {
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
-    components: true, 
- 
+    components: true,
+
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/tailwindcss
@@ -130,8 +163,8 @@ export default {
         credentials: true // Attention, credentials not withCredentials
     },
     auth: {
+        redirect: false,
         strategies: {
-            redirect: false,
             'laravelJWT': {
                 provider: 'laravel/jwt',
                 url: process.env.BASE_URL,

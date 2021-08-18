@@ -6,6 +6,7 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<AboutUsBanner>` | `<about-us-banner>` (components/AboutUsBanner.vue)
 - `<Banner>` | `<banner>` (components/Banner.vue)
 - `<BestDealSlider>` | `<best-deal-slider>` (components/BestDealSlider.vue)
 - `<Blog>` | `<blog>` (components/Blog.vue)
@@ -19,7 +20,7 @@ You can directly use them in pages and other components without the need to impo
 - `<HomeHeader>` | `<home-header>` (components/HomeHeader.vue)
 - `<Pagination>` | `<pagination>` (components/Pagination.vue)
 - `<ProductCard>` | `<product-card>` (components/ProductCard.vue)
-- `<ProductCarousel>` | `<product-carousel>` (components/ProductCarousel.vue)
+- `<ProductCarousel>` | `<product-carousel>` (components/productCarousel.vue)
 - `<ProductDetailHeader>` | `<product-detail-header>` (components/ProductDetailHeader.vue)
 - `<Search>` | `<search>` (components/Search.vue)
 - `<ShopHeader>` | `<shop-header>` (components/ShopHeader.vue)
@@ -29,9 +30,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Tag>` | `<tag>` (components/Tag.vue)
 - `<TopBrandSlider>` | `<top-brand-slider>` (components/TopBrandSlider.vue)
 - `<TrendingProduct>` | `<trending-product>` (components/TrendingProduct.vue)
-- `<DashboardNavBar>` | `<dashboard-nav-bar>` (components/dashboard/NavBar.vue)
-- `<DashboardSideBar>` | `<dashboard-side-bar>` (components/dashboard/SideBar.vue)
 - `<UIcomponentsAlert>` | `<u-icomponents-alert>` (components/UIcomponents/Alert.vue)
 - `<UIcomponentsModal>` | `<u-icomponents-modal>` (components/UIcomponents/Modal.vue)
 - `<UIcomponentsSlideOver>` | `<u-icomponents-slide-over>` (components/UIcomponents/SlideOver.vue)
-- `<DashboardCategoryShow>` | `<dashboard-category-show>` (components/dashboard/category/Show.vue)

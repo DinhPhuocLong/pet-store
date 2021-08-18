@@ -11,6 +11,11 @@ export default ($axios) => ({
             params
         });
     },
+    categoryWithProduct(slug, params = {}) {
+        return $axios.get(resource + `/${slug}`, {
+            params
+        });
+    },
     store(payload) {
         return $axios.post(resource, payload);
     },

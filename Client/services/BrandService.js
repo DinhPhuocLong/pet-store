@@ -5,7 +5,9 @@ export default ($axios) => ({
             params
         });
     },
-    productsByBrand(slug) {
-        return $axios.get(resource + `/${slug}`);
+    productsByBrand(slug, params = {}) {
+        return $axios.get(resource + `/${slug}`, {
+            params
+        });
     }
 });

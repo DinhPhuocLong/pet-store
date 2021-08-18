@@ -123,6 +123,9 @@
                                 </div>
                             </form>
                         </ValidationObserver>
+                        <button @click="alertTrigger('success', 'ok', 2000)">
+                            trigger
+                        </button>
                     </div>
                 </div>
             </div>
@@ -166,24 +169,25 @@ export default {
                 await this.$auth.loginWith('laravelJWT', {
                     data: this.credentials
                 });
-				this.alert.isVisible = true;
-				this.alert.type = 'success';
+                this.alert.isVisible = true;
+                this.alert.type = 'success';
                 this.alert.message = 'Đăng nhập thành công';
                 this.alertCloseTime(3000);
-                setTimeout(_ => {
-                    this.$router.push({
-                        name: 'dashboard'
-                    });
-                }, 2000);
             } catch (error) {
                 this.alert.isVisible = true;
+                this.alert.type = 'danger';
                 this.alert.message = error.response.data.error;
                 this.alertCloseTime(3000);
             }
         },
-		isShowAlert() {
-
-		},
+        alertTrigger(type, msg, ms) {
+            this.alert.isVisible = true;
+            this.alert.type = type;
+            this.alert.message = msg;
+            setTimeout(_ => {
+                this.alert.isVisible = false;
+            }, ms);
+        },
         alertCloseTime(ms) {
             setTimeout(_ => {
                 this.alert.isVisible = false;

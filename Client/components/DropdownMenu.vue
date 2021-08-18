@@ -30,9 +30,9 @@
                 <SubMenu :childrenCategories="c.children_categories" />
             </li>
             <li class="relative group">
-                <a href="#" class="font-semibold">
+                <nuxt-link to="/lien-he" class="font-semibold">
                     Liên hệ
-                </a>
+                </nuxt-link>
             </li>
         </ul>
     </nav>

@@ -1,5 +1,5 @@
 import { extend } from "vee-validate";
-import { required, alpha } from "vee-validate/dist/rules";
+import { required, alpha, mimes, min, min_value } from "vee-validate/dist/rules";
 
 extend('isValidateEmail', {
     validate: (value) => {
@@ -9,7 +9,13 @@ extend('isValidateEmail', {
     message: "Vui lòng nhập đúng định dạng email"
 });
 
+extend("mimes", {
+    ...mimes,
+});
 
+extend("min_value", {
+    ...min_value,
+});
 // rule để validate form 
 extend("required", {
     ...required,

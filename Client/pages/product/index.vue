@@ -23,7 +23,11 @@
                 </div>
 
                 <div class="grid grid-cols-2 xl:grid-cols-3 gap-2 mt-4">
-                    <BrandCard v-for="brand in brands" :key="brand.id" :brand="brand" />
+                    <BrandCard
+                        v-for="brand in brands"
+                        :key="brand.id"
+                        :brand="brand"
+                    />
                 </div>
 
                 <div class="border-b border-solid border-gray-200 mt-10">
@@ -799,11 +803,11 @@
                     </div>
                 </div>
 
-                <div
+                <div id="product-container"
                     class="mt-10 w-[94%] mx-auto grid grid-cols-2 md:grid-cols-3 gap-6"
                 >
                     <ProductCard
-                        v-for="product in products.data"
+                        v-for="product in products"
                         :key="product.id"
                         :product="product"
                     />
@@ -812,67 +816,7 @@
         </div>
 
         <div class="mx-auto px-4 mt-20">
-            <nav
-                class="flex flex-row flex-nowrap justify-center items-center"
-                aria-label="Pagination"
-            >
-                <a
-                    class="flex w-10 h-10 mr-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
-                    href="#"
-                    title="Previous Page"
-                >
-                    <span class="sr-only">Previous Page</span>
-                    <svg
-                        class="block w-4 h-4 fill-current"
-                        viewBox="0 0 256 512"
-                        aria-hidden="true"
-                        role="presentation"
-                    >
-                        <path
-                            d="M238.475 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L50.053 256 245.546 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L10.454 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"
-                        ></path>
-                    </svg>
-                </a>
-                <a
-                    class="flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
-                    href="#"
-                    title="Page 1"
-                >
-                    1
-                </a>
-                <a
-                    class="flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
-                    href="#"
-                    title="Page 2"
-                >
-                    2
-                </a>
-                <a
-                    class="flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-black bg-black text-white pointer-events-none"
-                    href="#"
-                    aria-current="page"
-                    title="Page 3"
-                >
-                    3
-                </a>
-                <a
-                    class="flex w-10 h-10 ml-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
-                    href="#"
-                    title="Next Page"
-                >
-                    <span class="sr-only">Next Page</span>
-                    <svg
-                        class="block w-4 h-4 fill-current"
-                        viewBox="0 0 256 512"
-                        aria-hidden="true"
-                        role="presentation"
-                    >
-                        <path
-                            d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"
-                        ></path>
-                    </svg>
-                </a>
-            </nav>
+            <Pagination :current_page="current_page" :last_page="last_page" />
         </div>
     </div>
 </template>
@@ -880,23 +824,50 @@
 <script>
 export default {
     layout: 'shop',
-    async asyncData({ params, redirect, $services }) {
+    async asyncData({ params, redirect, $services, query }) {
         try {
             const slug = params.slug;
-            let products, brands;
-            
+            let brands;
             await $services.Brand.all({ limit: 6 }).then(
-                response => (brands = response.data.filter(item => item.path_img != ''))
+                response =>
+                    (brands = response.data.filter(item => item.path_img != ''))
             );
-            return { products, brands };
+            const products = await $services.Category.categoryWithProduct(
+                slug,
+                query
+            );
+            return {
+                products: products.data.data,
+                brands,
+                current_page: products.data.current_page,
+                last_page: products.data.last_page
+            };
         } catch (error) {
             redirect('/');
         }
     },
-    async created() {
-        await $services.Product.getProductByCategory(slug).then(
-                response => (products = response.data)
-        );
+    watch: {
+        $route() {
+            this.getProducts();
+            this.scrollToTop();
+        }
+    },
+    methods: {
+        getProducts() {
+            const slug = this.$route.params.slug;
+            const query = this.$route.query;
+            this.$services.Category.categoryWithProduct(slug, query).then(
+                products => {
+                    this.products = products.data.data;
+                    this.current_page = products.data.current_page;
+                    this.last_page = products.data.last_page;
+                }
+            );
+        },
+        scrollToTop() {
+            let productContainer = this.$el.querySelector('#product-container');
+            productContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
     }
 };
 </script>

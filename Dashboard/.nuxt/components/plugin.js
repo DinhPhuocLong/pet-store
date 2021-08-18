@@ -6,6 +6,7 @@ const components = {
   SideBar: () => import('../..\\components\\SideBar.vue' /* webpackChunkName: "components/side-bar" */).then(c => wrapFunctional(c.default || c)),
   CategoryShow: () => import('../..\\components\\Category\\Show.vue' /* webpackChunkName: "components/category-show" */).then(c => wrapFunctional(c.default || c)),
   UIcomponentsAlert: () => import('../..\\components\\UIcomponents\\Alert.vue' /* webpackChunkName: "components/u-icomponents-alert" */).then(c => wrapFunctional(c.default || c)),
+  UIcomponentsAlertIcon: () => import('../..\\components\\UIcomponents\\alertIcon.js' /* webpackChunkName: "components/u-icomponents-alert-icon" */).then(c => wrapFunctional(c.default || c)),
   UIcomponentsModal: () => import('../..\\components\\UIcomponents\\Modal.vue' /* webpackChunkName: "components/u-icomponents-modal" */).then(c => wrapFunctional(c.default || c)),
   UIcomponentsSlideOver: () => import('../..\\components\\UIcomponents\\SlideOver.vue' /* webpackChunkName: "components/u-icomponents-slide-over" */).then(c => wrapFunctional(c.default || c))
 }
