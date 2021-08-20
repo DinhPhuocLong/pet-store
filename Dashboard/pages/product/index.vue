@@ -179,6 +179,15 @@
                             </div>
                         </div>
 
+                        <div class="mb-8">
+                            <label class="block mb-4">Tags</label>
+                                <input
+                                    v-model="tags"
+                                    class="appearance-none border border-solid border-gray-300 w-full py-2 px-2
+                                    text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                />
+                        </div>
+
                         <div class="mb-2">
                             <span>Hình ảnh</span>
                             <div
@@ -462,6 +471,7 @@ export default {
             salePrice: '',
             content: '',
             brand: '',
+            tags: '',
             brands: [],
             columns: [
                 {
@@ -590,6 +600,7 @@ export default {
                 formData.append('description', this.content);
                 formData.append('category_id', this.category_id);
                 formData.append('brand_id', this.brand);
+                formData.append('tags', this.tags);
                 await this.$services.Product.store(formData);
                 this.files = '';
                 this.name = '';

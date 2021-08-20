@@ -284,11 +284,14 @@ export default {
         };
     },
     created() {
-        this.newCategory.type = this.title;
+        if (!this.title) {
+            this.newCategory.type = 'product';
+        } else {
+            this.newCategory.type = this.title;
+        }
     },
     watch: {    
         title: function(newVal, oldVal) { 
-            console.log('Prop changed: ', newVal, ' | was: ', oldVal);
             if (!newVal) {
                 this.newCategory.type = 'product';
             } else {
