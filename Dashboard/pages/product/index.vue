@@ -401,7 +401,7 @@
                             :increment="0.01"
                         >
                         </star-rating>
-                        <nuxt-link to="/">{{
+                        <nuxt-link :to="{ name: 'review-of-product', params: { slug: props.row.slug } }">{{
                             `(${props.row.reviews.length})`
                         }}</nuxt-link>
                     </span>

@@ -56,6 +56,20 @@
     "_name": "_bb2c09a0"
   },
   {
+    "name": "product-review",
+    "path": "/product-review",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\product\\\\rating.vue",
+    "chunkName": "pages/product/rating.vue",
+    "_name": "_32ac1567"
+  },
+  {
+    "name": "review-of-product",
+    "path": "/product-review/:slug",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\product\\\\reviewOfProduct.vue",
+    "chunkName": "pages/product/reviewOfProduct.vue",
+    "_name": "_2fb91474"
+  },
+  {
     "name": "blog",
     "path": "/blog",
     "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\blog\\\\index.vue",

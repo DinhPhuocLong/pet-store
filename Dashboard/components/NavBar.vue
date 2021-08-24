@@ -4,7 +4,7 @@
 
             <!-- left navbar -->
             <div class="flex">
-                <p>Chào mừng!</p>
+                <p>Chào mừng {{ $auth.user.name }}!</p>
                 <!-- mobile hamburger -->
                 <div class="inline-block lg:hidden flex items-center mr-4">
                     <button class="hover:text-blue-500 hover:border-white focus:outline-none navbar-burger"

@@ -12,6 +12,8 @@ const _4974cb04 = () => interopDefault(import('..\\pages\\login.vue' /* webpackC
 const _26b38150 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
 const _b7bec710 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
 const _bb2c09a0 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug.vue" */))
+const _32ac1567 = () => interopDefault(import('..\\pages\\product\\rating.vue' /* webpackChunkName: "pages/product/rating.vue" */))
+const _2fb91474 = () => interopDefault(import('..\\pages\\product\\reviewOfProduct.vue' /* webpackChunkName: "pages/product/reviewOfProduct.vue" */))
 const _df98956a = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index.vue" */))
 const _e305d7fa = () => interopDefault(import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages/blog/_slug.vue" */))
 
@@ -58,6 +60,14 @@ export const routerOptions = {
     path: "/product/:slug",
     component: _bb2c09a0,
     name: "product-detail"
+  }, {
+    path: "/product-review",
+    component: _32ac1567,
+    name: "product-review"
+  }, {
+    path: "/product-review/:slug",
+    component: _2fb91474,
+    name: "review-of-product"
   }, {
     path: "/blog",
     component: _df98956a,

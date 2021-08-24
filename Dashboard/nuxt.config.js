@@ -99,7 +99,18 @@ export default {
                     component: resolve(__dirname, 'pages/product/_slug.vue'),
                     chunkName: 'pages/product/_slug.vue'
                 },
-
+                {
+                    name: 'product-review',
+                    path: '/product-review',
+                    component: resolve(__dirname, 'pages/product/rating.vue'),
+                    chunkName: 'pages/product/rating.vue'
+                },
+                {
+                    name: 'review-of-product',
+                    path: '/product-review/:slug',
+                    component: resolve(__dirname, 'pages/product/reviewOfProduct.vue'),
+                    chunkName: 'pages/product/reviewOfProduct.vue'
+                },
                 // blog routes
                 {
                     name: 'blog',

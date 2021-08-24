@@ -139,7 +139,7 @@ import Alert from '../components/UIcomponents/Alert.vue';
 
 export default {
     layout: 'login',
-    // middleware: 'unauthenticated',
+    middleware: ['authenticated'],
     components: {
         ValidationProvider,
         ValidationObserver,
@@ -169,26 +169,18 @@ export default {
                 await this.$auth.loginWith('laravelJWT', {
                     data: this.credentials
                 });
-                this.alert.isVisible = true;
-                this.alert.type = 'success';
-                this.alert.message = 'Đăng nhập thành công';
-                this.alertCloseTime(3000);
+                this.alertTrigger('success', 'Đăng nhập thành công!', 2000);
+                setTimeout(_ => {
+                    this.$router.push({ name: 'dashboard' });
+                }, 2000)
             } catch (error) {
-                this.alert.isVisible = true;
-                this.alert.type = 'danger';
-                this.alert.message = error.response.data.error;
-                this.alertCloseTime(3000);
+                this.alertTrigger('danger', error.response.data.error, 2000);
             }
         },
         alertTrigger(type, msg, ms) {
             this.alert.isVisible = true;
             this.alert.type = type;
             this.alert.message = msg;
-            setTimeout(_ => {
-                this.alert.isVisible = false;
-            }, ms);
-        },
-        alertCloseTime(ms) {
             setTimeout(_ => {
                 this.alert.isVisible = false;
             }, ms);
