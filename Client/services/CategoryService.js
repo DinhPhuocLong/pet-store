@@ -12,7 +12,7 @@ export default ($axios) => ({
         });
     },
     categoryWithProduct(slug, params = {}) {
-        return $axios.get(resource + `/${slug}`, {
+        return $axios.get(resource + `/p/${slug}`, {
             params
         });
     },

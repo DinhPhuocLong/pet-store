@@ -32,6 +32,10 @@ export default {
                 href: "https://fonts.googleapis.com/css2?family=Nunito&display=swap",
             },
             {
+                rel: "stylesheet",
+                href: "https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro",
+            },
+            {
                 rel: 'stylesheet',
                 href: '/uikit-core.min.css'
             },
@@ -45,6 +49,7 @@ export default {
     },
 
     router: {
+        prefetchLinks: false,
         extendRoutes(routes, resolve) {
             return [{
                     name: '404',
@@ -83,23 +88,53 @@ export default {
                     chunkName: 'pages/cart.vue',
                 },
                 {
+                    name: 'checkout',
+                    path: '/thanh-toan',
+                    component: resolve(__dirname, 'pages/checkout.vue'),
+                    chunkName: 'pages/checkout.vue',
+                },
+                {
                     name: 'contact',
                     path: '/lien-he',
                     component: resolve(__dirname, 'pages/contact.vue'),
                     chunkName: 'pages/contact.vue',
                 },
                 {
-                    name: 'dashboard-category',
-                    path: '/dashboard/category',
-                    component: resolve(__dirname, 'pages/dashboard/category/index.vue'),
-                    chunkName: 'pages/dashboard/category/index.vue',
+                    name: 'about',
+                    path: '/gioi-thieu',
+                    component: resolve(__dirname, 'pages/index.vue'),
+                    chunkName: 'pages/index.vue',
+                },
+                {
+                    name: 'thanks',
+                    path: '/thanh-cong',
+                    component: resolve(__dirname, 'pages/thanks.vue'),
+                    chunkName: 'pages/thanks.vue',
                 },
                 {
                     name: 'login',
-                    path: '/login',
-                    component: resolve(__dirname, 'pages/dashboard/login.vue'),
-                    chunkName: 'pages/dashboard/login.vue',
-                }
+                    path: '/dang-nhap',
+                    component: resolve(__dirname, 'pages/login.vue'),
+                    chunkName: 'pages/login.vue',
+                },
+                {
+                    name: 'register',
+                    path: '/dang-ky',
+                    component: resolve(__dirname, 'pages/register.vue'),
+                    chunkName: 'pages/register.vue',
+                },
+                {
+                    name: 'forgot-password',
+                    path: '/quen-mat-khau',
+                    component: resolve(__dirname, 'pages/forgot.vue'),
+                    chunkName: 'pages/forgot.vue',
+                },
+                {
+                    name: 'verify',
+                    path: '/verify',
+                    component: resolve(__dirname, 'pages/verify.vue'),
+                    chunkName: 'pages/verify.vue',
+                },
 
             ]
         }
@@ -118,11 +153,16 @@ export default {
             src: 'plugins/quill.js',
             ssr: false
         },
+        'plugins/lazy-load.js',
         'plugins/services.js',
         'plugins/vee-validate.js',
         'plugins/filters.js',
         {
             src: 'plugins/uikit.js',
+            ssr: false
+        },
+        {
+            src: 'plugins/starRating.js',
             ssr: false
         }
     ],

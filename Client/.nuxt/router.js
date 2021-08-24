@@ -10,9 +10,13 @@ const _2aa0fc48 = () => interopDefault(import('..\\pages\\product\\brand.vue' /*
 const _2d0a7cb2 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
 const _3077bf42 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug.vue" */))
 const _17c95fc4 = () => interopDefault(import('..\\pages\\cart.vue' /* webpackChunkName: "pages/cart.vue" */))
+const _720cc8ea = () => interopDefault(import('..\\pages\\checkout.vue' /* webpackChunkName: "pages/checkout.vue" */))
 const _f1438da8 = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact.vue" */))
-const _66fccea4 = () => interopDefault(import('..\\pages\\dashboard\\category\\index.vue' /* webpackChunkName: "pages/dashboard/category/index.vue" */))
-const _e4b7aa0e = () => interopDefault(import('..\\pages\\dashboard\\login.vue' /* webpackChunkName: "pages/dashboard/login.vue" */))
+const _53b7e826 = () => interopDefault(import('..\\pages\\thanks.vue' /* webpackChunkName: "pages/thanks.vue" */))
+const _70d644f5 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
+const _95d89872 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
+const _0288bb47 = () => interopDefault(import('..\\pages\\forgot.vue' /* webpackChunkName: "pages/forgot.vue" */))
+const _51aa74c6 = () => interopDefault(import('..\\pages\\verify.vue' /* webpackChunkName: "pages/verify.vue" */))
 
 const emptyFn = () => {}
 
@@ -50,17 +54,37 @@ export const routerOptions = {
     component: _17c95fc4,
     name: "cart"
   }, {
+    path: "/thanh-toan",
+    component: _720cc8ea,
+    name: "checkout"
+  }, {
     path: "/lien-he",
     component: _f1438da8,
     name: "contact"
   }, {
-    path: "/dashboard/category",
-    component: _66fccea4,
-    name: "dashboard-category"
+    path: "/gioi-thieu",
+    component: _b1a2bc44,
+    name: "about"
   }, {
-    path: "/login",
-    component: _e4b7aa0e,
+    path: "/thanh-cong",
+    component: _53b7e826,
+    name: "thanks"
+  }, {
+    path: "/dang-nhap",
+    component: _70d644f5,
     name: "login"
+  }, {
+    path: "/dang-ky",
+    component: _95d89872,
+    name: "register"
+  }, {
+    path: "/quen-mat-khau",
+    component: _0288bb47,
+    name: "forgot-password"
+  }, {
+    path: "/verify",
+    component: _51aa74c6,
+    name: "verify"
   }],
 
   fallback: false

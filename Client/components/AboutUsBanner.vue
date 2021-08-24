@@ -16,17 +16,17 @@
             <p
                 class="text-lg md:text-xl text-white font-semibold tracking-tight leading-6 mb-5"
             >
-            Bình là 1 thằng óc cặc vô văn hoá
+            Siêu thị cho thú cưng của bạn!
             </p>
-            <a
-                href="#"
+            <nuxt-link
+                to="/gioi-thieu"
                 class="inline-block py-2.5 px-8 
                             font-bold text-white text-[16px]
                             hover:bg-red-800
                             rounded-full bg-black"
             >
-                Shop Now
-            </a>
+                Về chúng tôi
+            </nuxt-link>
         </div>
     </div>
 </template>

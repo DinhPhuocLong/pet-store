@@ -811,7 +811,7 @@
             </div>
         </div>
 
-        <div class="mx-auto px-4 mt-20">
+        <div class="mx-auto px-4 my-20">
             <Pagination :current_page="current_page" :last_page="last_page" />
         </div>
     </div>

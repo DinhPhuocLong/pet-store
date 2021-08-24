@@ -8,8 +8,8 @@
                     <!-- logo -->
                     <a href="#"
                         ><img
-                            class="max-h-11 pr-10"
-                            src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/logo.png"
+                            class="max-h-28 pr-10"
+                            src="../static/logo.png"
                             alt="logo"
                     /></a>
                 </div>
@@ -46,7 +46,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <nuxt-link to="/">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-heart"
@@ -68,9 +68,9 @@
                                     d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
                                 />
                             </svg>
-                        </a>
+                        </nuxt-link>
                     </div>
-                    <div class="shopping-cart relative">
+                    <nuxt-link to="/gio-hang" class="shopping-cart relative">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-shopping-cart"
@@ -94,7 +94,7 @@
                         >
                             {{ cart.length }}
                         </span>
-                    </div>
+                    </nuxt-link>
                 </div>
             </div>
             <!-- header bottom -->

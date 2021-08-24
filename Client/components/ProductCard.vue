@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div
-            class="w-full box-border"
-        >
+        <div class="w-full box-border">
             <div
                 class="relative mx-px product-img border border-solid border-gray-200 rounded-lg overflow-hidden"
             >
@@ -13,9 +11,9 @@
                     }"
                 >
                     <img
-                        :src="
+                        v-lazy="
                             product.product_images.length
-                                ? product.product_images[0].mediumImageUrl
+                                ? product.product_images[0].imageUrl
                                 : ''
                         "
                         class="mx-auto p-9"
@@ -61,17 +59,12 @@
                     </div>
                 </nuxt-link>
                 <!-- sale -->
-                <div
-                    class="block min-w-[52px] text-center bg-red-500 absolute rounded-full py-0.5 text-white text-sm font-bold top-2 left-2"
+                <div v-if="product.salePrice"
+                    class="block min-w-[52px] text-center bg-red-500 absolute rounded-full py-1 text-white text-xs font-bold top-2 left-2"
                 >
-                    -11%
+                    -{{ product.salePrice | percentage }}
                 </div>
                 <!-- tag -->
-                <div
-                    class="block min-w-[52px] text-center bg-red-500 absolute rounded-full py-0.5 text-white text-sm font-bold top-2 right-2"
-                >
-                    Hot
-                </div>
             </div>
             <div class="py-4 text-[16px] font-bold text-center">
                 <!-- star -->

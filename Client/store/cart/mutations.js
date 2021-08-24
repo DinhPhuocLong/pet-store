@@ -14,7 +14,13 @@ export default {
     SET_CART_TO_LOCALSTORAGE(state) {
         localStorage.setItem("cart", JSON.stringify(state.cart));
     },
-    UPDATE_CART(_, { cartItem, product }) {
-        cartItem.quantity = product.quantity;
+    UNSET_LOCALSTORAGE_CART() {
+        localStorage.removeItem('cart');
+    },
+    CLEAR_CART(state) {
+        state.cart = [];
+    },
+    UPDATE_CART(_, { cartItem, quantity }) {
+        cartItem.quantity = +quantity;
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-[94%] xl:w-11/12 max-w-[1440px] mx-auto mt-2 font-nunito">
+    <div class="w-[94%] xl:w-11/12 max-w-[1440px] mx-auto mt-2 font-nunito mb-20">
         <Banner />
         <TopBrandSlider />
         <BestDealSlider :saleProducts="saleProducts" />
@@ -12,6 +12,7 @@
 
 <script>
 export default {
+    layout: 'default',
     data() {
         return {
             saleProducts: '',
@@ -20,7 +21,7 @@ export default {
     },
     async fetch() {
         await this.$store.dispatch('product/getProducts');
-        await this.$store.dispatch('brand/getBrands');
+        await this.$store.dispatch('brand/getBrands', { top: true });
     },
     created() {
         this.getSaleProduct();

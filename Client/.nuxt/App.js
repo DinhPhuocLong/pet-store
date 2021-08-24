@@ -4,7 +4,6 @@ import { decode, parsePath, withoutBase, withoutTrailingSlash, normalizeURL } fr
 import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '..\\node_modules\\@nuxtjs\\tailwindcss\\dist\\runtime\\tailwind.css'
 
@@ -14,6 +13,7 @@ import '..\\node_modules\\quill\\dist\\quill.bubble.css'
 
 import '..\\node_modules\\quill\\dist\\quill.core.css'
 
+import _2d217e9e from '..\\layouts\\auth.vue'
 import _771842db from '..\\layouts\\blogs.vue'
 import _4c0f576a from '..\\layouts\\contact.vue'
 import _6f6c098b from '..\\layouts\\default.vue'
@@ -21,7 +21,7 @@ import _77a66d33 from '..\\layouts\\login.vue'
 import _00e60039 from '..\\layouts\\product.vue'
 import _2d297bec from '..\\layouts\\shop.vue'
 
-const layouts = { "_blogs": sanitizeComponent(_771842db),"_contact": sanitizeComponent(_4c0f576a),"_default": sanitizeComponent(_6f6c098b),"_login": sanitizeComponent(_77a66d33),"_product": sanitizeComponent(_00e60039),"_shop": sanitizeComponent(_2d297bec) }
+const layouts = { "_auth": sanitizeComponent(_2d217e9e),"_blogs": sanitizeComponent(_771842db),"_contact": sanitizeComponent(_4c0f576a),"_default": sanitizeComponent(_6f6c098b),"_login": sanitizeComponent(_77a66d33),"_product": sanitizeComponent(_00e60039),"_shop": sanitizeComponent(_2d297bec) }
 
 export default {
   render (h, props) {
@@ -56,7 +56,7 @@ export default {
       }
     }, [
       loadingEl,
-      h(NuxtBuildIndicator),
+
       transitionEl
     ])
   },
@@ -192,10 +192,6 @@ export default {
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }

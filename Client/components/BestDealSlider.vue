@@ -10,9 +10,9 @@
                 >
                     <div class="border border-solid border-[#ebebeb]" v-for="saleProduct in saleProducts" :key="saleProduct.id">
                         <div class="relative product-img">
-                            <a href="#">
+                            <nuxt-link :to="{ name: 'product-detail', params: { slug: saleProduct.slug } }">
                                 <img
-                                    :src="saleProduct.product_images.length ? saleProduct.product_images[0].mediumImageUrl : ''"
+                                    v-lazy="saleProduct.product_images.length ? saleProduct.product_images[0].imageUrl : ''"
                                     class="mx-auto"
                                     width="450"
                                     height="450"
@@ -131,7 +131,7 @@
                                         </svg>
                                     </button>
                                 </div>
-                            </a>
+                            </nuxt-link>
                             <!-- sale -->
                             <div
                                 class="block min-w-[52px] text-center bg-red-500 absolute rounded-full py-1 text-white text-xs font-bold top-2 left-2"
@@ -216,10 +216,9 @@
                                 <span class="text-xs text-gray-400">(1)</span>
                             </div>
                             <p class="truncate px-8">
-                                <a
+                                <nuxt-link :to="{ name: 'product-detail', params: { slug: saleProduct.slug } }"
                                     class="hover:text-red-500 overflow-truncate"
-                                    href="#">{{ saleProduct.name }}</a
-                                >
+                                    href="#">{{ saleProduct.name }}</nuxt-link>
                             </p>
                             <span class="inline-block text-red-500 text-md mt-2"
                                 >{{ saleProduct.price | toVndCurrency }}</span

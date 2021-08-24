@@ -7,21 +7,21 @@
         <client-only>
             <div uk-slider>
                 <ul
-                    class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-6@m"
+                    class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@s uk-child-width-1-6@m"
                 >
                     <li
-                        class="uk-transition-toggle border border-solid border-[#ebebeb] py-5"
+                        class="uk-transition-toggle border border-solid border-[#ebebeb] py-5 mb-px"
                         v-for="brand in brands"
                         :key="brand.id"
                         tabindex="0"
                     >
                         <nuxt-link :to="{name: 'shop-by-brand', params: { slug: brand.slug }}">
                             <img
-                                :src="brand.imageUrl"
+                                v-lazy="brand.imageUrl"
                                 :alt="brand.name"
                                 class="mx-auto"
                                 width="175"
-                                style="max-width: 175px;"
+                                style="max-width: 175px; max-height: 120px"
                             />
                         </nuxt-link>
                     </li>

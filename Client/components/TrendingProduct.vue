@@ -10,7 +10,7 @@
                 >
                     <nuxt-link :to="{ name: 'product-detail', params: { slug: trendingProduct.slug } }">
                         <img
-                            :src="trendingProduct.product_images.length ? trendingProduct.product_images[0].mediumImageUrl : ''"
+                            v-lazy="trendingProduct.product_images.length ? trendingProduct.product_images[0].imageUrl : ''"
                             class="mx-auto p-9"
                             width="450"
                             height="450"
@@ -78,7 +78,7 @@
                                         />
                                     </svg>
                                 </button>
-                                <button
+                                <button @click.prevent="addToCart(trendingProduct)"
                                     class="p-2 inline-block text-center w-10 h-10 leading-10 bg-white   
                                             border border-solid border-gray-300 mb-2 rounded-full
                                             transform translate-x-20 transition-all duration-500
@@ -141,7 +141,15 @@
 
 <script>
 export default {
-    props: ['trendingProducts']
+    props: ['trendingProducts'],
+    methods: {
+        addToCart(product) {
+            this.$store.dispatch('cart/addToCart', {
+                ...product,
+                quantity: 1
+            });
+        },
+    }
 }
 </script>
 

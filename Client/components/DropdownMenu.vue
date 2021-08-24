@@ -5,9 +5,9 @@
             :class="textColor || 'text-white'"
         >
             <li>
-                <a href="#" class="font-semibold">
+                <nuxt-link to="/" class="font-semibold">
                     Trang chủ
-                </a>
+                </nuxt-link>
             </li>
             <li class="group" v-for="c in category" :key="c.id">
                 <nuxt-link :to="{ name: 'shop-by-category', params: { slug: c.slug } }" class="font-semibold">
@@ -44,5 +44,3 @@ export default {
     computed: {}
 };
 </script>
-
-<style></style>

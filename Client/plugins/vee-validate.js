@@ -22,10 +22,13 @@ extend("alpha", {
 });
 
 
-// extend("digits", {
-//     ...alpha,
-//     message: "Chỉ được nhập số"
-// });
+extend("vnPhone", {
+    validate: (value) => {
+        const re = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
+        return re.test(String(value).toLowerCase());
+    },
+    message: "Hãy nhập đúng định dạng số điện thoại!"
+});
 
 
 

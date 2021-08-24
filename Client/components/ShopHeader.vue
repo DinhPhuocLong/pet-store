@@ -8,8 +8,8 @@
                         <!-- logo -->
                         <nuxt-link to="/" href="#"
                             ><img
-                                class="max-h-11 pr-10"
-                                src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/logo.png"
+                                class="max-h-28 pr-10"
+                                src="../static/logo.png"
                                 alt="logo"
                         /></nuxt-link>
 

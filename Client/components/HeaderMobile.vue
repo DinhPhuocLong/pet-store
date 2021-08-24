@@ -74,7 +74,7 @@
             <!--Navbar logo-->
             <a href="#">
                 <img
-                    class="max-h-11"
+                    class="max-h-28"
                     src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/logo-white.png"
                     alt="logo"
                 />

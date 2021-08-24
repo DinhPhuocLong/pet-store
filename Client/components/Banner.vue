@@ -11,14 +11,14 @@
                     >
                         <img
                             class="w-full h-full object-cover"
-                            src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/Slider-4.jpg"
+                            src="~/assets/banner1.jpg"
                             height="590"
                             alt=""
                         />
                         <div
                             class="absolute px-4 top-20 left-3 md:top-40 md:right-1/2 lg:text-center"
                         >
-                            <p
+                            <!-- <p
                                 class="uppercase text-[8px] md:text-[14px] font-normal text-gray-700"
                             >
                                 Everything your pet need
@@ -33,7 +33,7 @@
                                 class="my-2 text-[16px] font-bold py-2 px-8 bg-yellow-800 text-white hover:bg-red-500 rounded-full"
                             >
                                 shop now
-                            </button>
+                            </button> -->
                         </div>
                     </div>
 
@@ -42,14 +42,14 @@
                     >
                         <img
                             class="w-full h-full object-cover"
-                            src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/Slider-4.jpg"
+                            src="~/assets/banner2.jpg"
                             height="590"
                             alt=""
                         />
                         <div
                             class="absolute px-4 top-20 left-3 md:top-40 md:right-1/2 lg:text-center"
                         >
-                            <p
+                            <!-- <p
                                 class="uppercase text-[8px] md:text-[14px] font-normal text-gray-700"
                             >
                                 Everything your pet need
@@ -64,7 +64,7 @@
                                 class="my-2 text-[16px] font-bold py-2 px-8 bg-yellow-800 text-white hover:bg-red-500 rounded-full"
                             >
                                 shop now
-                            </button>
+                            </button> -->
                         </div>
                     </div>
 
@@ -73,14 +73,14 @@
                     >
                         <img
                             class="w-full h-full object-cover"
-                            src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/Slider-4.jpg"
+                            src="~/assets/banner3.jpg"
                             height="590"
                             alt=""
                         />
                         <div
                             class="absolute px-4 top-20 left-3 md:top-40 md:right-1/2 lg:text-center"
                         >
-                            <p
+                            <!-- <p
                                 class="uppercase text-[8px] md:text-[14px] font-bold text-gray-700"
                             >
                                 Everything your pet need
@@ -95,7 +95,7 @@
                                 class="my-2 text-[16px] font-bold py-2 px-8 bg-yellow-800 text-white hover:bg-red-500 rounded-full"
                             >
                                 shop now
-                            </button>
+                            </button> -->
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-12">
+    <div class="mt-12 mb-10">
         <div class="w-[94%] xl:w-11/12 max-w-[1440px] mx-auto">
             <div class="my-6 text-center">
                 <h1 class="text-[25px] lg:text-[32px] font-bold">Giỏ hàng</h1>
@@ -169,32 +169,12 @@
                                         <div
                                             class="flex flex-wrap justify-between items-center"
                                         >
-                                            <div
-                                                class="flex items-center justify-between"
-                                            >
-                                                <input
-                                                    class="flex-1 p-2 rounded-full focus:outline-none border border-gray-300"
-                                                    type="text"
-                                                    placeholder="Mã giảm giá..."
-                                                />
-                                                <button
-                                                    class="mx-4 lg:w-24 min-w-max p-2 rounded-full bg-black text-white hover:bg-red-500 transition-all duration-500"
-                                                    type="submit"
-                                                >
-                                                    Xác nhận
-                                                </button>
-                                            </div>
                                             <h2>
-                                                <a href="#">
+                                                <nuxt-link to="/">
                                                     Tiếp tục mua sắm
-                                                </a>
+                                                </nuxt-link>
                                             </h2>
-                                            <button
-                                                class="mx-4 p-2 lg:w-24 min-w-max rounded-full bg-black text-white hover:bg-red-500 transition-all duration-500"
-                                                type="submit"
-                                            >
-                                                Cập nhật
-                                            </button>
+                                           
                                         </div>
                                     </td>
                                 </tr>
@@ -205,15 +185,15 @@
                 <div class="w-full lg:w-[30%] mt-8 lg:mt-0">
                     <div class="bg-gray-100 shadow-md h-max">
                         <h2 class="text-[16px] p-4 bg-gray-200 font-bold">
-                            Tổng giỏ hàng
+                            Thông tin đơn hàng
                         </h2>
-                        <div
+                        <!-- <div
                             class="flex items-center justify-between p-4 border-t"
                         >
                             <p>Thành tiền:</p>
                             <span>{{ total | toVndCurrency }}</span>
-                        </div>
-                        <div
+                        </div> -->
+                        <!-- <div
                             class="flex items-center justify-between p-4 border-t"
                         >
                             <p>Giao hàng:</p>
@@ -227,7 +207,7 @@
                                     <label>Có phí</label>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <div
                             class="flex items-center justify-between p-4 border-t"
                         >
@@ -238,12 +218,20 @@
                                 total | toVndCurrency
                             }}</span>
                         </div>
+
+                        <div
+                            class="flex items-center justify-between p-4 border-t"
+                        >
+                            <p>Bạn có thể nhập mã giảm giá ở trang thanh toán</p>
+                        </div>
+
+
                         <div class="p-4">
-                            <button
-                                class="w-full rounded-md p-4 bg-black text-white hover:bg-red-500 transition-all duration-500"
+                            <nuxt-link :to="{ name: 'checkout' }"
+                                class="w-full text-center block rounded-md p-4 bg-black text-white hover:bg-red-500 transition-all duration-500"
                             >
-                                Tiến hành kiểm tra
-                            </button>
+                                Thanh toán
+                            </nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -253,12 +241,12 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 export default {
     computed: {
-        ...mapState({
-            cart: state => state.cart.cart
-        }),
+        cart() {
+            let data = JSON.parse(JSON.stringify(this.$store.state.cart.cart));
+            return data;
+        },
         total() {
             return this.cart.reduce(
                 (acc, curr) => +curr.price * +curr.quantity + +acc,
@@ -270,11 +258,11 @@ export default {
         updateCart(cartItem) {
             const id = cartItem.id;
             const quantity = cartItem.quantity;
-            this.$store.dispatch('updateCart', { id, quantity });
+            this.$store.dispatch('cart/updateCart', { id, quantity });
         },
         deleteCart(itemId) {
             this.$store.dispatch('cart/deleteCart', itemId);
-        }
+        }, 
     }
 };
 </script>

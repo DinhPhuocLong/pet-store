@@ -16,10 +16,12 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_752b22da from 'nuxt_plugin_plugin_752b22da' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_axios_017ce736 from 'nuxt_plugin_axios_017ce736' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_quill_1080d657 from 'nuxt_plugin_quill_1080d657' // Source: ..\\plugins\\quill.js (mode: 'client')
+import nuxt_plugin_lazyload_47f64e06 from 'nuxt_plugin_lazyload_47f64e06' // Source: ..\\plugins\\lazy-load.js (mode: 'all')
 import nuxt_plugin_services_66cd5d34 from 'nuxt_plugin_services_66cd5d34' // Source: ..\\plugins\\services.js (mode: 'all')
 import nuxt_plugin_veevalidate_4ef50776 from 'nuxt_plugin_veevalidate_4ef50776' // Source: ..\\plugins\\vee-validate.js (mode: 'all')
 import nuxt_plugin_filters_57ec6061 from 'nuxt_plugin_filters_57ec6061' // Source: ..\\plugins\\filters.js (mode: 'all')
 import nuxt_plugin_uikit_387dd07a from 'nuxt_plugin_uikit_387dd07a' // Source: ..\\plugins\\uikit.js (mode: 'client')
+import nuxt_plugin_starRating_dbf3aaba from 'nuxt_plugin_starRating_dbf3aaba' // Source: ..\\plugins\\starRating.js (mode: 'client')
 import nuxt_plugin_auth_9d9bf98c from 'nuxt_plugin_auth_9d9bf98c' // Source: .\\auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -88,7 +90,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Pet-Market","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Nunito&display=swap"},{"rel":"stylesheet","href":"\u002Fuikit-core.min.css"}],"script":[{"type":"module","src":"\u002Fuikit.min.js","ssr":false}],"style":[]},
+    head: {"title":"Pet-Market","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Nunito&display=swap"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Kaushan+Script|Source+Sans+Pro"},{"rel":"stylesheet","href":"\u002Fuikit-core.min.css"}],"script":[{"type":"module","src":"\u002Fuikit.min.js","ssr":false}],"style":[]},
 
     store,
     router,
@@ -229,6 +231,10 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_quill_1080d657(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_lazyload_47f64e06 === 'function') {
+    await nuxt_plugin_lazyload_47f64e06(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_services_66cd5d34 === 'function') {
     await nuxt_plugin_services_66cd5d34(app.context, inject)
   }
@@ -243,6 +249,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_uikit_387dd07a === 'function') {
     await nuxt_plugin_uikit_387dd07a(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_starRating_dbf3aaba === 'function') {
+    await nuxt_plugin_starRating_dbf3aaba(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_9d9bf98c === 'function') {
