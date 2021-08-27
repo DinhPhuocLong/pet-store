@@ -16,6 +16,7 @@ const _53b7e826 = () => interopDefault(import('..\\pages\\thanks.vue' /* webpack
 const _70d644f5 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
 const _95d89872 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
 const _0288bb47 = () => interopDefault(import('..\\pages\\forgot.vue' /* webpackChunkName: "pages/forgot.vue" */))
+const _a8c533d4 = () => interopDefault(import('..\\pages\\resetPassword.vue' /* webpackChunkName: "pages/resetPassword.vue" */))
 const _51aa74c6 = () => interopDefault(import('..\\pages\\verify.vue' /* webpackChunkName: "pages/verify.vue" */))
 
 const emptyFn = () => {}
@@ -82,7 +83,11 @@ export const routerOptions = {
     component: _0288bb47,
     name: "forgot-password"
   }, {
-    path: "/verify",
+    path: "/reset-password",
+    component: _a8c533d4,
+    name: "reset-pasword"
+  }, {
+    path: "/verify-email",
     component: _51aa74c6,
     name: "verify"
   }],

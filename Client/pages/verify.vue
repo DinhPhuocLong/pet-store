@@ -1,7 +1,5 @@
-<template> 
-
-
-
+<template>
+    <h1>Verifing Email</h1>
 </template>
 
 <script>
@@ -16,12 +14,17 @@ export default {
     // },
     async created() {
         try {
-            const token = this.$route.query.token;
-            const response = await this.$axios.get('http://localhost:8000/api/user/verify/' + token);
+            const params = this.$route.query;
+            const response = await this.$axios.get('http://localhost:8000/api/email/verify', {
+                params: {
+                    ...params
+                }
+            });
         } catch (e) {
             console.log(e);
         }
     }
+    // id=28&hash=9e8e4c8bd21ec52e7e22f4a3653ddd7115bb1c56&
 };
 </script>
 

@@ -1,14 +1,14 @@
 exports.ids = [20];
 exports.modules = {
 
-/***/ 123:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/checkout.vue?vue&type=template&id=e1a354b6&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/checkout.vue?vue&type=template&id=1b8fa0aa&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"mt-12"},[_vm._ssrNode("<div class=\"w-[94%] xl:w-11/12 max-w-[1440px] mx-auto\">","</div>",[_vm._ssrNode("<div class=\"my-6 text-center\"><h1 class=\"text-[25px] lg:text-[32px] font-bold\">\n                Thông tin đơn hàng\n            </h1></div> "),_vm._ssrNode("<div class=\"flex flex-wrap\">","</div>",[_vm._ssrNode("<div class=\"w-full lg:w-[70%] lg:pr-10\">","</div>",[_vm._ssrNode("<h2 class=\"text-[20px] font-bold\">Thông tin giao hàng</h2> "),_vm._ssrNode("<div>","</div>",[_c('ValidationObserver',{ref:"form"},[_c('form',[_c('div',{staticClass:"my-4"},[_c('p',{staticClass:"font-bold my-2"},[_vm._v("\n                                    Họ và tên"),_c('b',{staticClass:"text-red-500 ml-1"})]),_vm._v(" "),_c('ValidationProvider',{attrs:{"rules":"required","custom-messages":_vm.customErrorMessages.name},scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var errors = ref.errors;
 return [_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.shipmentDetails.name),expression:"shipmentDetails.name"}],staticClass:"w-full border-b-2 border-gray-200 focus:outline-none py-2",class:{
@@ -34,7 +34,7 @@ return [_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.shipm
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/checkout.vue?vue&type=template&id=e1a354b6&
+// CONCATENATED MODULE: ./pages/checkout.vue?vue&type=template&id=1b8fa0aa&
 
 // EXTERNAL MODULE: ./node_modules/vee-validate/dist/vee-validate.js
 var vee_validate = __webpack_require__(7);
@@ -381,7 +381,7 @@ var external_vuex_ = __webpack_require__(5);
   methods: {
     async checkCoupon() {
       try {
-        const response = await this.$axios.post('http://localhost:8000/api/coupon', {
+        const response = await this.$axios.post('http://157.245.55.243/api/coupon', {
           code: this.code
         });
         this.coupon = response.data;

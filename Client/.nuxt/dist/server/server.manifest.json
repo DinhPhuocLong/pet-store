@@ -29,6 +29,7 @@
     "pages/product/brand.vue.js": "pages/product/brand.vue.js",
     "pages/product/index.vue.js": "pages/product/index.vue.js",
     "pages/register.vue.js": "pages/register.vue.js",
+    "pages/resetPassword.vue.js": "pages/resetPassword.vue.js",
     "pages/thanks.vue.js": "pages/thanks.vue.js",
     "pages/verify.vue.js": "pages/verify.vue.js",
     "server.js": "server.js"
@@ -62,6 +63,7 @@
     "pages/product/brand.vue.js": "pages/product/brand.vue.js.map",
     "pages/product/index.vue.js": "pages/product/index.vue.js.map",
     "pages/register.vue.js": "pages/register.vue.js.map",
+    "pages/resetPassword.vue.js": "pages/resetPassword.vue.js.map",
     "pages/thanks.vue.js": "pages/thanks.vue.js.map",
     "pages/verify.vue.js": "pages/verify.vue.js.map",
     "server.js": "server.js.map"

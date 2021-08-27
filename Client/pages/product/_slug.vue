@@ -125,9 +125,7 @@
                             >{{ product.price | toVndCurrency }}</span
                         >
                         <span class="text-xl font-semibold">{{
-                            +product.salePrice
-                                ? (+product.salePrice / 100) * +product.price
-                                : product.price | toVndCurrency
+                            calculateSalePrice | toVndCurrency
                         }}</span>
                         <div
                             class="onsale text-center"
@@ -500,12 +498,8 @@
 </template>
 
 <script>
-import { ValidationProvider, ValidationObserver } from 'vee-validate';
 export default {
     layout: 'shop',
-    components: {
-        ValidationProvider, ValidationObserver
-    },
     data() {
         return {
             rating: 0,
@@ -527,7 +521,7 @@ export default {
     },
     computed: {
         calculateSalePrice() {
-            return product.price - (product.salePrice / 100) * product.price;
+            return this.product.price - (this.product.salePrice / 100) * this.product.price;
         }
     },
     methods: {

@@ -91,8 +91,15 @@
     "_name": "_0288bb47"
   },
   {
+    "name": "reset-pasword",
+    "path": "/reset-password",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\resetPassword.vue",
+    "chunkName": "pages/resetPassword.vue",
+    "_name": "_a8c533d4"
+  },
+  {
     "name": "verify",
-    "path": "/verify",
+    "path": "/verify-email",
     "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\verify.vue",
     "chunkName": "pages/verify.vue",
     "_name": "_51aa74c6"
