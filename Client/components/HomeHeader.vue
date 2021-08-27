@@ -24,8 +24,13 @@
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-login"
+<<<<<<< HEAD
                                 width="27"
                                 height="27"
+=======
+                                width="24"
+                                height="24"
+>>>>>>> 2bacbdbf0b113a416593d1b0c65b2b8db155ef70
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
                                 stroke="#2c3e50"
@@ -38,7 +43,6 @@
                                     d="M0 0h24v24H0z"
                                     fill="none"
                                 />
-                                <circle cx="12" cy="7" r="4" />
                                 <path
                                     d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
                                 />
@@ -46,6 +50,10 @@
                             </svg>
                         </nuxt-link>
                     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2bacbdbf0b113a416593d1b0c65b2b8db155ef70
                     <div v-else class="relative">
                         <button
                             @click="profileDropDown = !profileDropDown"
@@ -76,7 +84,11 @@
                                 <hr />
                             </div>
                             <span
+<<<<<<< HEAD
                                 @click="logout()"
+=======
+                                @click="logout();"
+>>>>>>> 2bacbdbf0b113a416593d1b0c65b2b8db155ef70
                                 class="transition-colors duration-200 block px-4 py-1 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white"
                             >
                                 Logout
@@ -154,6 +166,11 @@
 <script>
 import { mapState } from 'vuex';
 export default {
+    data() {
+        return {
+            profileDropDown: false
+        };
+    },
     computed: {
         data() {
             return {

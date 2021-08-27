@@ -325,7 +325,7 @@ export default {
         async checkCoupon() {
             try {
                 const response = await this.$axios.post(
-                    'http://localhost:8000/api/coupon',
+                    'http://157.245.55.243/api/coupon',
                     { code: this.code }
                 );
                 this.coupon = response.data;

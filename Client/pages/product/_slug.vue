@@ -498,12 +498,8 @@
 </template>
 
 <script>
-import { ValidationProvider, ValidationObserver } from 'vee-validate';
 export default {
     layout: 'shop',
-    components: {
-        ValidationProvider, ValidationObserver
-    },
     data() {
         return {
             rating: 0,

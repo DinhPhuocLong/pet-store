@@ -8,16 +8,14 @@ exports.modules = {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/verify.vue?vue&type=template&id=4e565efa&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c("div")}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/verify.vue?vue&type=template&id=498aebc7&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('h1',[_vm._ssrNode("Verifing Email")])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/verify.vue?vue&type=template&id=4e565efa&
+// CONCATENATED MODULE: ./pages/verify.vue?vue&type=template&id=498aebc7&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/verify.vue?vue&type=script&lang=js&
-//
-//
 //
 //
 //
@@ -33,12 +31,16 @@ var staticRenderFns = []
   // },
   async created() {
     try {
-      const token = this.$route.query.token;
-      const response = await this.$axios.get('http://localhost:8000/api/user/verify/' + token);
+      const params = this.$route.query;
+      const response = await this.$axios.get('http://localhost:8000/api/email/verify', {
+        params: { ...params
+        }
+      });
     } catch (e) {
       console.log(e);
     }
-  }
+  } // id=28&hash=9e8e4c8bd21ec52e7e22f4a3653ddd7115bb1c56&
+
 
 });
 // CONCATENATED MODULE: ./pages/verify.vue?vue&type=script&lang=js&
