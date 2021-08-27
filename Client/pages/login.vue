@@ -1,5 +1,10 @@
 <template>
     <div class="w-full lg:max-w-[1440px] mx-auto px-4 my-10">
+        <Alert
+            :visible="alert.isVisible"
+            :message="alert.message"
+            :alertType="alert.type"
+        />
         <div
             class="w-full p-4 h-auto bg-no-repeat bg-center bg-cover"
             style="background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-pet-simple-pink-banner-image_172322.jpg')"
@@ -65,8 +70,8 @@
                                     <div
                                         class="text-[12px] lg:text-[14px] text-blue-500"
                                     >
-                                        <nuxt to="/quen-mat-khau"
-                                            >Quên mật khẩu?</nuxt
+                                        <nuxt-link to="/quen-mat-khau"
+                                            >Quên mật khẩu?</nuxt-link
                                         >
                                     </div>
                                     <div

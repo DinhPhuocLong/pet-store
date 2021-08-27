@@ -2,85 +2,91 @@
   {
     "name": "404",
     "path": "*",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\404.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\404.vue",
     "chunkName": "pages/404.vue"
   },
   {
     "name": "home-page",
     "path": "/",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\index.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\index.vue",
     "chunkName": "pages/index.vue"
   },
   {
     "name": "shop-by-brand",
     "path": "/thuong-hieu/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\product\\\\brand.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\product\\\\brand.vue",
     "chunkName": "pages/product/brand.vue"
   },
   {
     "name": "shop-by-category",
     "path": "/danh-muc/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\product\\\\index.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\product\\\\index.vue",
     "chunkName": "pages/product/index.vue"
   },
   {
     "name": "product-detail",
     "path": "/san-pham/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\product\\\\_slug.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\product\\\\_slug.vue",
     "chunkName": "pages/product/_slug.vue"
   },
   {
     "name": "cart",
     "path": "/gio-hang",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\cart.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\cart.vue",
     "chunkName": "pages/cart.vue"
   },
   {
     "name": "checkout",
     "path": "/thanh-toan",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\checkout.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\checkout.vue",
     "chunkName": "pages/checkout.vue"
   },
   {
     "name": "contact",
     "path": "/lien-he",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\contact.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\contact.vue",
     "chunkName": "pages/contact.vue"
   },
   {
     "name": "about",
     "path": "/gioi-thieu",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\about.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\about.vue",
     "chunkName": "pages/about.vue"
   },
   {
     "name": "thanks",
     "path": "/thanh-cong",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\thanks.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\thanks.vue",
     "chunkName": "pages/thanks.vue"
   },
   {
     "name": "login",
     "path": "/dang-nhap",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\login.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\login.vue",
     "chunkName": "pages/login.vue"
   },
   {
     "name": "register",
     "path": "/dang-ky",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\register.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\register.vue",
     "chunkName": "pages/register.vue"
   },
   {
     "name": "forgot-password",
     "path": "/quen-mat-khau",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\forgot.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\forgot.vue",
     "chunkName": "pages/forgot.vue"
   },
   {
+    "name": "reset-pasword",
+    "path": "/reset-password",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\resetPassword.vue",
+    "chunkName": "pages/resetPassword.vue"
+  },
+  {
     "name": "verify",
-    "path": "/verify",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\verify.vue",
+    "path": "/verify-email",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\verify.vue",
     "chunkName": "pages/verify.vue"
   }
 ]
