@@ -2,85 +2,106 @@
   {
     "name": "404",
     "path": "*",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\404.vue",
-    "chunkName": "pages/404.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\404.vue",
+    "chunkName": "pages/404.vue",
+    "_name": "_cefa2778"
   },
   {
     "name": "home-page",
     "path": "/",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\index.vue",
-    "chunkName": "pages/index.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\index.vue",
+    "chunkName": "pages/index.vue",
+    "_name": "_b1a2bc44"
   },
   {
     "name": "shop-by-brand",
     "path": "/thuong-hieu/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\product\\\\brand.vue",
-    "chunkName": "pages/product/brand.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\product\\\\brand.vue",
+    "chunkName": "pages/product/brand.vue",
+    "_name": "_2aa0fc48"
   },
   {
     "name": "shop-by-category",
     "path": "/danh-muc/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\product\\\\index.vue",
-    "chunkName": "pages/product/index.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\product\\\\index.vue",
+    "chunkName": "pages/product/index.vue",
+    "_name": "_2d0a7cb2"
   },
   {
     "name": "product-detail",
     "path": "/san-pham/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\product\\\\_slug.vue",
-    "chunkName": "pages/product/_slug.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\product\\\\_slug.vue",
+    "chunkName": "pages/product/_slug.vue",
+    "_name": "_3077bf42"
   },
   {
     "name": "cart",
     "path": "/gio-hang",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\cart.vue",
-    "chunkName": "pages/cart.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\cart.vue",
+    "chunkName": "pages/cart.vue",
+    "_name": "_17c95fc4"
   },
   {
     "name": "checkout",
     "path": "/thanh-toan",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\checkout.vue",
-    "chunkName": "pages/checkout.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\checkout.vue",
+    "chunkName": "pages/checkout.vue",
+    "_name": "_720cc8ea"
   },
   {
     "name": "contact",
     "path": "/lien-he",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\contact.vue",
-    "chunkName": "pages/contact.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\contact.vue",
+    "chunkName": "pages/contact.vue",
+    "_name": "_f1438da8"
   },
   {
     "name": "about",
     "path": "/gioi-thieu",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\about.vue",
-    "chunkName": "pages/about.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\about.vue",
+    "chunkName": "pages/about.vue",
+    "_name": "_f11271ce"
   },
   {
     "name": "thanks",
     "path": "/thanh-cong",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\thanks.vue",
-    "chunkName": "pages/thanks.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\thanks.vue",
+    "chunkName": "pages/thanks.vue",
+    "_name": "_53b7e826"
   },
   {
     "name": "login",
     "path": "/dang-nhap",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\login.vue",
-    "chunkName": "pages/login.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\login.vue",
+    "chunkName": "pages/login.vue",
+    "_name": "_70d644f5"
   },
   {
     "name": "register",
     "path": "/dang-ky",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\register.vue",
-    "chunkName": "pages/register.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\register.vue",
+    "chunkName": "pages/register.vue",
+    "_name": "_95d89872"
   },
   {
     "name": "forgot-password",
     "path": "/quen-mat-khau",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\forgot.vue",
-    "chunkName": "pages/forgot.vue"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\forgot.vue",
+    "chunkName": "pages/forgot.vue",
+    "_name": "_0288bb47"
+  },
+  {
+    "name": "reset-pasword",
+    "path": "/reset-password",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\resetPassword.vue",
+    "chunkName": "pages/resetPassword.vue",
+    "_name": "_a8c533d4"
   },
   {
     "name": "verify",
-    "path": "/verify",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\pet-store\\\\Client\\\\pages\\\\verify.vue",
-    "chunkName": "pages/verify.vue"
+    "path": "/verify-email",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Client\\\\pages\\\\verify.vue",
+    "chunkName": "pages/verify.vue",
+    "_name": "_51aa74c6"
   }
 ]

@@ -4,20 +4,21 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _3d6d7c80 = () => interopDefault(import('..\\pages\\404.vue' /* webpackChunkName: "pages/404.vue" */))
-const _5094ef4c = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index.vue" */))
-const _401e26e0 = () => interopDefault(import('..\\pages\\product\\brand.vue' /* webpackChunkName: "pages/product/brand.vue" */))
-const _3ee966ab = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
-const _3d32c563 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug.vue" */))
-const _30648c70 = () => interopDefault(import('..\\pages\\cart.vue' /* webpackChunkName: "pages/cart.vue" */))
-const _d6e6fe24 = () => interopDefault(import('..\\pages\\checkout.vue' /* webpackChunkName: "pages/checkout.vue" */))
-const _9c751eb0 = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact.vue" */))
-const _9004a4d6 = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about.vue" */))
-const _930c161e = () => interopDefault(import('..\\pages\\thanks.vue' /* webpackChunkName: "pages/thanks.vue" */))
-const _bd45a91e = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
-const _50d9286a = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
-const _3a42b76a = () => interopDefault(import('..\\pages\\forgot.vue' /* webpackChunkName: "pages/forgot.vue" */))
-const _90fea2be = () => interopDefault(import('..\\pages\\verify.vue' /* webpackChunkName: "pages/verify.vue" */))
+const _cefa2778 = () => interopDefault(import('..\\pages\\404.vue' /* webpackChunkName: "pages/404.vue" */))
+const _b1a2bc44 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index.vue" */))
+const _2aa0fc48 = () => interopDefault(import('..\\pages\\product\\brand.vue' /* webpackChunkName: "pages/product/brand.vue" */))
+const _2d0a7cb2 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
+const _3077bf42 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug.vue" */))
+const _17c95fc4 = () => interopDefault(import('..\\pages\\cart.vue' /* webpackChunkName: "pages/cart.vue" */))
+const _720cc8ea = () => interopDefault(import('..\\pages\\checkout.vue' /* webpackChunkName: "pages/checkout.vue" */))
+const _f1438da8 = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact.vue" */))
+const _f11271ce = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about.vue" */))
+const _53b7e826 = () => interopDefault(import('..\\pages\\thanks.vue' /* webpackChunkName: "pages/thanks.vue" */))
+const _70d644f5 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
+const _95d89872 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
+const _0288bb47 = () => interopDefault(import('..\\pages\\forgot.vue' /* webpackChunkName: "pages/forgot.vue" */))
+const _a8c533d4 = () => interopDefault(import('..\\pages\\resetPassword.vue' /* webpackChunkName: "pages/resetPassword.vue" */))
+const _51aa74c6 = () => interopDefault(import('..\\pages\\verify.vue' /* webpackChunkName: "pages/verify.vue" */))
 
 const emptyFn = () => {}
 
@@ -32,59 +33,63 @@ export const routerOptions = {
 
   routes: [{
     path: "*",
-    component: _3d6d7c80,
+    component: _cefa2778,
     name: "404"
   }, {
     path: "/",
-    component: _5094ef4c,
+    component: _b1a2bc44,
     name: "home-page"
   }, {
     path: "/thuong-hieu/:slug",
-    component: _401e26e0,
+    component: _2aa0fc48,
     name: "shop-by-brand"
   }, {
     path: "/danh-muc/:slug",
-    component: _3ee966ab,
+    component: _2d0a7cb2,
     name: "shop-by-category"
   }, {
     path: "/san-pham/:slug",
-    component: _3d32c563,
+    component: _3077bf42,
     name: "product-detail"
   }, {
     path: "/gio-hang",
-    component: _30648c70,
+    component: _17c95fc4,
     name: "cart"
   }, {
     path: "/thanh-toan",
-    component: _d6e6fe24,
+    component: _720cc8ea,
     name: "checkout"
   }, {
     path: "/lien-he",
-    component: _9c751eb0,
+    component: _f1438da8,
     name: "contact"
   }, {
     path: "/gioi-thieu",
-    component: _9004a4d6,
+    component: _f11271ce,
     name: "about"
   }, {
     path: "/thanh-cong",
-    component: _930c161e,
+    component: _53b7e826,
     name: "thanks"
   }, {
     path: "/dang-nhap",
-    component: _bd45a91e,
+    component: _70d644f5,
     name: "login"
   }, {
     path: "/dang-ky",
-    component: _50d9286a,
+    component: _95d89872,
     name: "register"
   }, {
     path: "/quen-mat-khau",
-    component: _3a42b76a,
+    component: _0288bb47,
     name: "forgot-password"
   }, {
-    path: "/verify",
-    component: _90fea2be,
+    path: "/reset-password",
+    component: _a8c533d4,
+    name: "reset-pasword"
+  }, {
+    path: "/verify-email",
+    component: _51aa74c6,
     name: "verify"
   }],
 

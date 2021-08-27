@@ -37,7 +37,7 @@ export default function (ctx, inject) {
   // Register strategies
   // laravelJWT
   $auth.registerStrategy('laravelJWT', new LaravelJWTScheme($auth, {
-  "url": "http://127.0.0.1:8000/api",
+  "url": "http://157.245.55.243/api",
   "token": {
     "property": "token",
     "maxAge": 3600,
@@ -50,16 +50,16 @@ export default function (ctx, inject) {
   },
   "endpoints": {
     "login": {
-      "url": "http://127.0.0.1:8000/api/login"
+      "url": "http://157.245.55.243/api/login"
     },
     "refresh": {
-      "url": "http://127.0.0.1:8000/api/api/auth/refresh"
+      "url": "http://157.245.55.243/api/api/auth/refresh"
     },
     "logout": {
-      "url": "http://127.0.0.1:8000/api/logout"
+      "url": "http://157.245.55.243/api/logout"
     },
     "user": {
-      "url": "http://127.0.0.1:8000/api/user",
+      "url": "http://157.245.55.243/api/user",
       "method": "get"
     }
   },

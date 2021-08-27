@@ -130,8 +130,14 @@ export default {
                     chunkName: 'pages/forgot.vue',
                 },
                 {
+                    name: 'reset-pasword',
+                    path: '/reset-password',
+                    component: resolve(__dirname, 'pages/resetPassword.vue'),
+                    chunkName: 'pages/resetPassword.vue',
+                },
+                {
                     name: 'verify',
-                    path: '/verify',
+                    path: '/verify-email',
                     component: resolve(__dirname, 'pages/verify.vue'),
                     chunkName: 'pages/verify.vue',
                 },
