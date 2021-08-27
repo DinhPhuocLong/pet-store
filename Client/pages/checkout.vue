@@ -125,8 +125,7 @@
                                 </div>
                                 <div class="my-4">
                                     <p class="font-bold my-2">
-                                        Ghi chú<b class="text-red-500 ml-1"
-                                            >*</b
+                                        Ghi chú
                                         >
                                     </p>
                                     <textarea

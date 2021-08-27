@@ -1,14 +1,14 @@
-exports.ids = [20];
+exports.ids = [21];
 exports.modules = {
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/checkout.vue?vue&type=template&id=1b8fa0aa&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/checkout.vue?vue&type=template&id=b1f32382&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"mt-12"},[_vm._ssrNode("<div class=\"w-[94%] xl:w-11/12 max-w-[1440px] mx-auto\">","</div>",[_vm._ssrNode("<div class=\"my-6 text-center\"><h1 class=\"text-[25px] lg:text-[32px] font-bold\">\n                Thông tin đơn hàng\n            </h1></div> "),_vm._ssrNode("<div class=\"flex flex-wrap\">","</div>",[_vm._ssrNode("<div class=\"w-full lg:w-[70%] lg:pr-10\">","</div>",[_vm._ssrNode("<h2 class=\"text-[20px] font-bold\">Thông tin giao hàng</h2> "),_vm._ssrNode("<div>","</div>",[_c('ValidationObserver',{ref:"form"},[_c('form',[_c('div',{staticClass:"my-4"},[_c('p',{staticClass:"font-bold my-2"},[_vm._v("\n                                    Họ và tên"),_c('b',{staticClass:"text-red-500 ml-1"})]),_vm._v(" "),_c('ValidationProvider',{attrs:{"rules":"required","custom-messages":_vm.customErrorMessages.name},scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var errors = ref.errors;
 return [_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.shipmentDetails.name),expression:"shipmentDetails.name"}],staticClass:"w-full border-b-2 border-gray-200 focus:outline-none py-2",class:{
@@ -25,7 +25,7 @@ return [_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.shipm
                                         var errors = ref.errors;
 return [_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.shipmentDetails.address),expression:"shipmentDetails.address"}],staticClass:"w-full border-b-2 border-gray-200 focus:outline-none py-2",class:{
                                             'border-red-600': errors[0]
-                                        },attrs:{"placeholder":"Địa chỉ nhận hàng...","type":"text"},domProps:{"value":(_vm.shipmentDetails.address)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.shipmentDetails, "address", $event.target.value)}}}),_vm._v(" "),_c('p',{staticClass:"mt-1 text-sm italic text-red-500"},[_vm._v("\n                                        "+_vm._s(errors[0])+"\n                                    ")])]}}])})],1),_vm._v(" "),_c('div',{staticClass:"my-4"},[_c('p',{staticClass:"font-bold my-2"},[_vm._v("\n                                    Ghi chú"),_c('b',{staticClass:"text-red-500 ml-1"},[_vm._v("*")])]),_vm._v(" "),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.shipmentDetails.userNote),expression:"shipmentDetails.userNote"}],staticClass:"w-full border border-gray-200 focus:outline-none p-2 rounded-md",attrs:{"placeholder":"Nhập ghi chú (nếu có)...","rows":"4","cols":"50"},domProps:{"value":(_vm.shipmentDetails.userNote)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.shipmentDetails, "userNote", $event.target.value)}}})])])])],1)],2),_vm._ssrNode(" <div class=\"w-full lg:w-[30%] mt-8 lg:mt-0\"><div class=\"h-max\"><h2 class=\"text-[16px] p-4 bg-gray-200 font-bold\">\n                        Sản phẩm\n                    </h2> <div class=\"overflow-y-scroll\" style=\"height: 210px\">"+(_vm._ssrList((_vm.cart),function(item){return ("<div class=\"flex items-center justify-around p-4 border-t\"><div class=\"w-24\"><img"+(_vm._ssrAttr("src",item.product_images.length
+                                        },attrs:{"placeholder":"Địa chỉ nhận hàng...","type":"text"},domProps:{"value":(_vm.shipmentDetails.address)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.shipmentDetails, "address", $event.target.value)}}}),_vm._v(" "),_c('p',{staticClass:"mt-1 text-sm italic text-red-500"},[_vm._v("\n                                        "+_vm._s(errors[0])+"\n                                    ")])]}}])})],1),_vm._v(" "),_c('div',{staticClass:"my-4"},[_c('p',{staticClass:"font-bold my-2"},[_vm._v("\n                                    Ghi chú\n                                    >\n                                ")]),_vm._v(" "),_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.shipmentDetails.userNote),expression:"shipmentDetails.userNote"}],staticClass:"w-full border border-gray-200 focus:outline-none p-2 rounded-md",attrs:{"placeholder":"Nhập ghi chú (nếu có)...","rows":"4","cols":"50"},domProps:{"value":(_vm.shipmentDetails.userNote)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.shipmentDetails, "userNote", $event.target.value)}}})])])])],1)],2),_vm._ssrNode(" <div class=\"w-full lg:w-[30%] mt-8 lg:mt-0\"><div class=\"h-max\"><h2 class=\"text-[16px] p-4 bg-gray-200 font-bold\">\n                        Sản phẩm\n                    </h2> <div class=\"overflow-y-scroll\" style=\"height: 210px\">"+(_vm._ssrList((_vm.cart),function(item){return ("<div class=\"flex items-center justify-around p-4 border-t\"><div class=\"w-24\"><img"+(_vm._ssrAttr("src",item.product_images.length
                                             ? item.product_images[0]
                                                   .imageUrl
                                             : ''))+(_vm._ssrAttr("alt",item.name))+" class=\"w-full\"></div> <div><p>"+_vm._ssrEscape(_vm._s(item.name))+"</p> <span>"+_vm._ssrEscape("Số lượng: "+_vm._s(item.quantity))+"</span></div> <div><span>"+_vm._ssrEscape(_vm._s(_vm._f("toVndCurrency")(item.price)))+"</span></div></div>")}))+"</div> <div class=\"flex items-center justify-between p-4 border-t\"><p class=\"font-bold\">Tạm tính:</p> <span>"+_vm._ssrEscape(_vm._s(_vm._f("toVndCurrency")(_vm.total)))+"</span></div> "+((_vm.discount)?("<div class=\"flex items-center justify-between p-4 border-t\"><p class=\"font-bold\">Giảm giá:</p> <span>"+_vm._ssrEscape(_vm._s(_vm._f("toVndCurrency")(_vm.discount)))+"</span></div>"):"<!---->")+" <div class=\"flex items-center justify-between p-4 border-t\"><p class=\"text-[16px] text-red-500 font-bold\">\n                            Tổng tiền:\n                        </p> "+((!_vm.newTotal)?("<span class=\"text-[16px] text-red-500 font-bold\">"+_vm._ssrEscape("\n                            "+_vm._s(_vm._f("toVndCurrency")(_vm.total))+"\n                        ")+"</span>"):("<span class=\"text-[16px] text-red-500 font-bold\">"+_vm._ssrEscape("\n                            "+_vm._s(_vm._f("toVndCurrency")(_vm.newTotal))+"\n                        ")+"</span>"))+"</div> <div class=\"flex items-center justify-between p-4 border-t\"><input type=\"text\" placeholder=\"Mã giảm giá...\""+(_vm._ssrAttr("value",(_vm.code)))+(_vm._ssrClass("flex-1 p-2 rounded-full focus:outline-none border border-gray-300",{
@@ -34,16 +34,15 @@ return [_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.shipm
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/checkout.vue?vue&type=template&id=1b8fa0aa&
+// CONCATENATED MODULE: ./pages/checkout.vue?vue&type=template&id=b1f32382&
 
 // EXTERNAL MODULE: ./node_modules/vee-validate/dist/vee-validate.js
-var vee_validate = __webpack_require__(7);
+var vee_validate = __webpack_require__(8);
 
 // EXTERNAL MODULE: external "vuex"
 var external_vuex_ = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/checkout.vue?vue&type=script&lang=js&
-//
 //
 //
 //

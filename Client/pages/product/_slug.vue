@@ -301,7 +301,7 @@
                                             />
                                         </svg>
                                     </span>
-                                    Add to wishlist
+                                    Yêu thích
                                 </button>
 
                                 <button class="flex items-center mt-6 gap-x-2">
@@ -335,7 +335,7 @@
                                             <path d="M18 20l3 -3l-3 -3" />
                                         </svg>
                                     </span>
-                                    Compare
+                                    So sánh
                                 </button>
                             </div>
                         </div>
@@ -343,7 +343,7 @@
                         <div
                             class="mt-4 flex flex-col gap-y-4 border-b border-solid border-gray-300 pb-20 lg:border-0"
                         >
-                            <span class="text-gray-500 text-md">
+                            <!-- <span class="text-gray-500 text-md">
                                 SKU:
                                 <span class="text-black">D2300-1</span>
                             </span>
@@ -377,12 +377,12 @@
                                 <a href="#" class="text-black">
                                     Chó
                                 </a>
-                            </span>
+                            </span> -->
 
                             <span class="text-gray-500 text-md">
                                 Tags:
                                 <a href="#" class="text-black">
-                                    Chó
+                                    Đồ ăn
                                 </a>
                             </span>
                         </div>
@@ -475,7 +475,7 @@
                     </p>
 
                     <div id="rating" class="flex items-center gap-x-3 my-4">
-                        <span>Your Rating:</span>
+                        <span>Đánh giá sao của bạn:</span>
                         <client-only>
                             <star-rating
                                 :star-size="20"

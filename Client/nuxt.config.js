@@ -102,8 +102,8 @@ export default {
                 {
                     name: 'about',
                     path: '/gioi-thieu',
-                    component: resolve(__dirname, 'pages/index.vue'),
-                    chunkName: 'pages/index.vue',
+                    component: resolve(__dirname, 'pages/about.vue'),
+                    chunkName: 'pages/about.vue',
                 },
                 {
                     name: 'thanks',

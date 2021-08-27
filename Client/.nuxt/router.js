@@ -12,6 +12,7 @@ const _3077bf42 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /*
 const _17c95fc4 = () => interopDefault(import('..\\pages\\cart.vue' /* webpackChunkName: "pages/cart.vue" */))
 const _720cc8ea = () => interopDefault(import('..\\pages\\checkout.vue' /* webpackChunkName: "pages/checkout.vue" */))
 const _f1438da8 = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact.vue" */))
+const _f11271ce = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about.vue" */))
 const _53b7e826 = () => interopDefault(import('..\\pages\\thanks.vue' /* webpackChunkName: "pages/thanks.vue" */))
 const _70d644f5 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
 const _95d89872 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
@@ -64,7 +65,7 @@ export const routerOptions = {
     name: "contact"
   }, {
     path: "/gioi-thieu",
-    component: _b1a2bc44,
+    component: _f11271ce,
     name: "about"
   }, {
     path: "/thanh-cong",

@@ -8,12 +8,12 @@ exports.modules = {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/TopBrandSlider.vue?vue&type=template&id=ebbf03da&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"clear-both mt-10"},[_vm._ssrNode("<h1 class=\"font-semibold text-4xl text-center mb-10 font-nunito\">\n        Thương hiệu nổi bật\n    </h1> "),_c('client-only',[_c('div',{attrs:{"uk-slider":""}},[_c('ul',{staticClass:"uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@s uk-child-width-1-6@m"},_vm._l((_vm.brands),function(brand){return _c('li',{key:brand.id,staticClass:"uk-transition-toggle border border-solid border-[#ebebeb] py-5 mb-px",attrs:{"tabindex":"0"}},[_c('nuxt-link',{attrs:{"to":{name: 'shop-by-brand', params: { slug: brand.slug }}}},[_c('img',{directives:[{name:"lazy",rawName:"v-lazy",value:(brand.imageUrl),expression:"brand.imageUrl"}],staticClass:"mx-auto",staticStyle:{"max-width":"175px","max-height":"120px"},attrs:{"alt":brand.name,"width":"175"}})])],1)}),0)])])],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/TopBrandSlider.vue?vue&type=template&id=30285469&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"clear-both mt-10"},[_vm._ssrNode("<h1 class=\"font-semibold text-4xl text-center mb-10 font-nunito\">\n        Thương hiệu nổi bật\n    </h1> "),_c('client-only',[_c('div',{attrs:{"uk-slider":""}},[_c('ul',{staticClass:"uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@s uk-child-width-1-6@m"},_vm._l((_vm.brands),function(brand){return _c('li',{key:brand.id,staticClass:"uk-transition-toggle border border-solid border-[#ebebeb] rounded-xl py-5 mb-px",attrs:{"tabindex":"0"}},[_c('nuxt-link',{attrs:{"to":{name: 'shop-by-brand', params: { slug: brand.slug }}}},[_c('img',{directives:[{name:"lazy",rawName:"v-lazy",value:(brand.imageUrl),expression:"brand.imageUrl"}],staticClass:"mx-auto",staticStyle:{"max-width":"175px","max-height":"120px"},attrs:{"alt":brand.name,"width":"175"}})])],1)}),0)])])],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/TopBrandSlider.vue?vue&type=template&id=ebbf03da&
+// CONCATENATED MODULE: ./components/TopBrandSlider.vue?vue&type=template&id=30285469&
 
 // EXTERNAL MODULE: external "vuex"
 var external_vuex_ = __webpack_require__(5);

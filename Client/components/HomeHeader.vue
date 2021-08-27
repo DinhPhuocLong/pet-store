@@ -6,12 +6,12 @@
             <div class="flex items-center justify-between pb-8">
                 <div class="w-1/4">
                     <!-- logo -->
-                    <a href="#"
+                    <nuxt-link to="/"
                         ><img
                             class="max-h-28 pr-10"
                             src="../static/logo.png"
                             alt="logo"
-                    /></a>
+                    /></nuxt-link>
                 </div>
                 <!-- search -->
                 <Search />
