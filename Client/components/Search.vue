@@ -8,9 +8,11 @@
             v-model="keywords"
             @keyup="debounce()"
             @focus="isHidden = false"
-            @blur="isHidden = true"
         />
-        <button type="submit" class="bg-black text-white px-7 rounded-r-full">
+        <button
+            @click.prevent="search()"
+            class="bg-black text-white px-7 rounded-r-full"
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-search"
@@ -30,8 +32,8 @@
         </button>
         <div
             class="w-full absolute top-14 bg-white shadow-md rounded-md overflow-hidden"
-            style="z-index: 9999;"
-            v-if="!isHidden"
+            style="z-index: 9999; box-shadow: 0 1px 8px rgb(0 0 0 / 30%);"
+            v-if="(!isHidden && (history && history.length)) || (!isHidden && suggests.length)"
         >
             <div
                 class="overflow-y-auto max-h-80"
@@ -80,6 +82,8 @@
                 </h2>
                 <div
                     class="flex justify-around items-center p-2 border-b hover:bg-gray-200 cursor-pointer"
+                    v-for="(keyword, index) in history"
+                    :key="index"
                 >
                     <div class="w-full lg:w-4/5">
                         <svg
@@ -93,12 +97,17 @@
                                 d="M11 6v8h7v-2h-5v-6h-2zm10.854 7.683l1.998.159c-.132.854-.351 1.676-.652 2.46l-1.8-.905c.2-.551.353-1.123.454-1.714zm-2.548 7.826l-1.413-1.443c-.486.356-1.006.668-1.555.933l.669 1.899c.821-.377 1.591-.844 2.299-1.389zm1.226-4.309c-.335.546-.719 1.057-1.149 1.528l1.404 1.433c.583-.627 1.099-1.316 1.539-2.058l-1.794-.903zm-20.532-5.2c0 6.627 5.375 12 12.004 12 1.081 0 2.124-.156 3.12-.424l-.665-1.894c-.787.2-1.607.318-2.455.318-5.516 0-10.003-4.486-10.003-10s4.487-10 10.003-10c2.235 0 4.293.744 5.959 1.989l-2.05 2.049 7.015 1.354-1.355-7.013-2.184 2.183c-2.036-1.598-4.595-2.562-7.385-2.562-6.629 0-12.004 5.373-12.004 12zm23.773-2.359h-2.076c.163.661.261 1.344.288 2.047l2.015.161c-.01-.755-.085-1.494-.227-2.208z"
                             />
                         </svg>
-                        <a href="#">
-                            Mèo con đi bộ ăn xúc xích khô bị đau bụng quá trời
-                        </a>
+                        <nuxt-link
+                            :to="{
+                                name: 'search-page',
+                                query: { keywords: keyword }
+                            }"
+                        >
+                            {{ keyword }}
+                        </nuxt-link>
                     </div>
                     <div class="w-full lg:w-1/5 flex justify-center">
-                        <svg
+                        <svg @click="removeSearchHistory(index)"
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
                             height="16"
@@ -123,10 +132,26 @@ export default {
             keywords: '',
             timeoutID: '',
             isHidden: true,
-            suggests: []
+            suggests: [],
+            history: [] // ['mèo']
         };
     },
+    created() {
+        if (process.client) {
+            let storageHistory = localStorage.getItem('history');
+                this.history = JSON.parse(storageHistory) || [];
+        }
+    },
     methods: {
+        removeSearchHistory(index) {
+            this.history.splice(index, 1);
+            localStorage.setItem('history', JSON.stringify(this.history));
+        },
+        closeDropDown(e) {
+            if (!this.$el.contains(e.target)) {
+                this.isHidden = true;
+            }
+        },
         async showSuggestion() {
             try {
                 const response = await this.$axios.post(
@@ -144,7 +169,12 @@ export default {
             return originalPrice - (salePrice / 100) * originalPrice;
         },
         async search() {
-            return this.$router.push();
+            this.history.push(this.keywords); 
+            localStorage.setItem('history', JSON.stringify([...new Set(this.history)]));
+            return this.$router.push({
+                name: 'search-page',
+                query: { keywords: this.keywords }
+            });
         },
         debounce() {
             clearTimeout(this.timeoutID);
@@ -152,6 +182,12 @@ export default {
                 this.showSuggestion();
             }, 300);
         }
+    },
+    mounted() {
+        document.addEventListener('click', this.closeDropDown);
+    },
+    beforeDestroy() {
+        document.removeEventListener('click', this.closeDropDown);
     }
 };
 </script>

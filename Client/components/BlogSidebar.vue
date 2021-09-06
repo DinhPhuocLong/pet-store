@@ -41,241 +41,42 @@
                 </fieldset>
             </form>
         </div>
-        <!--Blog Categories-->
-        <div class="mt-8 md:mt-10">
-            <fieldset class="border-2 border-gray-200 rounded-md">
-                <legend class="mx-4 text-[22px] px-2 font-medium">
-                    Danh mục
-                </legend>
-                <ul class="text-[11px] text-gray-300">
-                    <li class="py-2.5 border-b border-dashed border-gray-300">
-                        <svg
-                            class="inline-block ml-6 mb-0.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="8"
-                            height="8"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"
-                                fill="orange"
-                            />
-                        </svg>
-                        <a
-                            class="font-semibold text-gray-400 uppercase hover:text-red-500 transition-all duration-500"
-                            href="#"
-                        >
-                            Backpack (8)
-                        </a>
-                    </li>
-                    <li class="py-2.5 border-b border-dashed border-gray-300">
-                        <svg
-                            class="inline-block ml-6 mb-0.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="8"
-                            height="8"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"
-                                fill="orange"
-                            />
-                        </svg>
-                        <a
-                            class="font-semibold text-gray-400 uppercase hover:text-red-500 transition-all duration-500"
-                            href="#"
-                        >
-                            Fashion (4)
-                        </a>
-                    </li>
-                    <li class="py-2.5 border-b border-dashed border-gray-300">
-                        <svg
-                            class="inline-block ml-6 mb-0.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="8"
-                            height="8"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"
-                                fill="orange"
-                            />
-                        </svg>
-                        <a
-                            class="font-semibold text-gray-400 uppercase hover:text-red-500 transition-all duration-500"
-                            href="#"
-                        >
-                            Life Style (4)
-                        </a>
-                    </li>
-                    <li class="py-2.5 border-b border-dashed border-gray-300">
-                        <svg
-                            class="inline-block ml-6 mb-0.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="8"
-                            height="8"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"
-                                fill="orange"
-                            />
-                        </svg>
-                        <a
-                            class="font-semibold text-gray-400 uppercase hover:text-red-500 transition-all duration-500"
-                            href="#"
-                        >
-                            Shorts (5)
-                        </a>
-                    </li>
-                    <li class="py-2.5">
-                        <svg
-                            class="inline-block ml-6 mb-0.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="8"
-                            height="8"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"
-                                fill="orange"
-                            />
-                        </svg>
-                        <a
-                            class="font-semibold text-gray-400 uppercase hover:text-red-500 transition-all duration-500"
-                            href="#"
-                        >
-                            Swimwear (4)
-                        </a>
-                    </li>
-                </ul>
-            </fieldset>
-        </div>
         <!--Blog Recent Post-->
         <div class="mt-8 md:mt-10">
             <fieldset class="border-2 border-gray-200 rounded-md">
                 <legend class="mx-4 text-[22px] px-2 font-medium">
                     Bài viết gần đây
                 </legend>
-                <div class="flex py-4 px-6">
-                    <div>
+                <div class="flex py-4 px-6" v-for="recentPost in recentPosts" :key="recentPost.id">
+                    <div class="w-20 rounded-md overflow-hidden">
                         <img
-                            class="w-20 rounded-md"
-                            src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-500x500.jpg"
+                            class="object-cover h-full w-full"
+                            :src="recentPost.thumbnailUrl"
                             alt=""
                         />
                     </div>
                     <div class="leading-5 pl-4">
                         <p class="my-1 text-[11px] text-gray-400">
-                            MAY 30, 2021
+                            {{ recentPost.created_at | formatDate }}
                         </p>
-                        <a
-                            href="#"
+                        <nuxt-link
+                            :to="{ name: 'blog-detail', params: { slug: recentPost.slug } }"
                             class="hover:text-red-500 text-[16px] font-bold"
-                            >Traveling Solo Is Awesome</a
-                        >
+                            >{{ recentPost.title }}</nuxt-link>
                     </div>
                 </div>
-                <hr />
-                <div class="flex py-4 px-6">
-                    <div>
-                        <img
-                            class="w-20 rounded-md"
-                            src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-500x500.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="leading-5 pl-4">
-                        <p class="my-1 text-[11px] text-gray-400">
-                            MAY 30, 2021
-                        </p>
-                        <a
-                            href="#"
-                            class="hover:text-red-500 text-[16px] font-bold"
-                            >Traveling Solo Is Awesome</a
-                        >
-                    </div>
-                </div>
-                <hr />
-                <div class="flex py-4 px-6">
-                    <div>
-                        <img
-                            class="w-20 rounded-md"
-                            src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-500x500.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="leading-5 pl-4">
-                        <p class="my-1 text-[11px] text-gray-400">
-                            MAY 30, 2021
-                        </p>
-                        <a
-                            href="#"
-                            class="hover:text-red-500 text-[16px] font-bold"
-                            >Traveling Solo Is Awesome</a
-                        >
-                    </div>
-                </div>
-            </fieldset>
-        </div>
-        <!--Blog Archives-->
-        <div class="mt-8 md:mt-10">
-            <fieldset class="border-2 border-gray-200 rounded-md">
-                <legend class="mx-4 text-[22px] px-2 font-medium">
-                    Bài viết theo tháng
-                </legend>
-                <ul class="text-[12px] text-gray-500">
-                    <li class="py-2.5 border-b border-dashed border-gray-300">
-                        <svg
-                            class="inline-block ml-6 mb-0.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="8"
-                            height="8"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"
-                                fill="orange"
-                            />
-                        </svg>
-                        <a
-                            class="text-gray-500 uppercase hover:text-red-500 transition-all duration-500"
-                            href="#"
-                        >
-                            MAY 2021
-                        </a>
-                    </li>
-                    <li class="py-2.5">
-                        <svg
-                            class="inline-block ml-6 mb-0.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="8"
-                            height="8"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"
-                                fill="orange"
-                            />
-                        </svg>
-                        <a
-                            class="text-gray-500 uppercase hover:text-red-500 transition-all duration-500"
-                            href="#"
-                        >
-                            APRIL 2021
-                        </a>
-                    </li>
-                </ul>
-            </fieldset>
-        </div>
-        <!--Blog Tag-->
-        <div class="mt-8 md:mt-10">
-            <fieldset class="border-2 border-gray-200 rounded-md">
-                <legend class="mx-4 text-[22px] px-2 font-medium">Tags</legend>
-                <div class="px-4 pb-3">
-                    <Tag />
-                </div>
+
             </fieldset>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: ['recentPosts'],
+}
+</script>
+
+<style>
+
+</style>

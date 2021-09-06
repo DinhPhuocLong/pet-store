@@ -12,13 +12,10 @@
 <script>
 export default {
     async fetch() { //server 
-        try {
-            await this.$store.dispatch('category/getCategory', 'product');
-        } catch (error) {
-            console.log(error);
-        }
+        await this.$store.dispatch('category/getCategory', 'product');
+        await this.$store.dispatch('category/getBlogCategory', 'blog');
     },
-    created() {
+    async created() {
         if(process.client) this.$store.dispatch('cart/getLocalStorageCart');
     },
 };

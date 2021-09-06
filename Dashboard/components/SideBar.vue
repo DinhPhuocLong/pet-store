@@ -174,11 +174,77 @@ Latest commit 18fda80 yesterday History 2 contributors @kebinh1235@DinhPhuocLong
                         d="M19.647 15.247c-1.278 0-2.429.551-3.225 1.429l-7.788-3.846c.062-.343.079-.64.067-.942l8.058-4.231c.769.682 1.78 1.097 2.889 1.097 2.404-.001 4.352-1.949 4.352-4.353s-1.948-4.353-4.353-4.353-4.353 1.949-4.353 4.353c0 .18.012.356.033.53l-7.828 4.111c-.793-.829-1.908-1.347-3.146-1.347-2.405 0-4.353 1.949-4.353 4.353s1.948 4.353 4.353 4.353c1.013 0 1.943-.347 2.684-.927l8.26 4.078-.001.047c0 2.404 1.948 4.353 4.353 4.353s4.351-1.949 4.351-4.353-1.948-4.352-4.353-4.352z"
                     />
                 </svg>
-                <nuxt-link
-                    :to="{ name: 'dashboard-brand' }"
-                    class="text-gray-700 ml-2"
-                >
+                <nuxt-link :to="{ name: 'brand' }" class="text-gray-700 ml-2">
                     Quản lý thương hiệu
+                </nuxt-link>
+            </div>
+        </div>
+
+        <div class="mb-4 px-4">
+            <p class="pl-4 text-sm font-semibold mb-1">TIN TỨC</p>
+            <div
+                class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M19.647 15.247c-1.278 0-2.429.551-3.225 1.429l-7.788-3.846c.062-.343.079-.64.067-.942l8.058-4.231c.769.682 1.78 1.097 2.889 1.097 2.404-.001 4.352-1.949 4.352-4.353s-1.948-4.353-4.353-4.353-4.353 1.949-4.353 4.353c0 .18.012.356.033.53l-7.828 4.111c-.793-.829-1.908-1.347-3.146-1.347-2.405 0-4.353 1.949-4.353 4.353s1.948 4.353 4.353 4.353c1.013 0 1.943-.347 2.684-.927l8.26 4.078-.001.047c0 2.404 1.948 4.353 4.353 4.353s4.351-1.949 4.351-4.353-1.948-4.352-4.353-4.352z"
+                    />
+                </svg>
+                <nuxt-link :to="{ name: 'blog' }" class="text-gray-700 ml-2">
+                    Tất cả tin tức
+                </nuxt-link>
+            </div>
+
+
+            <div
+                class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M19.647 15.247c-1.278 0-2.429.551-3.225 1.429l-7.788-3.846c.062-.343.079-.64.067-.942l8.058-4.231c.769.682 1.78 1.097 2.889 1.097 2.404-.001 4.352-1.949 4.352-4.353s-1.948-4.353-4.353-4.353-4.353 1.949-4.353 4.353c0 .18.012.356.033.53l-7.828 4.111c-.793-.829-1.908-1.347-3.146-1.347-2.405 0-4.353 1.949-4.353 4.353s1.948 4.353 4.353 4.353c1.013 0 1.943-.347 2.684-.927l8.26 4.078-.001.047c0 2.404 1.948 4.353 4.353 4.353s4.351-1.949 4.351-4.353-1.948-4.352-4.353-4.352z"
+                    />
+                </svg>
+                <nuxt-link :to="{ name: 'add-blog' }" class="text-gray-700 ml-2">
+                    Thêm tin tức
+                </nuxt-link>
+            </div>
+        </div>
+
+        <div class="mb-4 px-4">
+            <p class="pl-4 text-sm font-semibold mb-1">NGƯỜI DÙNG</p>
+            <div
+                class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-users"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#2c3e50"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                </svg>
+                <nuxt-link :to="{ name: 'user' }" class="text-gray-700 ml-2">
+                    Quản lý người dùng
                 </nuxt-link>
             </div>
         </div>
@@ -186,7 +252,6 @@ Latest commit 18fda80 yesterday History 2 contributors @kebinh1235@DinhPhuocLong
 </template>
 
 <script>
-import { mapState } from 'vuex';
 export default {
     name: 'Sidebar'
 };

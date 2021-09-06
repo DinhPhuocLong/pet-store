@@ -41,9 +41,6 @@
   "ProductCard": {
     "description": "Auto imported from components/ProductCard.vue"
   },
-  "ProductCarousel": {
-    "description": "Auto imported from components/productCarousel.vue"
-  },
   "ProductDetailHeader": {
     "description": "Auto imported from components/ProductDetailHeader.vue"
   },

@@ -76,8 +76,4 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
 <style></style>
-=======
-<style></style>
->>>>>>> 2bacbdbf0b113a416593d1b0c65b2b8db155ef70

@@ -7,7 +7,7 @@
             :to="{
                 name: routeName,
                 params: { slug: slug },
-                query: { page: current_page - 1 }
+                query: { keywords: keywords, page: current_page - 1 }
             }"
             v-bind:class="[current_page == 1 ? 'pointer-events-none' : '']"
             class="flex w-10 h-10 mr-1 justify-center items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
@@ -32,7 +32,7 @@
             :to="{
                 name: routeName,
                 params: { slug: slug },
-                query: { page: item.name }
+                query: { keywords: keywords, page: item.name }
             }"
             v-bind:class="[
                 item.name == current_page
@@ -50,7 +50,7 @@
             :to="{
                 name: routeName,
                 params: { slug: slug },
-                query: { page: current_page + 1 }
+                query: { keywords: keywords, page: current_page + 1 },
             }"
             title="Next Page"
             v-bind:class="[
@@ -92,7 +92,8 @@ export default {
     data() {
         return {
             slug: this.$route.params.slug,
-            routeName: this.$route.name
+            routeName: this.$route.name,
+            keywords: this.$route.query.keywords
         };
     },
     computed: {

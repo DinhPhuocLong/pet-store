@@ -5,6 +5,7 @@ import ProductService from './ProductService';
 import BrandService from './BrandService';
 import BlogService from './BlogService';
 import ProductReview from './ProductReview';
+import UserService from './UserService';
 
 export default ($axios) => ({
     Auth: AuthService($axios),
@@ -13,5 +14,6 @@ export default ($axios) => ({
     Product: ProductService($axios),
     Brand: BrandService($axios),
     Blog: BlogService($axios),
-    ProductReview: ProductReview($axios)
+    ProductReview: ProductReview($axios),
+    User: UserService($axios),
 })

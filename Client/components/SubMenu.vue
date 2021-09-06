@@ -6,11 +6,11 @@
     >
         <ul class="w-full h-full grid grid-cols-3 overflow-y-scroll">
             <li class="pr-20" v-for="childrenCategory in childrenCategories" :key="childrenCategory.id">
-                <nuxt-link :to="{ name: 'shop-by-category', params: { slug: childrenCategory.slug } }"
+                <nuxt-link :to="{ name: redirect, params: { slug: childrenCategory.slug } }"
                     class="block pt-6 border-b pb-4 font-roboto text-[14px] text-gray-600 hover:text-yellow-500">
                     {{ childrenCategory.name }}
                 </nuxt-link>
-                <SubMenuItem :childrenCategories="childrenCategory.children_categories" />
+                <SubMenuItem :childrenCategories="childrenCategory.children_categories" :redirect="'blog'" />
             </li>
         </ul>
     </div>
@@ -18,7 +18,17 @@
 
 <script>
 export default {
-    props: ['childrenCategories']
+    props: {
+        childrenCategories: {
+            type: Array,
+            require: true,
+        },
+        redirect: {
+            type: String,
+            require: false,
+            default: 'shop-by-category',
+        }
+    }
 };
 </script>
 

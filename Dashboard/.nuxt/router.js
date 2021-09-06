@@ -15,7 +15,10 @@ const _bb2c09a0 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /*
 const _32ac1567 = () => interopDefault(import('..\\pages\\product\\rating.vue' /* webpackChunkName: "pages/product/rating.vue" */))
 const _2fb91474 = () => interopDefault(import('..\\pages\\product\\reviewOfProduct.vue' /* webpackChunkName: "pages/product/reviewOfProduct.vue" */))
 const _df98956a = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index.vue" */))
+const _410968c8 = () => interopDefault(import('..\\pages\\blog\\addBlog.vue' /* webpackChunkName: "pages/blog/addBlog.vue" */))
 const _e305d7fa = () => interopDefault(import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages/blog/_slug.vue" */))
+const _6c10f582 = () => interopDefault(import('..\\pages\\user\\index.vue' /* webpackChunkName: "pages/user/index.vue" */))
+const _d0947aae = () => interopDefault(import('..\\pages\\unauthorized.vue' /* webpackChunkName: "pages/index.vue" */))
 
 const emptyFn = () => {}
 
@@ -73,9 +76,21 @@ export const routerOptions = {
     component: _df98956a,
     name: "blog"
   }, {
+    path: "/blog/add",
+    component: _410968c8,
+    name: "add-blog"
+  }, {
     path: "/blog/:slug",
     component: _e305d7fa,
     name: "blog-detail"
+  }, {
+    path: "/user",
+    component: _6c10f582,
+    name: "user"
+  }, {
+    path: "/unauthorized",
+    component: _d0947aae,
+    name: "unauthorized"
   }],
 
   fallback: false

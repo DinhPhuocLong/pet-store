@@ -16,7 +16,6 @@ const components = {
   HomeHeader: () => import('../..\\components\\HomeHeader.vue' /* webpackChunkName: "components/home-header" */).then(c => wrapFunctional(c.default || c)),
   Pagination: () => import('../..\\components\\Pagination.vue' /* webpackChunkName: "components/pagination" */).then(c => wrapFunctional(c.default || c)),
   ProductCard: () => import('../..\\components\\ProductCard.vue' /* webpackChunkName: "components/product-card" */).then(c => wrapFunctional(c.default || c)),
-  ProductCarousel: () => import('../..\\components\\productCarousel.vue' /* webpackChunkName: "components/product-carousel" */).then(c => wrapFunctional(c.default || c)),
   ProductDetailHeader: () => import('../..\\components\\ProductDetailHeader.vue' /* webpackChunkName: "components/product-detail-header" */).then(c => wrapFunctional(c.default || c)),
   Search: () => import('../..\\components\\Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c)),
   ShopHeader: () => import('../..\\components\\ShopHeader.vue' /* webpackChunkName: "components/shop-header" */).then(c => wrapFunctional(c.default || c)),

@@ -14,7 +14,6 @@ export { default as HeaderMobile } from '../..\\components\\HeaderMobile.vue'
 export { default as HomeHeader } from '../..\\components\\HomeHeader.vue'
 export { default as Pagination } from '../..\\components\\Pagination.vue'
 export { default as ProductCard } from '../..\\components\\ProductCard.vue'
-export { default as ProductCarousel } from '../..\\components\\productCarousel.vue'
 export { default as ProductDetailHeader } from '../..\\components\\ProductDetailHeader.vue'
 export { default as Search } from '../..\\components\\Search.vue'
 export { default as ShopHeader } from '../..\\components\\ShopHeader.vue'
@@ -42,7 +41,6 @@ export const LazyHeaderMobile = import('../..\\components\\HeaderMobile.vue' /* 
 export const LazyHomeHeader = import('../..\\components\\HomeHeader.vue' /* webpackChunkName: "components/home-header" */).then(c => wrapFunctional(c.default || c))
 export const LazyPagination = import('../..\\components\\Pagination.vue' /* webpackChunkName: "components/pagination" */).then(c => wrapFunctional(c.default || c))
 export const LazyProductCard = import('../..\\components\\ProductCard.vue' /* webpackChunkName: "components/product-card" */).then(c => wrapFunctional(c.default || c))
-export const LazyProductCarousel = import('../..\\components\\productCarousel.vue' /* webpackChunkName: "components/product-carousel" */).then(c => wrapFunctional(c.default || c))
 export const LazyProductDetailHeader = import('../..\\components\\ProductDetailHeader.vue' /* webpackChunkName: "components/product-detail-header" */).then(c => wrapFunctional(c.default || c))
 export const LazySearch = import('../..\\components\\Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c))
 export const LazyShopHeader = import('../..\\components\\ShopHeader.vue' /* webpackChunkName: "components/shop-header" */).then(c => wrapFunctional(c.default || c))

@@ -119,11 +119,30 @@ export default {
                     chunkName: 'pages/blog/index.vue'
                 },
                 {
+                    name: 'add-blog',
+                    path: '/blog/add',
+                    component: resolve(__dirname, 'pages/blog/addBlog.vue'),
+                    chunkName: 'pages/blog/addBlog.vue'
+                },
+                {
                     name: 'blog-detail',
                     path: '/blog/:slug',
                     component: resolve(__dirname, 'pages/blog/_slug.vue'),
                     chunkName: 'pages/blog/_slug.vue'
                 },
+                {
+                    name: 'user',
+                    path: '/user',
+                    component: resolve(__dirname, 'pages/user/index.vue'),
+                    chunkName: 'pages/user/index.vue'
+                },
+                {
+                    name: 'unauthorized',
+                    path: '/unauthorized',
+                    component: resolve(__dirname, 'pages/unauthorized.vue'),
+                    chunkName: 'pages/index.vue'
+                },
+
             ]
         }
     },

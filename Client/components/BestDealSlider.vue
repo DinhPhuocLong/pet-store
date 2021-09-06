@@ -1,18 +1,32 @@
 <template>
     <div class="mt-20 w-full">
         <h1 class="font-semibold text-3xl text-center mb-10">
-            Ưu đãi tốt 
+            Ưu đãi tốt
         </h1>
         <client-only>
             <div uk-slider class="relative">
                 <ul
                     class="uk-slider-items uk-child-width-1-1 uk-child-width-1-3@s uk-child-width-1-5@m"
                 >
-                    <div class="border border-solid border-[#ebebeb] rounded-md" v-for="saleProduct in saleProducts" :key="saleProduct.id">
+                    <div
+                        class="border border-solid border-[#ebebeb] rounded-md"
+                        v-for="saleProduct in saleProducts"
+                        :key="saleProduct.id"
+                    >
                         <div class="relative product-img">
-                            <nuxt-link :to="{ name: 'product-detail', params: { slug: saleProduct.slug } }">
+                            <nuxt-link
+                                :to="{
+                                    name: 'product-detail',
+                                    params: { slug: saleProduct.slug }
+                                }"
+                            >
                                 <img
-                                    v-lazy="saleProduct.product_images.length ? saleProduct.product_images[0].imageUrl : ''"
+                                    v-lazy="
+                                        saleProduct.product_images.length
+                                            ? saleProduct.product_images[0]
+                                                  .imageUrl
+                                            : ''
+                                    "
                                     class="mx-auto"
                                     width="450"
                                     height="450"
@@ -23,8 +37,11 @@
                                 <div
                                     class="flex flex-col text-center absolute bottom-2 right-2"
                                 >
-                                    <a
-                                        href="#"
+                                    <nuxt-link
+                                        :to="{
+                                            name: 'product-detail',
+                                            params: { slug: saleProduct.slug }
+                                        }"
                                         class="p-2 inline-block text-center w-10 h-10 leading-10 bg-white
                                             border border-solid border-gray-300 mb-2 rounded-full
                                             transform translate-x-20 transition-all duration-300
@@ -67,44 +84,16 @@
                                                 y2="12"
                                             />
                                         </svg>
-                                    </a>
+                                    </nuxt-link>
                                     <button
-                                        class="p-2 inline-block text-center w-10 h-10 leading-10 bg-white
-                                            transform translate-x-20 transition-all duration-400
-                                            hover:text-white hover:bg-red-500
-                                            product-buttons opacity-0
-                                            border border-solid border-gray-300 mb-2 rounded-full focus:outline-none"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-heart focus:outline-none"
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            stroke-width="1.5"
-                                            stroke="#2c3e50"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <path
-                                                stroke="none"
-                                                d="M0 0h24v24H0z"
-                                                fill="none"
-                                            />
-                                            <path
-                                                d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <button @click.prevent="addToCart(saleProduct);"
+                                        @click.prevent="addToCart(saleProduct)"
                                         class="p-2 inline-block text-center w-10 h-10 leading-10 bg-white
                                             border border-solid border-gray-300 mb-2 rounded-full
                                             transform translate-x-20 transition-all duration-500
                                             hover:text-white hover:bg-red-500
                                             product-buttons opacity-0 focus:outline-none"
                                     >
-                                        <svg 
+                                        <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-shopping-cart-plus focus:outline-none"
                                             width="22"
@@ -139,88 +128,35 @@
                                 -{{ saleProduct.salePrice | percentage }}
                             </div>
                             <!-- tag -->
-                            <div
-                                class="block min-w-[52px] text-center bg-red-500 absolute rounded-full py-1 text-white text-xs font-bold top-2 right-2"
-                            >
-                                Hot
-                            </div>
                         </div>
                         <div
                             class="border-t border-solid border-[#ebebeb] px-10 py-4 text-[16px] font-bold text-center"
                         >
                             <!-- star -->
-                            <div class="flex justify-center my-2">
-                                <button
-                                    type="button"
-                                    class="focus:outline-none mr-1"
+                            <div class="flex justify-center items-center my-2">
+                                <star-rating
+                                    :rating="countingStar(saleProduct.reviews)"
+                                    :read-only="true"
+                                    :star-size="20"
+                                    :show-rating="false"
+                                    :increment="0.01"
                                 >
-                                    <svg
-                                        class="block h-4 w-4 text-yellow-400"
-                                        fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path
-                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                        />
-                                    </svg>
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="focus:outline-none mr-1"
-                                >
-                                    <svg
-                                        class="block h-4 w-4 text-yellow-400"
-                                        fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path
-                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                        />
-                                    </svg>
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="focus:outline-none mr-1"
-                                >
-                                    <svg
-                                        class="block h-4 w-4 text-yellow-400"
-                                        fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path
-                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                        />
-                                    </svg>
-                                </button>
-
-                                <button 
-                                    type="button"
-                                    class="focus:outline-none mr-1"
-                                >
-                                    <svg
-                                        class="block h-4 w-4 text-yellow-400"
-                                        fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path
-                                            d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
-                                        />
-                                    </svg>
-                                </button>
-                                <span class="text-xs text-gray-400">(1)</span>
+                                </star-rating>
+                                <span class="text-xs text-gray-400">({{ saleProduct.reviews.length }})</span>
                             </div>
                             <p class="truncate px-8">
-                                <nuxt-link :to="{ name: 'product-detail', params: { slug: saleProduct.slug } }"
+                                <nuxt-link
+                                    :to="{
+                                        name: 'product-detail',
+                                        params: { slug: saleProduct.slug }
+                                    }"
                                     class="hover:text-red-500 overflow-truncate"
-                                    href="#">{{ saleProduct.name }}</nuxt-link>
+                                    href="#"
+                                    >{{ saleProduct.name }}</nuxt-link
+                                >
                             </p>
-                            <span class="inline-block text-red-500 text-md mt-2"
+                            <span
+                                class="inline-block text-red-500 text-md mt-2"
                                 >{{ saleProduct.price | toVndCurrency }}</span
                             >
                         </div>
@@ -245,13 +181,19 @@
 
 <script>
 export default {
-    props: ["saleProducts"],
+    props: ['saleProducts'],
     methods: {
         addToCart(product) {
             this.$store.dispatch('cart/addToCart', {
                 ...product,
                 quantity: 1
             });
+        },
+        countingStar(reviews) {
+            return (
+                reviews.reduce((acc, curr) => acc + curr.rate, 0) /
+                reviews.length
+            );
         },
     }
 };

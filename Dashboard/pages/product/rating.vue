@@ -103,7 +103,7 @@
 
                 <span v-else-if="props.column.field == 'rate'">
                     <star-rating
-                        :rating="props.row.rate / 10"
+                        :rating="props.row.rate"
                         :read-only="true"
                         :star-size="20"
                         :show-rating="false"

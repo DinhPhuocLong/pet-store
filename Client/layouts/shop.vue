@@ -16,12 +16,10 @@
 <script>
 export default {
   async fetch() {
-    if (!this.$store.state.category.category.length) {
-      console.log('true');
         await this.$store.dispatch('category/getCategory', 'product');
+        await this.$store.dispatch('category/getBlogCategory', 'blog');
     }
   }
-}
 </script>
 
 <style>

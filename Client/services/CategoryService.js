@@ -16,6 +16,11 @@ export default ($axios) => ({
             params
         });
     },
+    categoryWithBlog(slug, params = {}) {
+        return $axios.get(resource + `/b/${slug}`, {
+            params
+        });
+    },
     store(payload) {
         return $axios.post(resource, payload);
     },

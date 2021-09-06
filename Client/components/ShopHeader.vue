@@ -13,49 +13,26 @@
                                 alt="logo"
                         /></nuxt-link>
 
-                        <DropdownMenu :category="category" />
+                        <DropdownMenu
+                            :category="category"
+                            :blogCate="blogCate"
+                        />
                     </div>
 
                     <!-- icon right -->
                     <div
-                        class="w-1/4 flex justify-end gap-5 text-2xl text-black pl-10"
+                        class="w-1/4 flex justify-end items-center gap-5 text-2xl text-black pl-10"
                     >
-                        <div>
-                            <a href="#">
+                        <div v-if="!$auth.loggedIn">
+                            <nuxt-link to="/dang-nhap">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-user"
-                                    width="27"
-                                    height="27"
+                                    class="icon icon-tabler icon-tabler-login"
+                                    width="24"
+                                    height="24"
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
-                                    stroke="white"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        stroke="none"
-                                        d="M0 0h24v24H0z"
-                                        fill="none"
-                                    />
-                                    <circle cx="12" cy="7" r="4" />
-                                    <path
-                                        d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-heart"
-                                    width="27"
-                                    height="27"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="white"
+                                    stroke="#2c3e50"
                                     fill="none"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -66,12 +43,57 @@
                                         fill="none"
                                     />
                                     <path
-                                        d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+                                        d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
                                     />
+                                    <path d="M20 12h-13l3 -3m0 6l-3 -3" />
                                 </svg>
-                            </a>
+                            </nuxt-link>
                         </div>
-                        <div class="shopping-cart relative">
+                        <div
+                            v-else
+                            class="relative"
+                            v-click-outside="closeDropdown"
+                        >
+                            <button
+                                @click="profileDropDown = !profileDropDown"
+                                class="block h-7 w-7 rounded-full overflow-hidden focus:outline-none"
+                            >
+                                <img
+                                    class="h-full w-full border-black object-cover"
+                                    :src="
+                                        $auth.user.imageUrl
+                                            ? $auth.user.imageUrl
+                                            : 'https://www.pngkey.com/png/detail/230-2301779_best-classified-apps-default-user-profile.png'
+                                    "
+                                    alt="avatar"
+                                />
+                            </button>
+
+                            <div
+                                v-if="profileDropDown"
+                                class="absolute text-base right-0 w-32 mt-2 py-2 bg-white border rounded shadow-xl"
+                            >
+                                <nuxt-link
+                                    to="/profile"
+                                    href="#"
+                                    class="transition-colors duration-200 block px-4 py-1 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white"
+                                    >Thông tin</nuxt-link
+                                >
+                                <div class="py-2">
+                                    <hr />
+                                </div>
+                                <span
+                                    @click="logout()"
+                                    class="transition-colors duration-200 block px-4 py-1 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white"
+                                >
+                                    Đăng xuất
+                                </span>
+                            </div>
+                        </div>
+                        <nuxt-link
+                            to="/gio-hang"
+                            class="shopping-cart relative"
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-shopping-cart"
@@ -97,9 +119,9 @@
                             <span
                                 class="inline-block nav-color w-5 h-5 leading-5 absolute rounded-full font-sans text-white text-xs text-center -top-2 -right-3"
                             >
-                                0
+                                {{ cart.length }}
                             </span>
-                        </div>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
@@ -111,12 +133,39 @@
 <script>
 import { mapState } from 'vuex';
 export default {
+    data() {
+        return {
+            profileDropDown: false
+        };
+    },
     computed: {
         ...mapState({
             category: state => {
                 return state.category.category;
+            },
+            blogCate: state => {
+                return state.category.blogCategory;
+            },
+            cart: state => state.cart.cart
+        })
+    },
+    methods: {
+        closeDropdown() {
+            this.profileDropDown = false;
+        },
+        async logout() {
+            try {
+                await this.$auth.logout();
+                this.$router.push({ name: 'home-page' });
+            } catch (error) {
+                console.log(error);
             }
-        }),
+        }
+    },
+    watch: {
+        $route() {
+            this.profileDropDown = false;
+        }
     }
 };
 </script>

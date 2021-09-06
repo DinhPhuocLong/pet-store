@@ -7,81 +7,23 @@
             >
                 <div class="uk-slider-items">
                     <div
+                        v-for="blog in saleBlogs"
+                        :key="blog.id"
                         class="w-full h-[250px] ip6:h-[293px] md:h-[480px] lg:h-[580px] rounded-lg overflow-hidden"
                     >
-                        <img
-                            class="w-full h-full object-cover"
-                            src="~/assets/banner1.jpg"
-                            height="590"
-                            alt=""
-                        />
+                        <nuxt-link :to="{ name: 'blog-detail', params: { slug: blog.slug } }">
+                            <img
+                                class="w-full h-full object-cover"
+                                :src="blog.thumbnailUrl"
+                                height="590"
+                                alt=""
+                            />
+                        </nuxt-link>
                         <div
                             class="absolute px-4 top-20 left-3 md:top-40 md:right-1/2 lg:text-center"
                         >
                             <!-- <p
                                 class="uppercase text-[8px] md:text-[14px] font-normal text-gray-700"
-                            >
-                                Everything your pet need
-                            </p>
-                            <p
-                                class="font-bold text-[24px] md:text-[52px] text-yellow-800 leading-6 md:leading-none"
-                            >
-                                Health & <br />
-                                Wellness Services
-                            </p>
-                            <button
-                                class="my-2 text-[16px] font-bold py-2 px-8 bg-yellow-800 text-white hover:bg-red-500 rounded-full"
-                            >
-                                shop now
-                            </button> -->
-                        </div>
-                    </div>
-
-                    <div
-                        class="w-full h-[250px] ip6:h-[293px] md:h-[480px] lg:h-[580px] rounded-lg overflow-hidden"
-                    >
-                        <img
-                            class="w-full h-full object-cover"
-                            src="~/assets/banner2.jpg"
-                            height="590"
-                            alt=""
-                        />
-                        <div
-                            class="absolute px-4 top-20 left-3 md:top-40 md:right-1/2 lg:text-center"
-                        >
-                            <!-- <p
-                                class="uppercase text-[8px] md:text-[14px] font-normal text-gray-700"
-                            >
-                                Everything your pet need
-                            </p>
-                            <p
-                                class="font-bold text-[24px] md:text-[52px] text-yellow-800 leading-6 md:leading-none"
-                            >
-                                Health & <br />
-                                Wellness Services
-                            </p>
-                            <button
-                                class="my-2 text-[16px] font-bold py-2 px-8 bg-yellow-800 text-white hover:bg-red-500 rounded-full"
-                            >
-                                shop now
-                            </button> -->
-                        </div>
-                    </div>
-
-                    <div
-                        class="w-full h-[250px] ip6:h-[293px] md:h-[480px] lg:h-[580px] rounded-lg overflow-hidden"
-                    >
-                        <img
-                            class="w-full h-full object-cover"
-                            src="~/assets/banner3.jpg"
-                            height="590"
-                            alt=""
-                        />
-                        <div
-                            class="absolute px-4 top-20 left-3 md:top-40 md:right-1/2 lg:text-center"
-                        >
-                            <!-- <p
-                                class="uppercase text-[8px] md:text-[14px] font-bold text-gray-700"
                             >
                                 Everything your pet need
                             </p>
@@ -115,7 +57,12 @@
         </client-only>
         <div class="w-full md:flex gap-4 mt-4">
             <div class="md:w-2/6 rounded-lg overflow-hidden mt-4 relative">
-                <nuxt-link :to="{ name: 'shop-by-category', params: { slug: 'shop-cho-cho' } }" >
+                <nuxt-link
+                    :to="{
+                        name: 'shop-by-category',
+                        params: { slug: 'shop-cho-cho' }
+                    }"
+                >
                     <img
                         class="mx-auto object-cover h-full hover:filter grayscale blur-md contrast-200 hover:grayscale cursor-pointer transition-all duration-500"
                         src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/banner-7.jpg"
@@ -139,7 +86,12 @@
                 </nuxt-link>
             </div>
             <div class="md:w-2/6 rounded-lg overflow-hidden mt-4 relative">
-                <nuxt-link :to="{ name: 'shop-by-category', params: { slug: 'shop-cho-meo' } }">
+                <nuxt-link
+                    :to="{
+                        name: 'shop-by-category',
+                        params: { slug: 'shop-cho-meo' }
+                    }"
+                >
                     <img
                         class="mx-auto object-cover h-full hover:filter grayscale blur-md contrast-200 hover:grayscale cursor-pointer transition-all duration-500"
                         src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/banner-8.jpg"
@@ -164,7 +116,12 @@
             </div>
 
             <div class="md:w-2/6 rounded-lg overflow-hidden mt-4 relative">
-                <nuxt-link :to="{ name: 'shop-by-category', params: { slug: 'shop-thu-y' } }">
+                <nuxt-link
+                    :to="{
+                        name: 'shop-by-category',
+                        params: { slug: 'shop-thu-y' }
+                    }"
+                >
                     <img
                         class="mx-auto object-cover h-full hover:filter grayscale blur-md contrast-200 hover:grayscale cursor-pointer transition-all duration-500"
                         src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/banner-9.jpg"
@@ -191,4 +148,10 @@
     </div>
 </template>
 
+<script>
+export default {
+    props: ['saleBlogs']
+};
+</script>
 
+<style></style>

@@ -31,7 +31,7 @@
                     class="w-12 h-12 rounded-full shadow-lg" @click="dropDownOpen = !dropDownOpen">
                 </template>
                 <template v-else>
-                    <img :src="$auth.user.path_img"
+                    <img :src="$auth.user.imageUrl"
                     class="w-12 h-12 rounded-full shadow-lg" @click="dropDownOpen = !dropDownOpen">
                 </template>
 

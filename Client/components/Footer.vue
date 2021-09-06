@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="clear-both">
         <!-- Footer -->
         <footer class="w-full bg-gray-100">
             <div class="w-full border-b border-solid border-gray-200">

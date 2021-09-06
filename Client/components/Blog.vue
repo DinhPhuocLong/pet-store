@@ -5,304 +5,46 @@
             <div uk-slider>
                 <div class="uk-position-relative">
                         <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid">
-                            <div>
+                            <div v-for="blog in blogs" :key="blog.id" class="flex">
                                 <div class="rounded-lg border border-solid border-gray-[#ebebeb]">
                                     <img
-                                        class="mx-auto rounded-lg rounded-b-none overflow-hidden"
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-720x484.jpg"
+                                        class="mx-auto rounded-lg rounded-b-none overflow-hidden w-full object-cover"
+                                        :src="blog.thumbnailUrl"
+                                        style="max-height: 210px"
                                         alt=""
                                     />
                                     <div class="text-center">
-                                    <div class="my-4">
-                                        <!-- categories -->
-                                        <a
-                                            class="text-xs font-bold tracking-widest text-yellow-600 "
-                                            href="#"
-                                            >BACK PACK</a
-                                        >
-                                    </div>
                                     <!-- title -->
                                     <h2
                                         class="leading-none font-bold text-3xl md:text-2xl md:px-10 hover:text-yellow-500"
                                     >
-                                        <a href="#"
-                                            >Traveling Solo Is Awesome</a
-                                        >
+                                        <nuxt-link :to="{ name: 'blog-detail', params: { slug: blog.slug } }">
+                                            {{ blog.title }}
+                                        </nuxt-link>
                                     </h2>
                                     <div
                                         class="flex items-center justify-center text-[13px] py-3.5"
                                     >
-                                        <div class="flex items-center author">
+                                        <div class="flex items-center author mt-auto">
                                             <span
                                                 class="text-gray-400 font-bold"
                                             >
-                                                By :
+                                                Đăng bởi :
                                                 <a
                                                     class="ml-1 text-black hover:text-yellow-500"
                                                     href="#"
-                                                    >Long</a
+                                                    > {{ blog.author }}</a
                                                 >
                                             </span>
                                         </div>
                                         <div
                                             class="text-gray-400 font-bold hover:text-yellow-500"
                                         >
-                                            4 comments
+                                            {{ blog.comments.length }} bình luận
                                         </div>
                                     </div>
                                 </div>
                                 </div>
-                                
-                            </div>
-
-                            <div>
-                                <div class="rounded-lg border border-solid border-gray-[#ebebeb]">
-                                    <img
-                                        class="mx-auto rounded-lg rounded-b-none overflow-hidden"
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-720x484.jpg"
-                                        alt=""
-                                    />
-                                    <div class="text-center">
-                                    <div class="my-4">
-                                        <!-- categories -->
-                                        <a
-                                            class="text-xs font-bold tracking-widest text-yellow-600 "
-                                            href="#"
-                                            >BACK PACK</a
-                                        >
-                                    </div>
-                                    <!-- title -->
-                                    <h2
-                                        class="leading-none font-bold text-3xl md:text-2xl md:px-10 hover:text-yellow-500"
-                                    >
-                                        <a href="#"
-                                            >Traveling Solo Is Awesome</a
-                                        >
-                                    </h2>
-                                    <div
-                                        class="flex items-center justify-center text-[13px] py-3.5"
-                                    >
-                                        <div class="flex items-center author">
-                                            <span
-                                                class="text-gray-400 font-bold"
-                                            >
-                                                By :
-                                                <a
-                                                    class="ml-1 text-black hover:text-yellow-500"
-                                                    href="#"
-                                                    >Long</a
-                                                >
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="text-gray-400 font-bold hover:text-yellow-500"
-                                        >
-                                            4 comments
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <div class="rounded-lg border border-solid border-gray-[#ebebeb]">
-                                    <img
-                                        class="mx-auto rounded-lg rounded-b-none overflow-hidden"
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-720x484.jpg"
-                                        alt=""
-                                    />
-                                    <div class="text-center">
-                                    <div class="my-4">
-                                        <!-- categories -->
-                                        <a
-                                            class="text-xs font-bold tracking-widest text-yellow-600 "
-                                            href="#"
-                                            >BACK PACK</a
-                                        >
-                                    </div>
-                                    <!-- title -->
-                                    <h2
-                                        class="leading-none font-bold text-3xl md:text-2xl md:px-10 hover:text-yellow-500"
-                                    >
-                                        <a href="#"
-                                            >Traveling Solo Is Awesome</a
-                                        >
-                                    </h2>
-                                    <div
-                                        class="flex items-center justify-center text-[13px] py-3.5"
-                                    >
-                                        <div class="flex items-center author">
-                                            <span
-                                                class="text-gray-400 font-bold"
-                                            >
-                                                By :
-                                                <a
-                                                    class="ml-1 text-black hover:text-yellow-500"
-                                                    href="#"
-                                                    >Long</a
-                                                >
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="text-gray-400 font-bold hover:text-yellow-500"
-                                        >
-                                            4 comments
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <div class="rounded-lg border border-solid border-gray-[#ebebeb]">
-                                    <img
-                                        class="mx-auto rounded-lg rounded-b-none overflow-hidden"
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-720x484.jpg"
-                                        alt=""
-                                    />
-                                    <div class="text-center">
-                                    <div class="my-4">
-                                        <!-- categories -->
-                                        <a
-                                            class="text-xs font-bold tracking-widest text-yellow-600 "
-                                            href="#"
-                                            >BACK PACK</a
-                                        >
-                                    </div>
-                                    <!-- title -->
-                                    <h2
-                                        class="leading-none font-bold text-3xl md:text-2xl md:px-10 hover:text-yellow-500"
-                                    >
-                                        <a href="#"
-                                            >Traveling Solo Is Awesome</a
-                                        >
-                                    </h2>
-                                    <div
-                                        class="flex items-center justify-center text-[13px] py-3.5"
-                                    >
-                                        <div class="flex items-center author">
-                                            <span
-                                                class="text-gray-400 font-bold"
-                                            >
-                                                By :
-                                                <a
-                                                    class="ml-1 text-black hover:text-yellow-500"
-                                                    href="#"
-                                                    >Long</a
-                                                >
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="text-gray-400 font-bold hover:text-yellow-500"
-                                        >
-                                            4 comments
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <div class="rounded-lg border border-solid border-gray-[#ebebeb]">
-                                    <img
-                                        class="mx-auto rounded-lg rounded-b-none overflow-hidden"
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-720x484.jpg"
-                                        alt=""
-                                    />
-                                    <div class="text-center">
-                                    <div class="my-4">
-                                        <!-- categories -->
-                                        <a
-                                            class="text-xs font-bold tracking-widest text-yellow-600 "
-                                            href="#"
-                                            >BACK PACK</a
-                                        >
-                                    </div>
-                                    <!-- title -->
-                                    <h2
-                                        class="leading-none font-bold text-3xl md:text-2xl md:px-10 hover:text-yellow-500"
-                                    >
-                                        <a href="#"
-                                            >Traveling Solo Is Awesome</a
-                                        >
-                                    </h2>
-                                    <div
-                                        class="flex items-center justify-center text-[13px] py-3.5"
-                                    >
-                                        <div class="flex items-center author">
-                                            <span
-                                                class="text-gray-400 font-bold"
-                                            >
-                                                By :
-                                                <a
-                                                    class="ml-1 text-black hover:text-yellow-500"
-                                                    href="#"
-                                                    >Long</a
-                                                >
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="text-gray-400 font-bold hover:text-yellow-500"
-                                        >
-                                            4 comments
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                
-                            </div>
-
-                            <div>
-                                <div class="rounded-lg border border-solid border-gray-[#ebebeb]">
-                                    <img
-                                        class="mx-auto rounded-lg rounded-b-none overflow-hidden"
-                                        src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2018/05/blog-1-720x484.jpg"
-                                        alt=""
-                                    />
-                                    <div class="text-center">
-                                    <div class="my-4">
-                                        <!-- categories -->
-                                        <a
-                                            class="text-xs font-bold tracking-widest text-yellow-600 "
-                                            href="#"
-                                            >BACK PACK</a
-                                        >
-                                    </div>
-                                    <!-- title -->
-                                    <h2
-                                        class="leading-none font-bold text-3xl md:text-2xl md:px-10 hover:text-yellow-500"
-                                    >
-                                        <a href="#"
-                                            >Traveling Solo Is Awesome</a
-                                        >
-                                    </h2>
-                                    <div
-                                        class="flex items-center justify-center text-[13px] py-3.5"
-                                    >
-                                        <div class="flex items-center author">
-                                            <span
-                                                class="text-gray-400 font-bold"
-                                            >
-                                                By :
-                                                <a
-                                                    class="ml-1 text-black hover:text-yellow-500"
-                                                    href="#"
-                                                    >Long</a
-                                                >
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="text-gray-400 font-bold hover:text-yellow-500"
-                                        >
-                                            4 comments
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                
                             </div>
                         </ul>
                 </div>
@@ -312,6 +54,16 @@
         </client-only>
     </div>
 </template>
+
+<script>
+export default {
+    props: ['blogs']
+}
+</script>
+
+<style>
+
+</style>
 
 <style scoped>
 .author::after {

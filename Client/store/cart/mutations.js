@@ -20,7 +20,12 @@ export default {
     CLEAR_CART(state) {
         state.cart = [];
     },
-    UPDATE_CART(_, { cartItem, quantity }) {
-        cartItem.quantity = +quantity;
+    UPDATE_CART(state, { cartItem, quantity }) {
+        const itemId = cartItem.id;
+        if (!quantity) {
+            state.cart = state.cart.filter(cartItem => cartItem.id != itemId);
+        } else {
+            cartItem.quantity = +quantity;
+        }
     }
 }

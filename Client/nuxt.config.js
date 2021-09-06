@@ -30,10 +30,12 @@ export default {
             {
                 rel: "stylesheet",
                 href: "https://fonts.googleapis.com/css2?family=Nunito&display=swap",
+                crossorigin: "anonymous"
             },
             {
                 rel: "stylesheet",
                 href: "https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro",
+                crossorigin: "anonymous"
             },
             {
                 rel: 'stylesheet',
@@ -74,6 +76,12 @@ export default {
                     path: '/danh-muc/:slug',
                     component: resolve(__dirname, 'pages/product/index.vue'),
                     chunkName: 'pages/product/index.vue',
+                },
+                {
+                    name: 'search-page',
+                    path: '/search',
+                    component: resolve(__dirname, 'pages/product/search.vue'),
+                    chunkName: 'pages/product/search.vue',
                 },
                 {
                     name: 'product-detail',
@@ -141,6 +149,35 @@ export default {
                     component: resolve(__dirname, 'pages/verify.vue'),
                     chunkName: 'pages/verify.vue',
                 },
+                {
+                    name: 'blog',
+                    path: '/loai-tin/:slug',
+                    component: resolve(__dirname, 'pages/blog/blog.vue'),
+                    chunkName: 'pages/blog/blog.vue',
+                },
+                {
+                    name: 'blog-detail',
+                    path: '/tin-tuc/:slug',
+                    component: resolve(__dirname, 'pages/blog/_slug.vue'),
+                    chunkName: 'pages/blog/_slug.vue',
+                },
+                {
+                    path: '/profile',
+                    component: resolve(__dirname, 'pages/user/index.vue'),
+                    chunkName: 'pages/user/profile.vue',
+                    children: [
+                        {
+                            path: '',
+                            component: 'pages/user/userInfo.vue.vue',
+                            name: 'user-info'
+                        },
+                        {
+                            path: 'change-password',
+                            component: 'pages/user/changePassword.vue',
+                            name: 'change-password'
+                        },
+                    ]
+                },
 
             ]
         }
@@ -163,6 +200,7 @@ export default {
         'plugins/services.js',
         'plugins/vee-validate.js',
         'plugins/filters.js',
+        'plugins/directives.js',
         {
             src: 'plugins/uikit.js',
             ssr: false

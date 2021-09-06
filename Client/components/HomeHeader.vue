@@ -45,7 +45,7 @@
                             </svg>
                         </nuxt-link>
                     </div>
-                    <div v-else class="relative">
+                    <div v-else class="relative" v-click-outside="closeDropdown">
                         <button
                             @click="profileDropDown = !profileDropDown"
                             class="block h-7 w-7 rounded-full overflow-hidden focus:outline-none"
@@ -53,8 +53,8 @@
                             <img
                                 class="h-full w-full border-black object-cover"
                                 :src="
-                                    $auth.user.path_img
-                                        ? $auth.user.path_img
+                                    $auth.user.imageUrl
+                                        ? $auth.user.imageUrl
                                         : 'https://www.pngkey.com/png/detail/230-2301779_best-classified-apps-default-user-profile.png'
                                 "
                                 alt="avatar"
@@ -69,43 +69,18 @@
                                 to="/profile"
                                 href="#"
                                 class="transition-colors duration-200 block px-4 py-1 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white"
-                                >Profile</nuxt-link
+                                >Thông tin</nuxt-link
                             >
                             <div class="py-2">
                                 <hr />
                             </div>
                             <span
-                                @click="logout();"
+                                @click="logout()"
                                 class="transition-colors duration-200 block px-4 py-1 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white"
                             >
-                                Logout
+                                Đăng xuất
                             </span>
                         </div>
-                    </div>
-                    <div>
-                        <nuxt-link to="/">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="icon icon-tabler icon-tabler-heart"
-                                width="27"
-                                height="27"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="#2c3e50"
-                                fill="none"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                />
-                                <path
-                                    d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
-                                />
-                            </svg>
-                        </nuxt-link>
                     </div>
                     <nuxt-link to="/gio-hang" class="shopping-cart relative">
                         <svg
@@ -139,7 +114,7 @@
                 class="flex items-center justify-between nav-color rounded-full py-3"
             >
                 <!-- nav menu-->
-                <DropdownMenu :category="category" />
+                <DropdownMenu :category="category" :blogCate="blogCate" />
                 <div
                     class="w-auto text-white font-semibold text-md leading-none pr-4"
                 >
@@ -159,19 +134,20 @@ export default {
         };
     },
     computed: {
-        data() {
-            return {
-                profileDropDown: false
-            };
-        },
         ...mapState({
             category: state => {
                 return state.category.category;
+            },
+            blogCate: state => {
+                return state.category.blogCategory;
             },
             cart: state => state.cart.cart
         })
     },
     methods: {
+        closeDropdown() {
+            this.profileDropDown = false;
+        },
         async logout() {
             try {
                 await this.$auth.logout();
@@ -179,6 +155,11 @@ export default {
             } catch (error) {
                 console.log(error);
             }
+        }
+    },
+    watch: {
+        $route() {
+            this.profileDropDown = false;
         }
     }
 };

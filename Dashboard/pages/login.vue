@@ -123,9 +123,6 @@
                                 </div>
                             </form>
                         </ValidationObserver>
-                        <button @click="alertTrigger('success', 'ok', 2000)">
-                            trigger
-                        </button>
                     </div>
                 </div>
             </div>
@@ -166,16 +163,24 @@ export default {
         //TODO: Test case 1 => catching form error before can send login request to server
         async login() {
             try {
-                await this.$auth.loginWith('laravelJWT', {
+                const response = await this.$auth.loginWith('laravelJWT', {
                     data: this.credentials
                 });
-                this.alertTrigger('success', 'Đăng nhập thành công!', 2000);
-                setTimeout(_ => {
-                    this.$router.push({ name: 'dashboard' });
-                }, 2000)
+                if (!response.data.level) {
+                    this.logout();
+                    this.$router.push({ name: 'unauthorized' });
+                } else {
+                    this.alertTrigger('success', 'Đăng nhập thành công', 2000);
+                    setTimeout(_ => {
+                        this.$router.push({ name: 'dashboard' });
+                    }, 2000);
+                }
             } catch (error) {
                 this.alertTrigger('danger', error.response.data.error, 2000);
             }
+        },
+        async logout() {
+            await this.$auth.logout();
         },
         alertTrigger(type, msg, ms) {
             this.alert.isVisible = true;

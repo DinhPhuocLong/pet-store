@@ -20,7 +20,6 @@ You can directly use them in pages and other components without the need to impo
 - `<HomeHeader>` | `<home-header>` (components/HomeHeader.vue)
 - `<Pagination>` | `<pagination>` (components/Pagination.vue)
 - `<ProductCard>` | `<product-card>` (components/ProductCard.vue)
-- `<ProductCarousel>` | `<product-carousel>` (components/productCarousel.vue)
 - `<ProductDetailHeader>` | `<product-detail-header>` (components/ProductDetailHeader.vue)
 - `<Search>` | `<search>` (components/Search.vue)
 - `<ShopHeader>` | `<shop-header>` (components/ShopHeader.vue)

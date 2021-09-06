@@ -1,5 +1,5 @@
 import { extend } from "vee-validate";
-import { required, alpha } from "vee-validate/dist/rules";
+import { required, alpha, confirmed, min, max } from "vee-validate/dist/rules";
 
 extend('isValidateEmail', {
     validate: (value) => {
@@ -14,6 +14,21 @@ extend('isValidateEmail', {
 extend("required", {
     ...required,
     message: "Hãy nhập trường này"
+});
+
+extend("min", {
+    ...min,
+    message: "Mật khẩu phải có độ dài ít nhất {length} ký tự !"
+});
+
+extend("max", {
+    ...max,
+    message: "Mật khẩu phải có độ dài tối đa {length} ký tự !"
+});
+
+
+extend("confirmed", {
+    ...confirmed,
 });
 
 extend("alpha", {
