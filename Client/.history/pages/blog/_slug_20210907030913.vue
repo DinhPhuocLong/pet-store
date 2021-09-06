@@ -51,7 +51,7 @@
                         <!-- Blog Detail Comments -->
                         <div class="mt-10">
                             <p
-                                class="text-center text-[20px] font-bold text-black my-2"
+                                class="text-center text-[20px] font-bold text-black"
                             >
                                 {{ blog.comments.length }} Bình luận
                             </p>
