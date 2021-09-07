@@ -10,7 +10,7 @@
                     class="block pt-6 border-b pb-4 font-roboto text-[14px] text-gray-600 hover:text-yellow-500">
                     {{ childrenCategory.name }}
                 </nuxt-link>
-                <SubMenuItem :childrenCategories="childrenCategory.children_categories" :redirect="'blog'" />
+                <SubMenuItem :childrenCategories="childrenCategory.children_categories" :redirect="redirect" />
             </li>
         </ul>
     </div>

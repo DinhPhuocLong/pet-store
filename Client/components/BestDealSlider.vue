@@ -157,7 +157,7 @@
                             </p>
                             <span
                                 class="inline-block text-red-500 text-md mt-2"
-                                >{{ saleProduct.price | toVndCurrency }}</span
+                                >{{ calculateSalePrice(saleProduct) | toVndCurrency }}</span
                             >
                         </div>
                     </div>
@@ -184,10 +184,15 @@ export default {
     props: ['saleProducts'],
     methods: {
         addToCart(product) {
+            const item = {...product};
+            item.price = this.calculateSalePrice(product);
             this.$store.dispatch('cart/addToCart', {
-                ...product,
+                ...item,
                 quantity: 1
             });
+        },
+        calculateSalePrice(product) {
+            return product.price - (product.salePrice / 100) * product.price;
         },
         countingStar(reviews) {
             return (

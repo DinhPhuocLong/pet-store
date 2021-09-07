@@ -162,14 +162,29 @@
                 </button>
             </div>
         </form>
+        <Alert
+            :visible="alert.isVisible"
+            :alertType="alert.type"
+            :message="alert.message"
+        />
     </div>
 </template>
 
 <script>
+import Alert from '@/components/UIcomponents/Alert.vue';
 import util from '@/helpers/util.js';
 export default {
+    middleware: ['unAuthenticated'],
+    components: {
+        Alert
+    },
     data() {
         return {
+            alert: {
+                type: '',
+                message: '',
+                isVisible: false
+            },
             content: '',
             newBlog: {
                 title: '',
@@ -245,9 +260,24 @@ export default {
                 formData.append('thumbnail', this.newBlog.thumbnail);
                 formData.append('hidden', this.newBlog.hidden);
                 await this.$axios.post(process.env.BASE_URL + '/blog', formData);
+                this.content = '';
+                this.newBlog.title = '';
+                this.newBlog.summary = '';
+                this.newBlog.category = '';
+                this.newBlog.thumbnail = '';
+                this.newBlog.hidden = 0;
+                this.alertTrigger('success', 'Thêm bài viết thành công !', 2000);
             } catch (error) {
                 console.log(error);
             }
+        },
+        alertTrigger(type, msg, ms) {
+            this.alert.isVisible = true;
+            this.alert.message = msg;
+            this.alert.type = type;
+            setTimeout(_ => {
+                this.alert.isVisible = false;
+            }, ms);
         },
         onImageChange($event) {
             this.newBlog.thumbnail = $event.target.files[0];

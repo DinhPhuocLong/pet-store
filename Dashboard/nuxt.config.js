@@ -60,8 +60,8 @@ export default {
                 {
                     name: 'dashboard',
                     path: '/',
-                    component: resolve(__dirname, 'pages/index.vue'),
-                    chunkName: 'pages/index.vue'
+                    component: resolve(__dirname, 'pages/category/index.vue'),
+                    chunkName: 'pages/category/index.vue'
                 },
                 {
                     name: 'category',
@@ -135,6 +135,12 @@ export default {
                     path: '/user',
                     component: resolve(__dirname, 'pages/user/index.vue'),
                     chunkName: 'pages/user/index.vue'
+                },
+                {
+                    name: 'admin',
+                    path: '/admin',
+                    component: resolve(__dirname, 'pages/user/admin.vue'),
+                    chunkName: 'pages/user/admin.vue'
                 },
                 {
                     name: 'unauthorized',

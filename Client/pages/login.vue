@@ -13,7 +13,7 @@
                 <div class="w-full lg:w-1/2"></div>
                 <div class="w-full lg:w-1/2 py-10 lg:px-20">
                     <ValidationObserver ref="form">
-                        <form
+                        <form :disabled="loadingState"
                             class="bg-white shadow-md p-4 lg:p-8 rounded-md"
                             @submit.prevent="onSubmit()"
                             @keyup.enter="onSubmit()"
@@ -61,10 +61,31 @@
                                         {{ errors[0] }}
                                     </p>
                                 </ValidationProvider>
-                                <button
+                                <button :disabled="loadingState"
                                     class="w-full my-2 p-2 bg-red-300 hover:bg-red-500 text-white rounded-md transition-all duration-500"
                                 >
-                                    Đăng nhập
+                                    <svg
+                                        v-if="loadingState"
+                                        class="animate-spin h-6 w-6 text-white inline-block"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <circle
+                                            class="opacity-25"
+                                            cx="12"
+                                            cy="12"
+                                            r="10"
+                                            stroke="currentColor"
+                                            stroke-width="4"
+                                        ></circle>
+                                        <path
+                                            class="opacity-75"
+                                            fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                        ></path>
+                                    </svg>
+                                    <span v-else> Đăng nhập </span>
                                 </button>
                                 <div class="flex items-center justify-between">
                                     <div
@@ -105,7 +126,7 @@
                                         >
                                     </button>
                                     <button
-                                        class="w-32 p-2 bg-red-500 text-white mx-4"
+                                        class="text-center w-32 p-2 bg-red-500 text-white mx-4"
                                     >
                                         <svg
                                             class="inline-block"
@@ -130,7 +151,11 @@
                                 <p class="text-center my-4">
                                     Bạn chưa có tài khoản?
                                     <br />
-                                    <nuxt-link to="/dang-ky" class="text-blue-500" href="#">
+                                    <nuxt-link
+                                        to="/dang-ky"
+                                        class="text-blue-500"
+                                        href="#"
+                                    >
                                         Đăng ký ngay
                                     </nuxt-link>
                                 </p>
@@ -156,6 +181,7 @@ export default {
     },
     data() {
         return {
+            loadingState: false,
             credentials: {
                 email: '',
                 password: ''
@@ -175,14 +201,19 @@ export default {
         //TODO: Test case 1 => catching form error before can send login request to server
         async login() {
             try {
+                this.loadingState = true;
                 await this.$auth.loginWith('laravelJWT', {
                     data: this.credentials
                 });
+                this.loadingState = false;
                 this.alertTrigger('success', 'Đăng nhập thành công!', 2000);
                 setTimeout(_ => {
                     this.$router.push({ name: 'home-page' });
                 }, 2000);
             } catch (error) {
+                this.loadingState = false;
+                this.$refs.form.reset();
+                this.credentials = {};
                 this.alertTrigger('danger', error.response.data.error, 2000);
             }
         },

@@ -158,6 +158,7 @@ import Alert from '../../components/UIcomponents/Alert.vue';
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
 import { mapState } from 'vuex';
 export default {
+    middleware: ['unAuthenticated'],
     layout: 'default',
     components: {
         Alert,

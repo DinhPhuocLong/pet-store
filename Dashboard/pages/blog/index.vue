@@ -86,6 +86,7 @@
 import Alert from '@/components/UIcomponents/Alert.vue';
 import Modal from '@/components/UIcomponents/Modal.vue';
 export default {
+    middleware: ['unAuthenticated'],
     components: {
         Alert,
         Modal

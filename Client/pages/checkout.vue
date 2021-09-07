@@ -126,7 +126,6 @@
                                 <div class="my-4">
                                     <p class="font-bold my-2">
                                         Ghi chú
-                                        >
                                     </p>
                                     <textarea
                                         class="w-full border border-gray-200 focus:outline-none p-2 rounded-md"
@@ -312,7 +311,11 @@ export default {
         newTotal() {
             if (this.coupon.type === 'fixed') {
                 this.discount = this.coupon.value;
-                return this.total - this.coupon.value;
+                let result = this.total - this.coupon.value;
+                if (result < 0) {
+                    return 'FREE';
+                }
+                return result;
             }
             if (this.coupon.type === 'percent') {
                 let discount = this.total * (this.coupon.value / 100);
@@ -345,7 +348,9 @@ export default {
         async processPayment() {
             let payload = {
                 ...this.shipmentDetails,
-                cart: this.cart
+                cart: this.cart,
+                total: this.total,
+                discount: this.discount,
             };
             try {
                 await this.$axios.post(

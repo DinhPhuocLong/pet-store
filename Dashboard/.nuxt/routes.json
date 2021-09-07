@@ -2,106 +2,113 @@
   {
     "name": "404",
     "path": "*",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\404.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\404.vue",
     "chunkName": "pages/404.vue",
-    "_name": "_933d85b8"
+    "_name": "_284cabda"
   },
   {
     "name": "dashboard",
     "path": "/",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\index.vue",
-    "chunkName": "pages/index.vue",
-    "_name": "_72878a84"
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\category\\\\index.vue",
+    "chunkName": "pages/category/index.vue",
+    "_name": "_174dc622"
   },
   {
     "name": "category",
     "path": "/category",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\category\\\\index.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\category\\\\index.vue",
     "chunkName": "pages/category/index.vue",
-    "_name": "_3fcf9e80"
+    "_name": "_174dc622"
   },
   {
     "name": "category-slug",
     "path": "/category/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\category\\\\_slug.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\category\\\\_slug.vue",
     "chunkName": "pages/category/_slug.vue",
-    "_name": "_3e18fd38"
+    "_name": "_1abb08b2"
   },
   {
     "name": "login",
     "path": "/login",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\login.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\login.vue",
     "chunkName": "pages/login.vue",
-    "_name": "_df384456"
+    "_name": "_4974cb04"
   },
   {
     "name": "register",
     "path": "/register",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\register.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\register.vue",
     "chunkName": "pages/register.vue",
-    "_name": "_d8362232"
+    "_name": "_26b38150"
   },
   {
     "name": "product",
     "path": "/product",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\product\\\\index.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\product\\\\index.vue",
     "chunkName": "pages/product/index.vue",
-    "_name": "_53fb24c7"
+    "_name": "_b7bec710"
   },
   {
     "name": "product-detail",
     "path": "/product/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\product\\\\_slug.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\product\\\\_slug.vue",
     "chunkName": "pages/product/_slug.vue",
-    "_name": "_5244837f"
+    "_name": "_bb2c09a0"
   },
   {
     "name": "product-review",
     "path": "/product-review",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\product\\\\rating.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\product\\\\rating.vue",
     "chunkName": "pages/product/rating.vue",
-    "_name": "_7e2296f8"
+    "_name": "_32ac1567"
   },
   {
     "name": "review-of-product",
     "path": "/product-review/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\product\\\\reviewOfProduct.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\product\\\\reviewOfProduct.vue",
     "chunkName": "pages/product/reviewOfProduct.vue",
-    "_name": "_fdf1b156"
+    "_name": "_2fb91474"
   },
   {
     "name": "blog",
     "path": "/blog",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\blog\\\\index.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\blog\\\\index.vue",
     "chunkName": "pages/blog/index.vue",
-    "_name": "_0803a75c"
+    "_name": "_df98956a"
   },
   {
     "name": "add-blog",
     "path": "/blog/add",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\blog\\\\addBlog.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\blog\\\\addBlog.vue",
     "chunkName": "pages/blog/addBlog.vue",
-    "_name": "_b9d20526"
+    "_name": "_410968c8"
   },
   {
     "name": "blog-detail",
     "path": "/blog/:slug",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\blog\\\\_slug.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\blog\\\\_slug.vue",
     "chunkName": "pages/blog/_slug.vue",
-    "_name": "_064d0614"
+    "_name": "_e305d7fa"
   },
   {
     "name": "user",
     "path": "/user",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\user\\\\index.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\user\\\\index.vue",
     "chunkName": "pages/user/index.vue",
-    "_name": "_383e30da"
+    "_name": "_6c10f582"
+  },
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\user\\\\admin.vue",
+    "chunkName": "pages/user/admin.vue",
+    "_name": "_c4ff6d02"
   },
   {
     "name": "unauthorized",
     "path": "/unauthorized",
-    "component": "C:\\\\Users\\\\kebin\\\\Desktop\\\\New folder (2)\\\\pet-store\\\\Dashboard\\\\pages\\\\unauthorized.vue",
+    "component": "C:\\\\Users\\\\dinhp\\\\Desktop\\\\New folder (8)\\\\Dashboard\\\\pages\\\\unauthorized.vue",
     "chunkName": "pages/index.vue",
-    "_name": "_19e412b8"
+    "_name": "_d0947aae"
   }
 ]

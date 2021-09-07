@@ -9,6 +9,7 @@
 <script>
 import { mapState } from 'vuex';
 export default {
+    middleware: ['unAuthenticated'],
     layout: 'dashboard',
     data() {
         return {

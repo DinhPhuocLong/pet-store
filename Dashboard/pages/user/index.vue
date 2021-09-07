@@ -102,6 +102,7 @@
 <script>
 import Modal from '@/components/UIcomponents/Modal.vue';
 export default {
+    middleware: ['unAuthenticated'],
     components: {
         Modal
     },
@@ -142,7 +143,7 @@ export default {
     },
     async created() {
         try {
-            const response = await this.$services.User.all();
+            const response = await this.$services.User.all('user');
             this.users = response.data;
         } catch (error) {
             console.log(error);
@@ -173,7 +174,8 @@ export default {
                 this.modal.confirmText = 'Khoá';
             } else {
                 this.modal.title = 'Mở Khoá người dùng';
-                this.modal.message = 'Bạn có chắc muốn mở khoá cho người dùng này!';
+                this.modal.message =
+                    'Bạn có chắc muốn mở khoá cho người dùng này!';
                 this.modal.confirmText = 'Đồng ý';
             }
             this.isShowModal = true;
@@ -186,4 +188,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+/* Toggle B */
+input:checked ~ .dot {
+    transform: translateX(160%);
+    background-color: #48bb78 !important;
+}
+</style>

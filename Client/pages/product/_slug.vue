@@ -1,5 +1,10 @@
 <template>
     <div>
+        <zoom-image
+            :visible="isZoomImage"
+            :image="zoomImage"
+            v-on:closeZoom="isZoomImage = false"
+        ></zoom-image>
         <div class="w-full mt-12">
             <div
                 class="w-[94%] xl:w-11/12 max-w-[1440px] mx-auto lg:flex gap-x-8 lg:border-b border-solid border-gray-300 pb-20"
@@ -8,19 +13,12 @@
                     <div
                         class="border border-solid border-gray-300 rounded-lg overflow-hidden relative py-12"
                     >
-                        <img
-                            class="p-2 mx-auto"
-                            :src="
-                                product.product_images.length
-                                    ? product.product_images[0].imageUrl
-                                    : ''
-                            "
-                            alt=""
-                        />
+                        <img class="p-2 mx-auto" :src="activeImage" alt="" />
                         <div
                             class="absolute top-4 right-4 border border-solid border-gray-300 rounded-full p-1"
                         >
                             <svg
+                                @click="imageZoom(activeImage)"
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-arrows-diagonal"
                                 width="24"
@@ -51,7 +49,11 @@
                             :key="index"
                             class="border border-solid border-black rounded-lg overflow-hidden"
                         >
-                            <img :src="image.imageUrl" :alt="image.name" />
+                            <img
+                                @click="changeActiveImage(image.imageUrl)"
+                                :src="image.imageUrl"
+                                :alt="image.name"
+                            />
                         </div>
                     </div>
                 </div>
@@ -136,11 +138,11 @@
                             </span>
                         </div>
                     </div>
-                    <div class="">
-                        <p
+                    <div>
+                        <div
                             class="text-base text-gray-500"
                             v-html="product.description"
-                        ></p>
+                        ></div>
 
                         <!-- <div class="flex flex-col items-start gap-x-2 mt-10">
                         <div class="flex gap-x-2">
@@ -195,7 +197,10 @@
                                     <div
                                         class="w-32 h-12 flex items-center border-2 border-gray-400 rounded-full"
                                     >
-                                        <button class="focus:outline-none ml-3">
+                                        <button
+                                            class="focus:outline-none ml-3"
+                                            @click.prevent="increaseQuantity()"
+                                        >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 class="icon icon-tabler icon-tabler-plus"
@@ -230,10 +235,13 @@
                                         <input
                                             class="w-full text-center focus:outline-none"
                                             type="number"
-                                            value="1"
+                                            v-model="quantity"
                                             placeholder="1"
                                         />
-                                        <button class="focus:outline-none mr-3">
+                                        <button
+                                            class="focus:outline-none mr-3"
+                                            @click.prevent="decreaseQuantity()"
+                                        >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 class="icon icon-tabler icon-tabler-minus"
@@ -261,83 +269,13 @@
                                         </button>
                                     </div>
                                     <button
+                                        @click.prevent="addToCart()"
                                         class="flex-grow h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition duration-500"
                                     >
                                         Thêm vào giỏ
                                     </button>
                                 </div>
-                                <button
-                                    style="flex: 1 0 calc(50% - 65px);"
-                                    class="h-12 text-white bg-red-500 rounded-full mt-4 [480]:mt-0 hover:bg-red-600 transition duration-500"
-                                >
-                                    Mua ngay
-                                </button>
                             </form>
-
-                            <div class="md:flex gap-x-10">
-                                <button class="flex items-center mt-6 gap-x-2">
-                                    <span
-                                        class="flex items-center justify-center w-12 h-12 text-center vertical border border-solid border-gray-400 rounded-full"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-heart"
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            stroke-width="1.5"
-                                            stroke="rgb(34, 34, 34)"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <path
-                                                stroke="none"
-                                                d="M0 0h24v24H0z"
-                                                fill="none"
-                                            />
-                                            <path
-                                                d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
-                                            />
-                                        </svg>
-                                    </span>
-                                    Yêu thích
-                                </button>
-
-                                <button class="flex items-center mt-6 gap-x-2">
-                                    <span
-                                        class="flex items-center justify-center w-12 h-12 text-center vertical border border-solid border-gray-400 rounded-full"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-switch-3"
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            stroke-width="1.5"
-                                            stroke="rgb(34, 34, 34)"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <path
-                                                stroke="none"
-                                                d="M0 0h24v24H0z"
-                                                fill="none"
-                                            />
-                                            <path
-                                                d="M3 17h2.397a5 5 0 0 0 4.096 -2.133l.177 -.253m3.66 -5.227l.177 -.254a5 5 0 0 1 4.096 -2.133h3.397"
-                                            />
-                                            <path d="M18 4l3 3l-3 3" />
-                                            <path
-                                                d="M3 7h2.397a5 5 0 0 1 4.096 2.133l4.014 5.734a5 5 0 0 0 4.096 2.133h3.397"
-                                            />
-                                            <path d="M18 20l3 -3l-3 -3" />
-                                        </svg>
-                                    </span>
-                                    So sánh
-                                </button>
-                            </div>
                         </div>
 
                         <div
@@ -378,13 +316,6 @@
                                     Chó
                                 </a>
                             </span> -->
-
-                            <span class="text-gray-500 text-md">
-                                Tags:
-                                <a href="#" class="text-black">
-                                    Đồ ăn
-                                </a>
-                            </span>
                         </div>
                     </div>
                 </div>
@@ -396,8 +327,12 @@
                 <h2 class="text-lg font-bold">
                     {{ `Đánh giá (${product.reviews.length})` }}
                 </h2>
-                
-                <div class="mt-10 border-b pb-8" v-for="review in product.reviews" :key="review.id">
+
+                <div
+                    class="mt-10 border-b pb-8"
+                    v-for="review in product.reviews"
+                    :key="review.id"
+                >
                     <div class="float-left mr-4">
                         <img
                             class="w-12 lg:w-16 rounded-full"
@@ -498,10 +433,15 @@
 </template>
 
 <script>
+import ZoomImage from '../../components/UIcomponents/ZoomImage.vue';
 export default {
+    components: { ZoomImage },
     layout: 'shop',
     data() {
         return {
+            quantity: 1,
+            zoomImage: '',
+            isZoomImage: false,
             rating: 0,
             commentData: {
                 name: '',
@@ -514,17 +454,48 @@ export default {
         try {
             const slug = params.slug;
             const response = await $services.Product.show(slug);
-            return { product: response.data };
+            return {
+                product: response.data,
+                activeImage: response.data.product_images.length
+                    ? response.data.product_images[0].imageUrl
+                    : ''
+            };
         } catch (error) {
             redirect('/404');
         }
     },
     computed: {
         calculateSalePrice() {
-            return this.product.price - (this.product.salePrice / 100) * this.product.price;
+            return (
+                this.product.price -
+                (this.product.salePrice / 100) * this.product.price
+            );
         }
     },
     methods: {
+        decreaseQuantity() {
+            if (this.quantity > 1) {
+                this.quantity--;
+            }
+        },
+        increaseQuantity() {
+            this.quantity++;
+        },
+        changeActiveImage(image) {
+            this.activeImage = image;
+        },
+        imageZoom(activeImage) {
+            this.isZoomImage = true;
+            this.zoomImage = activeImage;
+        },
+        addToCart() {
+            const item = { ...this.product };
+            item.price = this.calculateSalePrice;
+            this.$store.dispatch('cart/addToCart', {
+                ...item,
+                quantity: this.quantity
+            });
+        },
         async submit(payload) {
             let formData = {
                 ...this.commentData,

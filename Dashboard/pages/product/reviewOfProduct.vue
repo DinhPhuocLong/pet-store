@@ -166,6 +166,7 @@ import Alert from '@/components/UIcomponents/Alert.vue';
 import Modal from '@/components/UIcomponents/Modal.vue';
 import StarRating from 'vue-star-rating';
 export default {
+    middleware: ['unAuthenticated'],
     layout: 'default',
     components: {
         StarRating,

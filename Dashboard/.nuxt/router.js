@@ -4,21 +4,21 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _933d85b8 = () => interopDefault(import('..\\pages\\404.vue' /* webpackChunkName: "pages/404.vue" */))
-const _72878a84 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index.vue" */))
-const _3fcf9e80 = () => interopDefault(import('..\\pages\\category\\index.vue' /* webpackChunkName: "pages/category/index.vue" */))
-const _3e18fd38 = () => interopDefault(import('..\\pages\\category\\_slug.vue' /* webpackChunkName: "pages/category/_slug.vue" */))
-const _df384456 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
-const _d8362232 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
-const _53fb24c7 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
-const _5244837f = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug.vue" */))
-const _7e2296f8 = () => interopDefault(import('..\\pages\\product\\rating.vue' /* webpackChunkName: "pages/product/rating.vue" */))
-const _fdf1b156 = () => interopDefault(import('..\\pages\\product\\reviewOfProduct.vue' /* webpackChunkName: "pages/product/reviewOfProduct.vue" */))
-const _0803a75c = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index.vue" */))
-const _b9d20526 = () => interopDefault(import('..\\pages\\blog\\addBlog.vue' /* webpackChunkName: "pages/blog/addBlog.vue" */))
-const _064d0614 = () => interopDefault(import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages/blog/_slug.vue" */))
-const _383e30da = () => interopDefault(import('..\\pages\\user\\index.vue' /* webpackChunkName: "pages/user/index.vue" */))
-const _19e412b8 = () => interopDefault(import('..\\pages\\unauthorized.vue' /* webpackChunkName: "pages/index.vue" */))
+const _284cabda = () => interopDefault(import('..\\pages\\404.vue' /* webpackChunkName: "pages/404.vue" */))
+const _174dc622 = () => interopDefault(import('..\\pages\\category\\index.vue' /* webpackChunkName: "pages/category/index.vue" */))
+const _1abb08b2 = () => interopDefault(import('..\\pages\\category\\_slug.vue' /* webpackChunkName: "pages/category/_slug.vue" */))
+const _4974cb04 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login.vue" */))
+const _26b38150 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register.vue" */))
+const _b7bec710 = () => interopDefault(import('..\\pages\\product\\index.vue' /* webpackChunkName: "pages/product/index.vue" */))
+const _bb2c09a0 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug.vue" */))
+const _32ac1567 = () => interopDefault(import('..\\pages\\product\\rating.vue' /* webpackChunkName: "pages/product/rating.vue" */))
+const _2fb91474 = () => interopDefault(import('..\\pages\\product\\reviewOfProduct.vue' /* webpackChunkName: "pages/product/reviewOfProduct.vue" */))
+const _df98956a = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index.vue" */))
+const _410968c8 = () => interopDefault(import('..\\pages\\blog\\addBlog.vue' /* webpackChunkName: "pages/blog/addBlog.vue" */))
+const _e305d7fa = () => interopDefault(import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages/blog/_slug.vue" */))
+const _6c10f582 = () => interopDefault(import('..\\pages\\user\\index.vue' /* webpackChunkName: "pages/user/index.vue" */))
+const _c4ff6d02 = () => interopDefault(import('..\\pages\\user\\admin.vue' /* webpackChunkName: "pages/user/admin.vue" */))
+const _d0947aae = () => interopDefault(import('..\\pages\\unauthorized.vue' /* webpackChunkName: "pages/index.vue" */))
 
 const emptyFn = () => {}
 
@@ -33,63 +33,67 @@ export const routerOptions = {
 
   routes: [{
     path: "*",
-    component: _933d85b8,
+    component: _284cabda,
     name: "404"
   }, {
     path: "/",
-    component: _72878a84,
+    component: _174dc622,
     name: "dashboard"
   }, {
     path: "/category",
-    component: _3fcf9e80,
+    component: _174dc622,
     name: "category"
   }, {
     path: "/category/:slug",
-    component: _3e18fd38,
+    component: _1abb08b2,
     name: "category-slug"
   }, {
     path: "/login",
-    component: _df384456,
+    component: _4974cb04,
     name: "login"
   }, {
     path: "/register",
-    component: _d8362232,
+    component: _26b38150,
     name: "register"
   }, {
     path: "/product",
-    component: _53fb24c7,
+    component: _b7bec710,
     name: "product"
   }, {
     path: "/product/:slug",
-    component: _5244837f,
+    component: _bb2c09a0,
     name: "product-detail"
   }, {
     path: "/product-review",
-    component: _7e2296f8,
+    component: _32ac1567,
     name: "product-review"
   }, {
     path: "/product-review/:slug",
-    component: _fdf1b156,
+    component: _2fb91474,
     name: "review-of-product"
   }, {
     path: "/blog",
-    component: _0803a75c,
+    component: _df98956a,
     name: "blog"
   }, {
     path: "/blog/add",
-    component: _b9d20526,
+    component: _410968c8,
     name: "add-blog"
   }, {
     path: "/blog/:slug",
-    component: _064d0614,
+    component: _e305d7fa,
     name: "blog-detail"
   }, {
     path: "/user",
-    component: _383e30da,
+    component: _6c10f582,
     name: "user"
   }, {
+    path: "/admin",
+    component: _c4ff6d02,
+    name: "admin"
+  }, {
     path: "/unauthorized",
-    component: _19e412b8,
+    component: _d0947aae,
     name: "unauthorized"
   }],
 

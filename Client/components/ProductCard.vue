@@ -81,12 +81,18 @@
                     <span class="text-xs text-gray-400">(1)</span>
                 </div>
                 <p class="mb-2">
-                    <nuxt-link class="hover:text-red-500" to="#">
+                    <nuxt-link
+                        class="hover:text-red-500"
+                        :to="{
+                            name: 'product-detail',
+                            params: { slug: product.slug }
+                        }"
+                    >
                         {{ product.name }}
                     </nuxt-link>
                 </p>
                 <span class="text-red-600">{{
-                    product.price | toVndCurrency
+                    calculateSalePrice(product) | toVndCurrency
                 }}</span>
             </div>
         </div>
@@ -102,6 +108,9 @@ export default {
                 reviews.reduce((acc, curr) => acc + curr.rate, 0) /
                 reviews.length
             );
+        },
+        calculateSalePrice(product) {
+            return product.price - (product.salePrice / 100) * product.price;
         }
     }
 };

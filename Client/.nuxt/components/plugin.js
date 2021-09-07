@@ -27,7 +27,8 @@ const components = {
   TrendingProduct: () => import('../..\\components\\TrendingProduct.vue' /* webpackChunkName: "components/trending-product" */).then(c => wrapFunctional(c.default || c)),
   UIcomponentsAlert: () => import('../..\\components\\UIcomponents\\Alert.vue' /* webpackChunkName: "components/u-icomponents-alert" */).then(c => wrapFunctional(c.default || c)),
   UIcomponentsModal: () => import('../..\\components\\UIcomponents\\Modal.vue' /* webpackChunkName: "components/u-icomponents-modal" */).then(c => wrapFunctional(c.default || c)),
-  UIcomponentsSlideOver: () => import('../..\\components\\UIcomponents\\SlideOver.vue' /* webpackChunkName: "components/u-icomponents-slide-over" */).then(c => wrapFunctional(c.default || c))
+  UIcomponentsSlideOver: () => import('../..\\components\\UIcomponents\\SlideOver.vue' /* webpackChunkName: "components/u-icomponents-slide-over" */).then(c => wrapFunctional(c.default || c)),
+  UIcomponentsZoomImage: () => import('../..\\components\\UIcomponents\\ZoomImage.vue' /* webpackChunkName: "components/u-icomponents-zoom-image" */).then(c => wrapFunctional(c.default || c))
 }
 
 for (const name in components) {

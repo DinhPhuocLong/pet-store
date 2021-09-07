@@ -25,24 +25,6 @@ Latest commit 18fda80 yesterday History 2 contributors @kebinh1235@DinhPhuocLong
         </div>
 
         <div class="mb-4 px-4">
-            <div
-                class="w-full flex items-center text-blue-400 h-10 pl-4 bg-gray-200 hover:bg-gray-200 rounded-lg cursor-pointer"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        d="M0 0v19h24v-19h-24zm22 17h-20v-15h20v15zm-6.599 4l2.599 3h-12l2.599-3h6.802zm-1.901-11.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5l.028-.29c.737.271 1.464-.441 1.202-1.186l.27-.024c.828 0 1.5.672 1.5 1.5zm-1.492-3.5c-3.785 0-6.008 3.275-6.008 3.275s2.418 3.725 6.008 3.725c3.866 0 5.992-3.725 5.992-3.725s-2.146-3.275-5.992-3.275zm-.008 6c-1.381 0-2.5-1.119-2.5-2.5 0-1.38 1.119-2.5 2.5-2.5s2.5 1.12 2.5 2.5c0 1.381-1.119 2.5-2.5 2.5z"
-                    />
-                </svg>
-                <span class="text-gray-700 ml-2">Bảng điều khiển</span>
-            </div>
-        </div>
-
-        <div class="mb-4 px-4">
             <p class="pl-4 text-sm font-semibold mb-1">DANH MỤC</p>
             <div
                 class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
@@ -160,27 +142,6 @@ Latest commit 18fda80 yesterday History 2 contributors @kebinh1235@DinhPhuocLong
         </div>
 
         <div class="mb-4 px-4">
-            <p class="pl-4 text-sm font-semibold mb-1">THƯƠNG HIỆU</p>
-            <div
-                class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        d="M19.647 15.247c-1.278 0-2.429.551-3.225 1.429l-7.788-3.846c.062-.343.079-.64.067-.942l8.058-4.231c.769.682 1.78 1.097 2.889 1.097 2.404-.001 4.352-1.949 4.352-4.353s-1.948-4.353-4.353-4.353-4.353 1.949-4.353 4.353c0 .18.012.356.033.53l-7.828 4.111c-.793-.829-1.908-1.347-3.146-1.347-2.405 0-4.353 1.949-4.353 4.353s1.948 4.353 4.353 4.353c1.013 0 1.943-.347 2.684-.927l8.26 4.078-.001.047c0 2.404 1.948 4.353 4.353 4.353s4.351-1.949 4.351-4.353-1.948-4.352-4.353-4.352z"
-                    />
-                </svg>
-                <nuxt-link :to="{ name: 'brand' }" class="text-gray-700 ml-2">
-                    Quản lý thương hiệu
-                </nuxt-link>
-            </div>
-        </div>
-
-        <div class="mb-4 px-4">
             <p class="pl-4 text-sm font-semibold mb-1">TIN TỨC</p>
             <div
                 class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
@@ -230,7 +191,34 @@ Latest commit 18fda80 yesterday History 2 contributors @kebinh1235@DinhPhuocLong
                     <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
                 </svg>
                 <nuxt-link :to="{ name: 'user' }" class="text-gray-700 ml-2">
-                    Quản lý người dùng
+                    Khách hàng
+                </nuxt-link>
+            </div>
+
+
+            <div
+                class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-users"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#2c3e50"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                </svg>
+                <nuxt-link :to="{ name: 'admin' }" class="text-gray-700 ml-2">
+                    Admin
                 </nuxt-link>
             </div>
         </div>
@@ -242,3 +230,10 @@ export default {
     name: 'Sidebar'
 };
 </script>
+
+<style scoped>
+a.nuxt-link-exact-active {
+    font-weight: 700;
+    color: red;
+}
+</style>

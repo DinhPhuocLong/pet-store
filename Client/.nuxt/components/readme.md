@@ -32,3 +32,4 @@ You can directly use them in pages and other components without the need to impo
 - `<UIcomponentsAlert>` | `<u-icomponents-alert>` (components/UIcomponents/Alert.vue)
 - `<UIcomponentsModal>` | `<u-icomponents-modal>` (components/UIcomponents/Modal.vue)
 - `<UIcomponentsSlideOver>` | `<u-icomponents-slide-over>` (components/UIcomponents/SlideOver.vue)
+- `<UIcomponentsZoomImage>` | `<u-icomponents-zoom-image>` (components/UIcomponents/ZoomImage.vue)

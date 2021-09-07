@@ -441,6 +441,7 @@ import StarRating from 'vue-star-rating';
 import util from '../../helpers/util';
 import { ValidationProvider, ValidationObserver } from 'vee-validate';
 export default {
+    middleware: ['unAuthenticated'],
     layout: 'dashboard',
     components: {
         StarRating,

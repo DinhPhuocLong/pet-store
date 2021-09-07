@@ -26,6 +26,7 @@ export { default as TrendingProduct } from '../..\\components\\TrendingProduct.v
 export { default as UIcomponentsAlert } from '../..\\components\\UIcomponents\\Alert.vue'
 export { default as UIcomponentsModal } from '../..\\components\\UIcomponents\\Modal.vue'
 export { default as UIcomponentsSlideOver } from '../..\\components\\UIcomponents\\SlideOver.vue'
+export { default as UIcomponentsZoomImage } from '../..\\components\\UIcomponents\\ZoomImage.vue'
 
 export const LazyAboutUsBanner = import('../..\\components\\AboutUsBanner.vue' /* webpackChunkName: "components/about-us-banner" */).then(c => wrapFunctional(c.default || c))
 export const LazyBanner = import('../..\\components\\Banner.vue' /* webpackChunkName: "components/banner" */).then(c => wrapFunctional(c.default || c))
@@ -53,3 +54,4 @@ export const LazyTrendingProduct = import('../..\\components\\TrendingProduct.vu
 export const LazyUIcomponentsAlert = import('../..\\components\\UIcomponents\\Alert.vue' /* webpackChunkName: "components/u-icomponents-alert" */).then(c => wrapFunctional(c.default || c))
 export const LazyUIcomponentsModal = import('../..\\components\\UIcomponents\\Modal.vue' /* webpackChunkName: "components/u-icomponents-modal" */).then(c => wrapFunctional(c.default || c))
 export const LazyUIcomponentsSlideOver = import('../..\\components\\UIcomponents\\SlideOver.vue' /* webpackChunkName: "components/u-icomponents-slide-over" */).then(c => wrapFunctional(c.default || c))
+export const LazyUIcomponentsZoomImage = import('../..\\components\\UIcomponents\\ZoomImage.vue' /* webpackChunkName: "components/u-icomponents-zoom-image" */).then(c => wrapFunctional(c.default || c))

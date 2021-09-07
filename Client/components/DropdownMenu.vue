@@ -30,7 +30,7 @@
                     </svg>
                 </nuxt-link>
                 <!--Dropdown Menu-->
-                <SubMenu :childrenCategories="c.children_categories" />
+                <SubMenu :childrenCategories="c.children_categories" :redirect="'shop-by-category'" />
             </li>
             <li class="group" v-for="item in blogCate" :key="item.id">
                 <nuxt-link

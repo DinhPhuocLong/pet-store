@@ -132,7 +132,7 @@
                             {{ trendingProduct.name }}
                         </nuxt-link>
                     </p>
-                    <span class="text-red-600">{{ trendingProduct.price | toVndCurrency }}</span>
+                    <span class="text-red-600">{{ calculateSalePrice(trendingProduct) | toVndCurrency }}</span>
                 </div>
             </div>
         </div>
@@ -144,10 +144,15 @@ export default {
     props: ['trendingProducts'],
     methods: {
         addToCart(product) {
+            const item = {...product};
+            item.price = this.calculateSalePrice(product);
             this.$store.dispatch('cart/addToCart', {
-                ...product,
+                ...item,
                 quantity: 1
             });
+        },
+        calculateSalePrice(product) {
+            return product.price - (product.salePrice / 100) * product.price;
         },
     }
 }

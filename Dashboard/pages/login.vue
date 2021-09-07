@@ -108,14 +108,6 @@
                                 <div class="text-center">
                                     <a
                                         class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                                        href="./register.html"
-                                    >
-                                        Tạo tài khoản!
-                                    </a>
-                                </div>
-                                <div class="text-center">
-                                    <a
-                                        class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
                                         href="./forgot-password.html"
                                     >
                                         Quên mật khẩu?
@@ -171,9 +163,7 @@ export default {
                     this.$router.push({ name: 'unauthorized' });
                 } else {
                     this.alertTrigger('success', 'Đăng nhập thành công', 2000);
-                    setTimeout(_ => {
-                        this.$router.push({ name: 'dashboard' });
-                    }, 2000);
+                    this.$router.push({ name: 'dashboard' });
                 }
             } catch (error) {
                 this.alertTrigger('danger', error.response.data.error, 2000);
